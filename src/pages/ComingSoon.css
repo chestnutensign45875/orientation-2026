@@ -1,13 +1,14 @@
-.page {
+.coming-soon-page {
   min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: clamp(1.25rem, 4vw, 3rem);
   box-sizing: border-box;
+  background: #c48b8b;
 }
 
-.card {
+.coming-soon-card {
   width: min(960px, 100%);
   background: #faf8f5;
   border-radius: 12px;
@@ -22,7 +23,7 @@
   box-sizing: border-box;
 }
 
-.card-content {
+.coming-soon-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -30,7 +31,7 @@
   min-width: 0;
 }
 
-.clock {
+.coming-soon-clock {
   display: block;
   color: #e84c4c;
   font-size: 0.8rem;
@@ -40,7 +41,7 @@
   font-variant-numeric: tabular-nums;
 }
 
-.headline {
+.coming-soon-headline {
   margin: 0;
   color: #1e3a5f;
   font-size: clamp(2rem, 4.5vw, 3.15rem);
@@ -49,7 +50,7 @@
   letter-spacing: -0.03em;
 }
 
-.subcopy {
+.coming-soon-subcopy {
   margin: 1.25rem 0 0;
   color: #5a6a7a;
   font-size: clamp(0.95rem, 1.5vw, 1.05rem);
@@ -57,7 +58,7 @@
   max-width: 28ch;
 }
 
-.card-footer {
+.coming-soon-footer {
   margin-top: clamp(2rem, 5vw, 3.5rem);
   display: flex;
   align-items: center;
@@ -71,7 +72,7 @@
   display: block;
 }
 
-.badge {
+.coming-soon-badge {
   display: inline-flex;
   align-items: center;
   padding: 0.4rem 0.85rem;
@@ -83,7 +84,7 @@
   letter-spacing: 0.01em;
 }
 
-.card-visual {
+.coming-soon-visual {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,10 +94,10 @@
   width: min(280px, 100%);
   height: auto;
   display: block;
-  animation: float 4.5s ease-in-out infinite;
+  animation: coming-soon-float 4.5s ease-in-out infinite;
 }
 
-@keyframes float {
+@keyframes coming-soon-float {
   0%,
   100% {
     transform: translateY(0);
@@ -107,20 +108,20 @@
 }
 
 @media (max-width: 720px) {
-  .card {
+  .coming-soon-card {
     grid-template-columns: 1fr;
     padding: 2rem 1.5rem 2.25rem;
     gap: 1.75rem;
     text-align: center;
   }
 
-  .card-content {
+  .coming-soon-content {
     align-items: center;
     text-align: center;
     order: 2;
   }
 
-  .card-visual {
+  .coming-soon-visual {
     order: 1;
   }
 
@@ -128,15 +129,15 @@
     width: min(200px, 70vw);
   }
 
-  .subcopy {
+  .coming-soon-subcopy {
     max-width: 36ch;
   }
 
-  .clock {
+  .coming-soon-clock {
     margin-bottom: 1rem;
   }
 
-  .card-footer {
+  .coming-soon-footer {
     margin-top: 1.75rem;
     justify-content: center;
   }
