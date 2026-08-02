@@ -52,11 +52,6 @@ function About() {
               <SparkleSvg size={24} />
             </div>
 
-            <div className="page-eyebrow">
-              <span className="page-eyebrow__dot" />
-              <span>PEHLA KADAM 2026 // ORIENTATION</span>
-            </div>
-
             <div className="page-welcome">
               <TextReveal
                 text="WELCOME"
