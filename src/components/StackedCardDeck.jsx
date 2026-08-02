@@ -171,23 +171,28 @@ function StackedCardDeck() {
         {/* Background Deck Card 1 (Rotated left) */}
         <div className="deck-card-bg deck-card-bg--1" />
 
-        {/* Active Animated Draggable & Swipable Front Card */}
-        <AnimatePresence mode="wait" custom={direction}>
+        {/* Active Animated Draggable & Swipable Front Card (Silky smooth 60fps performance) */}
+        <AnimatePresence mode="popLayout" custom={direction}>
           <motion.div
             key={activeCard.id}
             className="deck-card-active"
             onClick={handleCardClick}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.22}
+            dragElastic={0.2}
             onDragStart={() => {
               isDraggingRef.current = true
             }}
             onDragEnd={handleDragEnd}
-            initial={{ opacity: 0, scale: 0.92, x: direction * 45 }}
+            initial={{ opacity: 0, scale: 0.95, x: direction * 50 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
-            exit={{ opacity: 0, scale: 0.92, x: -direction * 45 }}
-            transition={{ type: 'spring', stiffness: 350, damping: 28 }}
+            exit={{ opacity: 0, scale: 0.95, x: -direction * 50 }}
+            transition={{
+              type: 'spring',
+              stiffness: 380,
+              damping: 30,
+              mass: 0.75,
+            }}
             whileHover={{ scale: 1.02, y: -4 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -216,6 +221,7 @@ function StackedCardDeck() {
             </button>
           </motion.div>
         </AnimatePresence>
+
 
 
       </div>
