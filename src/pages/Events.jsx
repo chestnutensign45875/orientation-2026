@@ -1,30 +1,29 @@
 import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import BlurredBackground from '../components/BlurredBackground'
 import RevealOnScroll from '../components/RevealOnScroll'
-import { useSwipe } from '../components/SwipeContainer'
 import './Page.css'
 
 function Events() {
   const scrollRef = useRef(null)
-  const { nextPage, prevPage } = useSwipe()
+  const navigate = useNavigate()
 
   return (
     <article className="page">
       <BlurredBackground src="/page.png" scrollContainerRef={scrollRef} />
 
       <div className="page-scroll" ref={scrollRef}>
-        {/* TOP LOGOS BAR (Left: /1.png | Right: /2.png) */}
+        {/* TOP LOGOS BAR (Left: /piet.png | Right: /Logo.svg) */}
         <div className="top-logos-bar">
           <div className="top-logo-item">
-            <img src="/piet.png" alt="Left Logo" className="top-logo-img--left" />
+            <img src="/piet.png" alt="PIET Logo" className="top-logo-img--left" />
           </div>
           <div className="top-logo-item">
-            <img src="/Logo.svg" alt="Right Logo" className="top-logo-img--right" />
+            <img src="/Logo.svg" alt="ACM Logo" className="top-logo-img--right" />
           </div>
         </div>
 
         <header className="page-hero">
-
           <div className="page-hero__inner">
             <div className="page-eyebrow">
               <span className="page-eyebrow__dot" />
@@ -38,27 +37,32 @@ function Events() {
           </div>
 
           <div className="page-hero__footer">
-            <button
-              type="button"
-              className="page-swipe-hint"
-              onClick={prevPage}
-              aria-label="Go to About page"
-            >
-              <span className="page-swipe-hint__arrow">←</span>
-              <span>ABOUT</span>
-            </button>
-            <button
-              type="button"
-              className="page-swipe-hint"
-              onClick={nextPage}
-              aria-label="Go to Map page"
-            >
-              <span>MAP</span>
-              <span className="page-swipe-hint__arrow">→</span>
-            </button>
+            <div className="page-scroll-cue">
+              <div className="page-scroll-line" />
+              <span className="page-scroll-label">SCROLL</span>
+            </div>
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              <button
+                type="button"
+                className="page-swipe-hint"
+                onClick={() => navigate('/about')}
+                aria-label="Back to About page"
+              >
+                <span className="page-swipe-hint__arrow">←</span>
+                <span>ABOUT</span>
+              </button>
+              <button
+                type="button"
+                className="page-swipe-hint"
+                onClick={() => navigate('/map')}
+                aria-label="Go to Map page"
+              >
+                <span>MAP</span>
+                <span className="page-swipe-hint__arrow">→</span>
+              </button>
+            </div>
           </div>
         </header>
-
 
         <section className="page-content-wrap">
           <div className="page-content">

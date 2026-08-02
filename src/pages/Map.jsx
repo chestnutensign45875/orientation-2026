@@ -1,25 +1,25 @@
 import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import BlurredBackground from '../components/BlurredBackground'
 import RevealOnScroll from '../components/RevealOnScroll'
-import { useSwipe } from '../components/SwipeContainer'
 import './Page.css'
 
 function Map() {
   const scrollRef = useRef(null)
-  const { prevPage } = useSwipe()
+  const navigate = useNavigate()
 
   return (
     <article className="page">
       <BlurredBackground src="/page.png" scrollContainerRef={scrollRef} />
 
       <div className="page-scroll" ref={scrollRef}>
-        {/* TOP LOGOS BAR (Left: /1.png | Right: /2.png) */}
+        {/* TOP LOGOS BAR (Left: /piet.png | Right: /Logo.svg) */}
         <div className="top-logos-bar">
           <div className="top-logo-item">
-            <img src="/piet.png" alt="Left Logo" className="top-logo-img--left" />
+            <img src="/piet.png" alt="PIET Logo" className="top-logo-img--left" />
           </div>
           <div className="top-logo-item">
-            <img src="/Logo.svg" alt="Right Logo" className="top-logo-img--right" />
+            <img src="/Logo.svg" alt="ACM Logo" className="top-logo-img--right" />
           </div>
         </div>
 
@@ -38,20 +38,21 @@ function Map() {
           </div>
 
           <div className="page-hero__footer">
-            <button
-              type="button"
-              className="page-swipe-hint"
-              onClick={prevPage}
-              aria-label="Go to Events page"
-            >
-              <span className="page-swipe-hint__arrow">←</span>
-              <span>EVENTS</span>
-            </button>
             <div className="page-scroll-cue">
               <div className="page-scroll-line" />
               <span className="page-scroll-label">SCROLL</span>
             </div>
+            <button
+              type="button"
+              className="page-swipe-hint"
+              onClick={() => navigate('/about')}
+              aria-label="Back to About page"
+            >
+              <span className="page-swipe-hint__arrow">←</span>
+              <span>ABOUT</span>
+            </button>
           </div>
+
         </header>
 
 

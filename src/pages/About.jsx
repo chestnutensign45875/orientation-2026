@@ -3,7 +3,7 @@ import BlurredBackground from '../components/BlurredBackground'
 import RotatingWords from '../components/RotatingWords'
 import TextReveal from '../components/TextReveal'
 import RevealOnScroll from '../components/RevealOnScroll'
-import { useSwipe } from '../components/SwipeContainer'
+import StackedCardDeck from '../components/StackedCardDeck'
 import './Page.css'
 
 function SparkleSvg({ size = 28 }) {
@@ -17,11 +17,11 @@ function SparkleSvg({ size = 28 }) {
 /**
  * About Page — Pehla Kadam 2026 Orientation
  * Light theme with 70% opacity campus photo background (/page.png),
- * fully centered welcome hero, rotating typography, and content cards.
+ * fully centered welcome hero, rotating typography, stacked card deck carousel
+ * (Events, Campus Map, Student Council), and content sections.
  */
 function About() {
   const scrollRef = useRef(null)
-  const { nextPage } = useSwipe()
 
   return (
     <article className="page">
@@ -29,20 +29,18 @@ function About() {
       <BlurredBackground src="/page.png" scrollContainerRef={scrollRef} />
 
       <div className="page-scroll" ref={scrollRef}>
-        {/* TOP LOGOS BAR (Left: /1.png | Right: /2.png) */}
+        {/* TOP LOGOS BAR (Left: /piet.png | Right: /Logo.svg) */}
         <div className="top-logos-bar">
           <div className="top-logo-item">
-            <img src="/piet.png" alt="Left Logo" className="top-logo-img--left" />
+            <img src="/piet.png" alt="PIET Logo" className="top-logo-img--left" />
           </div>
           <div className="top-logo-item">
-            <img src="/Logo.svg" alt="Right Logo" className="top-logo-img--right" />
+            <img src="/Logo.svg" alt="ACM Logo" className="top-logo-img--right" />
           </div>
         </div>
 
-
         {/* HERO / WELCOME SCREEN - FULLY CENTERED */}
         <header className="page-hero">
-
           <div className="page-hero__inner">
             {/* Floating Decorative Sparkles */}
             <div className="page-sparkle page-sparkle--blue" style={{ top: '-10px', right: '20px' }}>
@@ -66,18 +64,12 @@ function About() {
               prefix="FOR THE NEXT GENERATION OF"
               words={['ENGINEERS', 'CREATORS', 'ENTHUSIASTS', 'STUDENTS']}
             />
+
+            {/* STACKED CARDS DECK (Inspired by inspo.png) */}
+            <StackedCardDeck />
           </div>
 
           <div className="page-hero__footer">
-            <button
-              type="button"
-              className="page-swipe-hint"
-              onClick={nextPage}
-              aria-label="Go to Events page"
-            >
-              <span>SWIPE FOR EVENTS</span>
-              <span className="page-swipe-hint__arrow">→</span>
-            </button>
             <div className="page-scroll-cue">
               <div className="page-scroll-line" />
               <span className="page-scroll-label">SCROLL</span>
