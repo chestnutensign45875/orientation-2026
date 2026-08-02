@@ -1,33 +1,32 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
-import Layout from './components/Layout'
+import SwipeContainer from './components/SwipeContainer'
 import ComingSoon from './pages/ComingSoon'
 import About from './pages/About'
 import Events from './pages/Events'
 import Map from './pages/Map'
 
+const pages = [
+  { path: '/about', label: 'About', Component: About },
+  { path: '/events', label: 'Events', Component: Events },
+  { path: '/map', label: 'Map', Component: Map },
+]
+
 /**
  * App shell — routing only.
- *
- * Launch checklist when the real site is ready:
- * 1. Build out About / Events / Map (and add a Home page if needed).
- * 2. Point `/` at that Home (or About) inside the Layout routes below.
- * 3. Delete `pages/ComingSoon.jsx` + `pages/ComingSoon.css`.
  */
 function App() {
   return (
     <Routes>
-      {/* Temporary public landing — swap this route when launching */}
+      {/* Temporary landing page — swap with Navigate to="/about" when ready */}
       <Route path="/" element={<ComingSoon />} />
 
-      {/* Real site pages (nav + footer via Layout) */}
-      <Route element={<Layout />}>
-        <Route path="/about" element={<About />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/map" element={<Map />} />
-      </Route>
+      {/* Swipe shell containing About (default), Events, and Map */}
+      <Route path="/about" element={<SwipeContainer pages={pages} />} />
+      <Route path="/events" element={<SwipeContainer pages={pages} />} />
+      <Route path="/map" element={<SwipeContainer pages={pages} />} />
 
-      {/* Unknown paths fall back to the landing page for now */}
+      {/* Fallback to landing page */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )

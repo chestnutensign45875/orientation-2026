@@ -1,50 +1,84 @@
-:root {
-  --bg: #c48b8b;
-  --card: #faf8f5;
-  --text: #5a6a7a;
-  --text-h: #1e3a5f;
-  --accent: #e84c4c;
-  --sans: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial,
-    sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap');
 
-  font-family: var(--sans), sans-serif;
+:root {
+  --bg-light: #fdfbf7;
+  --bg-surface: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.88);
+  --bg-card-hover: #ffffff;
+  --bg-glass: rgba(253, 251, 247, 0.9);
+
+  /* Light Theme Color Palette (Royal Blue, Golden Amber, Deep Indigo, Teal) */
+  --blue: #2563eb;
+  --blue-dark: #1e40af;
+  --blue-glow: rgba(37, 99, 235, 0.15);
+  
+  --amber: #d97706;
+  --amber-gold: #f59e0b;
+  --amber-glow: rgba(217, 119, 6, 0.15);
+  
+  --indigo: #4f46e5;
+  --teal: #0d9488;
+  --cream: #ffffff;
+
+  --border: rgba(15, 23, 42, 0.12);
+  --border-blue: rgba(37, 99, 235, 0.3);
+  --border-amber: rgba(217, 119, 6, 0.3);
+
+  --text-primary: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #64748b;
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+
+  font-family: var(--font-sans), sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  font-weight: 400;
-  color: var(--text);
-  background-color: var(--bg);
+  color: var(--text-primary);
+  background-color: var(--bg-light);
+  color-scheme: light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color-scheme: light;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+html,
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100svh;
-  background-color: var(--bg);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #root {
-  min-height: 100svh;
   width: 100%;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin: 0;
+  height: 100svh;
+  overflow: hidden;
+  position: relative;
 }
 
 a {
   color: inherit;
+  text-decoration: none;
 }
+
+button {
+  font-family: inherit;
+}
+
+
+
