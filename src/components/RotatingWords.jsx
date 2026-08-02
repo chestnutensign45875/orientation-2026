@@ -3,7 +3,6 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 
 const DEFAULT_WORDS = ['ENGINEERS', 'CREATORS', 'ENTHUSIASTS', 'STUDENTS']
 
-// All variants use 100% identical font-family, weight, and style matching the page font
 const COLOR_VARIANTS = [
   { color: '#2563eb', textShadow: '0 4px 20px rgba(37, 99, 235, 0.25)', fontFamily: 'var(--font-display)', fontStyle: 'normal', fontWeight: 900 },
   { color: '#d97706', textShadow: '0 4px 20px rgba(217, 119, 6, 0.25)', fontFamily: 'var(--font-display)', fontStyle: 'normal', fontWeight: 900 },
@@ -19,7 +18,7 @@ function RotatingWords({ words = DEFAULT_WORDS, prefix = 'FOR THE NEXT GENERATIO
     if (words.length <= 1) return undefined
     const id = setInterval(
       () => setIndex((current) => (current + 1) % words.length),
-      2300,
+      2500,
     )
     return () => clearInterval(id)
   }, [words.length])
@@ -36,48 +35,63 @@ function RotatingWords({ words = DEFAULT_WORDS, prefix = 'FOR THE NEXT GENERATIO
     )
   }
 
+  const chars = currentWord.split('')
+
   return (
     <div className="page-rotate-block" aria-live="polite">
       {prefix && <span className="page-rotate-prefix">{prefix}</span>}
 
       <div className="page-rotate-slot">
-        <AnimatePresence mode="wait">
-          <motion.span
-            key={currentWord}
-            className="page-rotate-word"
-            style={currentVariant}
-            initial={{
-              opacity: 0,
-              scaleY: 0.65,
-              scaleX: 1.16,
-              y: 18,
-            }}
-            animate={{
-              opacity: 1,
-              scaleY: 1,
-              scaleX: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              scaleY: 1.22,
-              scaleX: 0.85,
-              y: -18,
-            }}
-            transition={{
-              duration: 0.5,
-              ease: [0.34, 1.56, 0.64, 1], // Crisp liquid spring elasticity
-            }}
-          >
-            {currentWord}
-          </motion.span>
-        </AnimatePresence>
+        <motion.div
+          className="morph-word-wrap"
+          style={currentVariant}
+          layout
+          transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+        >
+          <AnimatePresence mode="popLayout" initial={false}>
+            {chars.map((char, charIdx) => (
+              <motion.span
+                key={`${char}-${charIdx}`}
+                className="morph-char"
+                initial={{
+                  opacity: 0,
+                  y: 14,
+                  rotateX: 70,
+                  scale: 0.88,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  rotateX: 0,
+                  scale: 1,
+                }}
+                exit={{
+                  opacity: 0,
+                  y: -14,
+                  rotateX: -70,
+                  scale: 0.88,
+                }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 420,
+                  damping: 26,
+                  mass: 0.5,
+                  delay: charIdx * 0.018,
+                }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </div>
   )
 }
 
 export default RotatingWords
+
+
 
 
 

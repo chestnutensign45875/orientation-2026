@@ -477,15 +477,28 @@
   text-align: center;
 }
 
-.liquid-transform-slot {
-  filter: url(#liquid-transform-goo);
-  overflow: visible !important;
+.morph-word-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2.6rem, 13vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-transform: uppercase;
+  perspective: 800px;
+  will-change: transform;
 }
 
-.liquid-transform-word {
-  will-change: transform, opacity, filter;
+.morph-char {
+  display: inline-block;
   transform-origin: center center;
+  will-change: transform, opacity;
+  white-space: pre;
 }
+
 
 .page-rotate-word {
   display: block;
@@ -497,6 +510,7 @@
   text-transform: uppercase;
   text-align: center;
 }
+
 
 
 
