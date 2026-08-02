@@ -29,6 +29,28 @@
   display: none;
 }
 
+/* ========================================================
+   INTERACTIVE FLOATING & DRAGGABLE SPARKLE STARS
+   ======================================================== */
+.interactive-sparkles-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.interactive-star-wrap {
+  pointer-events: auto;
+  user-select: none;
+  filter: drop-shadow(0 4px 12px rgba(15, 23, 42, 0.12));
+  touch-action: none;
+}
+
+.interactive-star-wrap:active {
+  cursor: grabbing;
+}
+
 /* Floating Sparkle Stars (Royal Blue & Amber Gold) */
 .page-sparkle {
   position: absolute;
@@ -129,6 +151,8 @@
   border: 1px solid rgba(37, 99, 235, 0.15);
   z-index: 1;
 }
+
+
 
 .deck-card-bg--2 {
   transform: rotate(4.2deg) translate(8px, 10px) scale(0.94);
@@ -446,10 +470,22 @@
 
 .page-rotate-slot {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 1.15em;
-  overflow: hidden;
+  overflow: visible;
   text-align: center;
+}
+
+.liquid-transform-slot {
+  filter: url(#liquid-transform-goo);
+  overflow: visible !important;
+}
+
+.liquid-transform-word {
+  will-change: transform, opacity, filter;
+  transform-origin: center center;
 }
 
 .page-rotate-word {
@@ -462,6 +498,9 @@
   text-transform: uppercase;
   text-align: center;
 }
+
+
+
 
 /* Swipe & Scroll Visual Cues - Left Scroll & Right Swipe Pill */
 .page-hero__footer {

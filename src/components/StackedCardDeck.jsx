@@ -55,7 +55,7 @@ const cardsData = [
     category: 'LEADERSHIP & CLUBS',
     badgeClass: 'nav-card__badge--teal',
     title: 'STUDENT COUNCIL',
-    desc: 'Meet the student leads, ACM chapter coordinators, mentors, and team behind Pehla Kadam 2026.',
+    desc: 'Meet the student leads,  mentors, and team behind Pehla Kadam 2026.',
     btnText: 'MEET COUNCIL →',
     icon: (
       <img
@@ -87,6 +87,8 @@ function StackedCardDeck() {
   }, [])
 
   const activeCard = cardsData[currentIndex]
+  const nextCard = cardsData[(currentIndex + 1) % cardsData.length]
+
 
   // Handle Drag gesture end for swipe
   const handleDragEnd = (_, info) => {
@@ -164,14 +166,10 @@ function StackedCardDeck() {
         onTouchEnd={handleTouchEnd}
       >
         {/* Background Deck Card 2 (Rotated right) */}
-        <div className="deck-card-bg deck-card-bg--2">
-          <div className="deck-card-bg__inner" />
-        </div>
+        <div className="deck-card-bg deck-card-bg--2" />
 
         {/* Background Deck Card 1 (Rotated left) */}
-        <div className="deck-card-bg deck-card-bg--1">
-          <div className="deck-card-bg__inner" />
-        </div>
+        <div className="deck-card-bg deck-card-bg--1" />
 
         {/* Active Animated Draggable & Swipable Front Card */}
         <AnimatePresence mode="wait" custom={direction}>
@@ -218,6 +216,8 @@ function StackedCardDeck() {
             </button>
           </motion.div>
         </AnimatePresence>
+
+
       </div>
 
       {/* Right Navigation Arrow */}

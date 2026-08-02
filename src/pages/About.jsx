@@ -4,6 +4,7 @@ import RotatingWords from '../components/RotatingWords'
 import TextReveal from '../components/TextReveal'
 import RevealOnScroll from '../components/RevealOnScroll'
 import StackedCardDeck from '../components/StackedCardDeck'
+import InteractiveSparkles from '../components/InteractiveSparkles'
 import './Page.css'
 
 function SparkleSvg({ size = 28 }) {
@@ -17,8 +18,8 @@ function SparkleSvg({ size = 28 }) {
 /**
  * About Page — Pehla Kadam 2026 Orientation
  * Light theme with 70% opacity campus photo background (/page.png),
- * fully centered welcome hero, rotating typography, stacked card deck carousel
- * (Events, Campus Map, Student Council), and content sections.
+ * fully centered welcome hero, rotating typography, interactive draggable stars,
+ * stacked card deck carousel (Events, Campus Map, Student Council), and content sections.
  */
 function About() {
   const scrollRef = useRef(null)
@@ -41,14 +42,10 @@ function About() {
 
         {/* HERO / WELCOME SCREEN - FULLY CENTERED */}
         <header className="page-hero">
+          {/* Interactive Floating & Draggable Stars */}
+          <InteractiveSparkles />
+
           <div className="page-hero__inner">
-            {/* Floating Decorative Sparkles */}
-            <div className="page-sparkle page-sparkle--blue" style={{ top: '-10px', right: '20px' }}>
-              <SparkleSvg size={32} />
-            </div>
-            <div className="page-sparkle page-sparkle--amber" style={{ bottom: '20px', left: '-10px' }}>
-              <SparkleSvg size={24} />
-            </div>
 
             <div className="page-welcome">
               <TextReveal

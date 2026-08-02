@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import BlurredBackground from '../components/BlurredBackground'
 import RevealOnScroll from '../components/RevealOnScroll'
+import InteractiveSparkles from '../components/InteractiveSparkles'
 import './Page.css'
 
 function Events() {
@@ -24,7 +25,10 @@ function Events() {
         </div>
 
         <header className="page-hero">
+          <InteractiveSparkles />
+
           <div className="page-hero__inner">
+
             <div className="page-eyebrow">
               <span className="page-eyebrow__dot" />
               <span>SCHEDULE &amp; CURRICULUM</span>
