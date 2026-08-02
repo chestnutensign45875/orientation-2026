@@ -1,9 +1,15 @@
 :root {
-  --bg: #c48b8b;
-  --card: #faf8f5;
-  --text: #5a6a7a;
-  --text-h: #1e3a5f;
-  --accent: #e84c4c;
+  --bg: #071a33;
+  --card: #102a4d;
+  --text: #dce9fb;
+  --text-h: #ffffff;
+  --text-muted: #a9bedb;
+  --accent: #91c4ff;
+  --accent-soft: rgba(145, 196, 255, 0.14);
+  --border: rgba(255, 255, 255, 0.16);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --display: var(--sans);
   --sans: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial,
     sans-serif;
 
@@ -17,7 +23,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 *,
