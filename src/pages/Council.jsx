@@ -29,11 +29,6 @@ function Council() {
 
           <div className="page-hero__inner">
 
-            <div className="page-eyebrow">
-              <span className="page-eyebrow__dot" />
-              <span>LEADERSHIP &amp; CLUBS</span>
-            </div>
-
             <h1 className="page-welcome__line">STUDENT COUNCIL</h1>
             <p className="page-lead" style={{ marginTop: '1rem' }}>
               Meet the student council, organizing committee, event leads, and mentors behind Pehla Kadam 2026.
