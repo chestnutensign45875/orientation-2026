@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -67,34 +67,81 @@ const cardsData = [
   },
 ]
 
-
 function StackedCardDeck() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(1)
+  const isDraggingRef = useRef(false)
+  const touchStartRef = useRef({ x: 0, y: 0, time: 0 })
   const navigate = useNavigate()
 
-  const handleNext = (e) => {
+  const handleNext = useCallback((e) => {
     e?.stopPropagation()
     setDirection(1)
     setCurrentIndex((prev) => (prev + 1) % cardsData.length)
-  }
+  }, [])
 
-  const handlePrev = (e) => {
+  const handlePrev = useCallback((e) => {
     e?.stopPropagation()
     setDirection(-1)
     setCurrentIndex((prev) => (prev - 1 + cardsData.length) % cardsData.length)
-  }
+  }, [])
 
   const activeCard = cardsData[currentIndex]
 
-  // Get background stack card rotations
-  const getDeckStack = () => {
-    const nextIdx = (currentIndex + 1) % cardsData.length
-    const prevIdx = (currentIndex - 1 + cardsData.length) % cardsData.length
-    return { next: cardsData[nextIdx], prev: cardsData[prevIdx] }
+  // Handle Drag gesture end for swipe
+  const handleDragEnd = (_, info) => {
+    const swipeThreshold = 35
+    const swipeVelocity = 150
+    const offset = info.offset.x
+    const velocity = info.velocity.x
+
+    if (offset < -swipeThreshold || velocity < -swipeVelocity) {
+      handleNext()
+    } else if (offset > swipeThreshold || velocity > swipeVelocity) {
+      handlePrev()
+    }
+
+    setTimeout(() => {
+      isDraggingRef.current = false
+    }, 80)
   }
 
-  const { next: nextCard, prev: prevCard } = getDeckStack()
+  // Touch Swipe Gesture Fallback
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0]
+    touchStartRef.current = {
+      x: touch.clientX,
+      y: touch.clientY,
+      time: Date.now(),
+    }
+  }
+
+  const handleTouchEnd = (e) => {
+    if (!touchStartRef.current.time) return
+    const touch = e.changedTouches[0]
+    const deltaX = touch.clientX - touchStartRef.current.x
+    const deltaY = touch.clientY - touchStartRef.current.y
+    const deltaTime = Date.now() - touchStartRef.current.time
+
+    if (
+      Math.abs(deltaX) > Math.abs(deltaY) * 1.15 &&
+      Math.abs(deltaX) > 40 &&
+      deltaTime < 500
+    ) {
+      if (deltaX < 0) {
+        handleNext()
+      } else {
+        handlePrev()
+      }
+    }
+    touchStartRef.current.time = 0
+  }
+
+  const handleCardClick = () => {
+    if (!isDraggingRef.current) {
+      navigate(activeCard.path)
+    }
+  }
 
   return (
     <div className="deck-wrapper">
@@ -111,7 +158,11 @@ function StackedCardDeck() {
       </button>
 
       {/* Stacked Deck Card Box */}
-      <div className="deck-container">
+      <div
+        className="deck-container"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         {/* Background Deck Card 2 (Rotated right) */}
         <div className="deck-card-bg deck-card-bg--2">
           <div className="deck-card-bg__inner" />
@@ -122,17 +173,24 @@ function StackedCardDeck() {
           <div className="deck-card-bg__inner" />
         </div>
 
-        {/* Active Animated Front Card */}
+        {/* Active Animated Draggable & Swipable Front Card */}
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={activeCard.id}
             className="deck-card-active"
-            onClick={() => navigate(activeCard.path)}
-            initial={{ opacity: 0, scale: 0.92, x: direction * 40 }}
+            onClick={handleCardClick}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.22}
+            onDragStart={() => {
+              isDraggingRef.current = true
+            }}
+            onDragEnd={handleDragEnd}
+            initial={{ opacity: 0, scale: 0.92, x: direction * 45 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
-            exit={{ opacity: 0, scale: 0.92, x: -direction * 40 }}
+            exit={{ opacity: 0, scale: 0.92, x: -direction * 45 }}
             transition={{ type: 'spring', stiffness: 350, damping: 28 }}
-            whileHover={{ scale: 1.025, y: -4 }}
+            whileHover={{ scale: 1.02, y: -4 }}
             whileTap={{ scale: 0.98 }}
           >
             <div className="deck-card__header">
@@ -174,7 +232,7 @@ function StackedCardDeck() {
         </svg>
       </button>
 
-      {/* Pagination Dots Indicator below stack */}
+      {/* Pagination Dots Indicator */}
       <div className="deck-dots">
         {cardsData.map((card, idx) => (
           <button
