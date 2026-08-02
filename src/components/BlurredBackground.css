@@ -1,0 +1,45 @@
+.blurred-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blurred-bg__image {
+  position: absolute;
+  inset: -5%;
+  background-size: cover;
+  background-position: center 35%;
+  opacity: 0.70; /* 70% background opacity as requested */
+  filter: saturate(1.08) brightness(0.95);
+  transform-origin: center center;
+}
+
+.blurred-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(37, 99, 235, 0.08) 0%,
+      transparent 65%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(253, 251, 247, 0.45) 0%,
+      rgba(253, 251, 247, 0.78) 55%,
+      rgba(253, 251, 247, 0.94) 100%
+    );
+}
+
+.blurred-bg__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  mix-blend-mode: multiply;
+}
+
+

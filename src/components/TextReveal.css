@@ -1,0 +1,8 @@
+.text-reveal {
+  display: inline-block;
+}
+
+.text-reveal__char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
