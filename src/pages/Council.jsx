@@ -245,9 +245,9 @@ const CLUBS_DATA = [
     captain: {
       name: 'Shriyam Tailong',
       role: 'Captain',
-      image: '/captains/jdc.jpg',
-      email: 'jdc.lead@piet.ac.in',
-      instagram: 'https://instagram.com/joshiley_piet',
+      image: '/captains/jdc.jpeg',
+      email: 'joshileydrama@poornima.org',
+      instagram: 'https://www.instagram.com/joshileydramaclub',
     },
   },
   {
@@ -291,11 +291,11 @@ const CLUBS_DATA = [
     brief: 'Because college shouldn\'t happen entirely behind a desk. Coordinates college-level sporting activities and teams across volleyball, cricket, basketball and table tennis.',
     fullDesc: 'The Sports & Athletics Club manages campus tournaments for cricket, football, basketball, badminton, and esports. We train student athletes for state and national inter-college championships.',
     captain: {
-      name: 'Sports Captain',
-      role: 'Varsity Sports Lead',
-      // image: '/captains/esports.jpg',
-      email: 'sports.captain@piet.ac.in',
-      instagram: 'https://instagram.com/sports_piet',
+      name: 'Nitish Sharma',
+      role: 'Captain',
+      image: '/captains/sports.png',
+      email: 'sports@poornima.org',
+      instagram: 'https://instagram.com/sports.piet',
     },
   },
   {
@@ -326,8 +326,8 @@ const CLUBS_DATA = [
       name: 'Vaibhav Sharma',
       role: 'Captain',
       image: '/captains/nss.jpg',
-      email: 'nss.lead@piet.ac.in',
-      instagram: 'https://instagram.com/nss_piet',
+      email: 'nss.piet@poornima.org',
+      instagram: 'https://www.instagram.com/nss.pietjaipur',
     },
   },
   {
@@ -501,7 +501,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Pranjal Sharma',
       role: 'Captain',
-      image: '/captains/yi.jpg',
+      image: '/captains/yi.jpeg',
       email: 'yi.lead@piet.ac.in',
       instagram: 'https://instagram.com/yi_piet',
     },
