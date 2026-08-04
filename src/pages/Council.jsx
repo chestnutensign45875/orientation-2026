@@ -13,14 +13,13 @@ const CLUBS_DATA = [
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/acm.png',
-    brief: 'A community for students interested in computer science, coding, open source, technical events and developing real-world problem-solving skills. ',
+    brief: 'A community for students interested in computer science, coding, open source, technical events and developing real-world problem-solving skills.',
     fullDesc: 'PIET ACM Student Chapter is dedicated to empowering students through hands-on technical projects, algorithmic problem-solving, open-source development, and national hackathons. Members gain mentorship from industry seniors and alumni.',
     captain: {
-      name: 'Captain Name',
-      role: 'Club President / Lead',
-      image: '/acm.jpg', // Placeholder until photo provided
+      name: 'Khyati Arora',
+      role: 'Captain',
+      image: '/captains/acm.jpg',
       email: 'acm.captain@piet.ac.in',
-      bio: 'Lead organizer & senior coordinator for Pehla Kadam 2026 technical tracks.',
     },
   },
   {
@@ -29,14 +28,13 @@ const CLUBS_DATA = [
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/aws.png',
-    brief: 'Get hands-on with cloud computing through AWS workshops, projects and collaborative learning — with a focus on real-world skills and opportunities',
-    fullDesc: 'If cloud computing interests you, this is another place to explore it. From Buzz the Cloud to a Tech Escape Room and UI Sprint, the club mixes learning with hands-on challenges and experimentation. ',
+    brief: 'Get hands-on with cloud computing through AWS workshops, projects and collaborative learning — with a focus on real-world skills and opportunities.',
+    fullDesc: 'If cloud computing interests you, this is another place to explore it. From Buzz the Cloud to a Tech Escape Room and UI Sprint, the club mixes learning with hands-on challenges and experimentation.',
     captain: {
-      name: 'Captain Name',
-      role: 'Club President / Lead',
-      image: '/acm.jpg', // Placeholder until photo provided
-      email: 'acm.captain@piet.ac.in',
-      bio: 'Lead organizer & senior coordinator for Pehla Kadam 2026 technical tracks.',
+      name: 'Aarya Maheshwari',
+      role: 'AWS Captain',
+      image: '/captains/aws.jpg',
+      email: 'aws.lead@piet.ac.in',
     },
   },
   {
@@ -45,14 +43,13 @@ const CLUBS_DATA = [
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/debug.png',
-    brief: 'For coders and problem-solvers who enjoy DSA, coding contests, hackathons, and figuring out why their code decided to stop working. ',
-    fullDesc: 'Programming, web development, Android development and gaming — all under one roof. And it\'s not just theory. Students have explored backend development, cloud computing, cybersecurity and Linux through activities such as Backend Matters, Cloud Roadmap, CyberQuest and Linux Unlocked. ',
+    brief: 'For coders and problem-solvers who enjoy DSA, coding contests, hackathons, and figuring out why their code decided to stop working.',
+    fullDesc: "Programming, web development, Android development and gaming — all under one roof. Students explore backend development, cloud computing, cybersecurity and Linux through activities such as Backend Matters, Cloud Roadmap, CyberQuest and Linux Unlocked.",
     captain: {
-      name: 'Captain Name',
-      role: 'Debug Lead',
+      name: 'Ayush Sharma',
+      role: 'Debug Club Captain',
       image: '/captains/debug.jpg',
-      email: 'robotics.lead@piet.ac.in',
-      bio: 'Passionate hardware engineer and IoT developer guiding project teams.',
+      email: 'debug.lead@piet.ac.in',
     },
   },
   {
@@ -61,14 +58,13 @@ const CLUBS_DATA = [
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/cyborgs.png',
-    brief: 'Explore AI, automation and modern software development through workshops, projects and hands-on experimentation. ',
-    fullDesc: 'AI. Machine Learning. Web Development. Python. Automation. UI/UX. Emerging technologies. Cyborgs brings together students who want to explore technology beyond the classroom — from their first line of code to real-world projects and workshops. Recent activities included Blockchain Unlocked, Git & GitHub Essentials, Cloud Connect, Foundations Forge and AI & ML Spark. ',
+    brief: 'Explore AI, automation and modern software development through workshops, projects and hands-on experimentation.',
+    fullDesc: 'AI, Machine Learning, Web Development, Python, Automation, and UI/UX. Cyborgs brings together students who want to explore technology beyond the classroom — from their first line of code to real-world projects and workshops.',
     captain: {
-      name: 'Captain Name',
-      role: 'NSS Lead Coordinator',
-      image: '/Logo.svg',
-      email: 'nss.lead@piet.ac.in',
-      bio: 'Social activist and student mentor driving community impact programs.',
+      name: 'Divyansh Dua',
+      role: 'Cyborgs Captain',
+      image: '/captains/cyborgs.jpg',
+      email: 'cyborgs.lead@piet.ac.in',
     },
   },
   {
@@ -77,14 +73,13 @@ const CLUBS_DATA = [
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/iste.png',
-    brief: 'Discover emerging technologies, work on innovative projects and develop technical and professional skills through workshops and competitions. ',
-    fullDesc: 'The Social Welfare & NSS wing mobilizes student volunteers for blood donation drives, tree plantation initiatives, rural education workshops, and campus sustainability projects.',
+    brief: 'Discover emerging technologies, work on innovative projects and develop technical and professional skills through workshops and competitions.',
+    fullDesc: 'ISTE focuses on holistic technical growth, professional skill workshops, hackathons, and multidisciplinary engineering projects across departments.',
     captain: {
-      name: 'Captain Name',
-      role: 'NSS Lead Coordinator',
-      image: '/Logo.svg',
-      email: 'nss.lead@piet.ac.in',
-      bio: 'Social activist and student mentor driving community impact programs.',
+      name: '',
+      role: 'Ananya Gupta',
+      image: '/captains/iste.jpg',
+      email: 'iste.lead@piet.ac.in',
     },
   },
   {
@@ -94,13 +89,12 @@ const CLUBS_DATA = [
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/ieee.png',
     brief: 'A space to explore technology beyond the classroom through workshops, hands-on sessions, industry interaction and innovative projects.',
-    fullDesc: 'The Social Welfare & NSS wing mobilizes student volunteers for blood donation drives, tree plantation initiatives, rural education workshops, and campus sustainability projects.',
+    fullDesc: 'IEEE student branch brings international tech standards, research paper workshops, hardware design sessions, and global network connections to campus.',
     captain: {
-      name: 'Captain Name',
-      role: 'NSS Lead Coordinator',
-      image: '/Logo.svg',
-      email: 'nss.lead@piet.ac.in',
-      bio: 'Social activist and student mentor driving community impact programs.',
+      name: 'Kartik Khurana',
+      role: 'IEEE Branch Chair',
+      image: '/captains/ieee.jpg',
+      email: 'ieee.lead@piet.ac.in',
     },
   },
   {
@@ -109,15 +103,13 @@ const CLUBS_DATA = [
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/mlsa.png',
-    brief: 'Learn and build with Microsoft technologies, from web development and AI/ML to cloud\n' +
-        'computing, Azure and GitHub.',
-    fullDesc: 'The Microsoft Learn Student Ambassadors community gives students opportunities to develop technical and leadership skills, connect with professionals and access Microsoft resources. ',
+    brief: 'Learn and build with Microsoft technologies, from web development and AI/ML to cloud computing, Azure and GitHub.',
+    fullDesc: 'The Microsoft Learn Student Ambassadors community gives students opportunities to develop technical and leadership skills, connect with professionals and access Microsoft resources.',
     captain: {
-      name: 'Captain Name',
-      role: 'NSS Lead Coordinator',
-      image: '/Logo.svg',
-      email: 'nss.lead@piet.ac.in',
-      bio: 'Social activist and student mentor driving community impact programs.',
+      name: 'Satyendra Singh',
+      role: 'Microsoft Student Ambassador',
+      image: '/captains/mlsa.jpg',
+      email: 'mlsa.lead@piet.ac.in',
     },
   },
   {
@@ -126,15 +118,13 @@ const CLUBS_DATA = [
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/inventive.png',
-    brief: 'Got an idea? Turn it into something real. Inventive encourages students to build prototypes,\n' +
-        'explore startups and solve real-world problems.',
-    fullDesc: 'This is where ideas can move beyond the “what if we built this?” stage. Inventive brings students together around technology, engineering, creative problem-solving and realistic projects. One of its project exhibitions, UDBHAV 2025, featured 105 student teams and attracted more than 500 attendees. The club has also hosted sessions on robotics, aeromodelling and generative AI. ',
+    brief: 'Got an idea? Turn it into something real. Inventive encourages students to build prototypes, explore startups and solve real-world problems.',
+    fullDesc: 'This is where ideas move beyond the "what if" stage. Inventive brings students together around technology, engineering, creative problem-solving and realistic projects.',
     captain: {
-      name: 'Captain Name',
-      role: 'NSS Lead Coordinator',
-      image: '/Logo.svg',
-      email: 'nss.lead@piet.ac.in',
-      bio: 'Social activist and student mentor driving community impact programs.',
+      name: 'Yash Raj Sodha',
+      role: 'Innovation & Prototype Lead',
+      image: '/captains/inventive.jpg',
+      email: 'inventive.lead@piet.ac.in',
     },
   },
   {
@@ -143,15 +133,13 @@ const CLUBS_DATA = [
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/udaan.png',
-    brief: 'Build, experiment and fly. Udaan gives students hands-on experience with RC planes,\n' +
-        'gliders and hovercrafts while exploring aerodynamics and design.',
-    fullDesc: 'The club gives students hands-on exposure to RC aircraft, gliders, aircraft design and construction, with students participating in project exhibitions, competitions and events such as FlightQuest 2.0 and BITS Pilani\'s SkyHigh. Because apparently engineering students weren\'t satisfied with keeping their projects on the ground. :) ',
+    brief: 'Build, experiment and fly. Udaan gives students hands-on experience with RC planes, gliders and hovercrafts while exploring aerodynamics and design.',
+    fullDesc: 'Hands-on exposure to RC aircraft, gliders, aircraft design and construction, with students participating in project exhibitions, competitions and flight expos.',
     captain: {
-      name: 'Captain Name',
-      role: 'NSS Lead Coordinator',
-      image: '/Logo.svg',
-      email: 'nss.lead@piet.ac.in',
-      bio: 'Social activist and student mentor driving community impact programs.',
+      name: 'Lakshy Parmar',
+      role: 'Aeromodelling Lead',
+      image: '/captains/udaan.jpg',
+      email: 'udaan.lead@piet.ac.in',
     },
   },
   {
@@ -160,15 +148,13 @@ const CLUBS_DATA = [
     category: 'CULTURAL',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/vibrant_vision.png',
-    brief: 'A creative space for art, craft, design and social awareness — with activities ranging from Art for a Cause and Diya Decoration to miniature art and online talent hunts. ',
-    fullDesc: 'The Social Welfare & NSS wing mobilizes student volunteers for blood donation drives, tree plantation initiatives, rural education workshops, and campus sustainability projects.',
+    brief: 'A creative space for art, craft, design and social awareness — with activities ranging from Art for a Cause and Diya Decoration to miniature art.',
+    fullDesc: 'Vibrant Vision celebrates visual arts, handicrafts, poster design, installation art, and creative expressions across campus events.',
     captain: {
-      name: 'Captain Name',
-      role: 'NSS Lead Coordinator',
-      image: '/Logo.svg',
-      email: 'nss.lead@piet.ac.in',
-      bio: 'Social activist and student mentor driving community impact programs.',
-    },
+      name: 'Tarushi Khandelwal',
+      role: 'Arts & Craft Head',
+      image: '/captains/vibrant-vision.jpg',
+      email: 'vibrantvision.lead@piet.ac.in',},
   },
   {
     id: 'dk-club',
@@ -176,15 +162,13 @@ const CLUBS_DATA = [
     category: 'CULTURAL',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/dk.png',
-    brief: 'For dancers, singers and performers who want to explore classical, folk and Western arts\n' +
-        'and take the stage at college events.',
-    fullDesc: 'Dance, music, performances and cultural expression. It\'s a space for students to learn, collaborate and perform alongside people who enjoy the same things. Recent activities included Navdurga, a Garba Workshop and Dev Festival. ',
+    brief: 'For dancers, singers and performers who want to explore classical, folk and Western arts and take the stage at college events.',
+    fullDesc: 'Dance, music, performances and cultural expression. A space for students to learn, collaborate and perform alongside people who share the same passion.',
     captain: {
-      name: 'Captain Name',
-      role: 'NSS Lead Coordinator',
-      image: '/Logo.svg',
-      email: 'nss.lead@piet.ac.in',
-      bio: 'Social activist and student mentor driving community impact programs.',
+      name: 'Mahika Khanna',
+      role: 'Performing Arts Captain',
+      image: '/captains/dk.jpg',
+      email: 'dk.lead@piet.ac.in',
     },
   },
   {
@@ -193,14 +177,13 @@ const CLUBS_DATA = [
     category: 'CULTURAL',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/jdc.png',
-    brief: 'For people who love stories and are not afraid of a stage. Explore acting, scriptwriting,direction, plays and Nukkad Nataks.',
-    fullDesc: 'Not everyone is comfortable performing in front of a crowd. But if you are — or if you want to become that person — Joshiley gives students a space to explore theatre through everything from Nukkad Nataks to full-length stage productions. ',
+    brief: 'For people who love stories and are not afraid of a stage. Explore acting, scriptwriting, direction, plays and Nukkad Nataks.',
+    fullDesc: 'Joshiley Drama Club provides students a platform to explore theatre, street plays (Nukkad Natak), scriptwriting, and full-length stage productions.',
     captain: {
-      name: 'Captain Name',
-      role: 'NSS Lead Coordinator',
-      image: '/Logo.svg',
-      email: 'nss.lead@piet.ac.in',
-      bio: 'Social activist and student mentor driving community impact programs.',
+      name: 'Shriyam Tailong',
+      role: 'Theatre & Stage Director',
+      image: '/captains/jdc.jpg',
+      email: 'jdc.lead@piet.ac.in',
     },
   },
   {
@@ -209,47 +192,43 @@ const CLUBS_DATA = [
     category: 'CULTURAL',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/spic_macay.png',
-    brief: 'Experience India\'s rich cultural heritage through classical music, dance, workshops,\n' +
-        'performances and interactions with renowned artists',
-    fullDesc: 'Not everything about college has to be about what\'s new. SPIC MACAY gives students opportunities to experience Indian classical music, dance, theatre and traditional arts, often through interactions with accomplished artists. Recent programmes included classical music performances, Garba workshops, cultural festivals, Odissi demonstrations and sessions featuring renowned artists. ',
+    brief: 'Experience India\'s rich cultural heritage through classical music, dance, workshops, performances and interactions with renowned artists.',
+    fullDesc: 'SPIC MACAY gives students opportunities to experience Indian classical music, dance, theatre and traditional arts featuring interactions with accomplished national artists.',
     captain: {
-      name: 'Captain Name',
-      role: 'NSS Lead Coordinator',
-      image: '/Logo.svg',
-      email: 'nss.lead@piet.ac.in',
-      bio: 'Social activist and student mentor driving community impact programs.',
+      name: 'Himanshu Soni',
+      role: 'Spic Macay Captain',
+      image: '/captains/spic.jpeg',
+      email: 'spicmacay.lead@piet.ac.in',
     },
   },
   {
     id: 'literary',
-    name: 'Literary ',
+    name: 'Literary Club',
     category: 'MEDIA & PUB',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/literary.png',
-    brief: 'For readers, writers and people who always have something to say — with debates, poetry, storytelling, writing competitions and public speaking. ',
-    fullDesc: 'Poetry. Storytelling. Debates. Extempore. MUNs. Public speaking. The Literary Club gives students opportunities to develop their writing, communication and confidence — with activities such as Garjana, Verbal Voyage, Talent Hunt and Poornima Manthan, an inter-college debate involving Poornima institutions. And yes, if you\'re the person who always has something to say… this might be your place. ',
+    brief: 'For readers, writers and people who always have something to say — with debates, poetry, storytelling, writing competitions and public speaking.',
+    fullDesc: 'Poetry, storytelling, debates, extempore, MUNs, and public speaking. The Literary Club gives students opportunities to develop writing, communication and stage confidence.',
     captain: {
-      name: 'Captain Name',
-      role: 'Editor-in-Chief',
-      image: '/Logo.svg',
-      email: 'media.lead@piet.ac.in',
-      bio: 'Writer, photographer, and chief editor managing campus media coverage.',
+      name: 'Kanupriya Sharma',
+      role: 'Editor-in-Chief & Debater',
+      image: '/captains/literary.jpg',
+      email: 'literary.lead@piet.ac.in',
     },
   },
   {
     id: 'sports-fitness-club',
-    name: 'Sports',
+    name: 'Sports Club',
     category: 'ATHLETICS',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/nitish.png',
-    brief: 'Because college shouldn\'t happen entirely behind a desk. The Sports Club coordinates college-level sporting activities and teams across games including volleyball, box cricket, basketball and table tennis.  ',
+    brief: 'Because college shouldn\'t happen entirely behind a desk. Coordinates college-level sporting activities and teams across volleyball, cricket, basketball and table tennis.',
     fullDesc: 'The Sports & Athletics Club manages campus tournaments for cricket, football, basketball, badminton, and esports. We train student athletes for state and national inter-college championships.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
+      name: 'Nitish Sharma',
+      role: 'Varsity Sports Lead',
+      image: '/captains/esports.jpg',
       email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
     },
   },
   {
@@ -258,15 +237,13 @@ const CLUBS_DATA = [
     category: 'COMMUNITY',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/perfect_pixels.png',
-    brief: 'Capture campus life through photography, videography and visual storytelling while learning\n' +
-        'editing, content creation and filmmaking.',
-    fullDesc: 'Photography goes beyond simply taking a good picture. The club explores photography, cinematography, filmmaking, marketing, social media and digital skills, including activities such as photo walks. ',
+    brief: 'Capture campus life through photography, videography and visual storytelling while learning editing, content creation and filmmaking.',
+    fullDesc: 'Perfect Pixels explores photography, cinematography, filmmaking, social media, and digital content creation, including photo walks and campus coverage.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Anshul Sharma',
+      role: 'Head of Photography & Film',
+      image: '/captains/pp.jpg',
+      email: 'pixels.lead@piet.ac.in',
     },
   },
   {
@@ -275,14 +252,13 @@ const CLUBS_DATA = [
     category: 'COMMUNITY',
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/nss.png',
-    brief: 'Get involved beyond campus through cleanliness drives, educational outreach, awareness campaigns and community service initiatives. ',
-    fullDesc: 'The Social Welfare & NSS wing mobilizes student volunteers for blood donation drives, tree plantation initiatives, rural education workshops, and campus sustainability projects.',
+    brief: 'Get involved beyond campus through cleanliness drives, educational outreach, awareness campaigns and community service initiatives.',
+    fullDesc: 'The NSS club mobilizes student volunteers for blood donation drives, tree plantation initiatives, rural education workshops, and campus sustainability projects.',
     captain: {
-      name: 'Captain Name',
+      name: 'Vaibhav Sharma',
       role: 'NSS Lead Coordinator',
-      image: '/Logo.svg',
+      image: '/captains/nss.jpg',
       email: 'nss.lead@piet.ac.in',
-      bio: 'Social activist and student mentor driving community impact programs.',
     },
   },
   {
@@ -292,13 +268,12 @@ const CLUBS_DATA = [
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/origin.png',
     brief: 'A graphic design community where creativity meets technology through design workshops, competitions and collaborative projects.',
-    fullDesc: 'Drawing, painting, sculpture, crafting, graphic design, audio and video editing — a space to explore different forms of creativity. ',
+    fullDesc: 'Drawing, painting, sculpture, crafting, graphic design, audio and video editing — a creative space to explore digital design tools.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Shalini Choudhary',
+      role: 'Graphic Design Head',
+      image: '/captains/origin.jpg',
+      email: 'origin.lead@piet.ac.in',
     },
   },
   {
@@ -307,15 +282,13 @@ const CLUBS_DATA = [
     category: 'COMMUNITY',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/indgenius.png',
-    brief: 'Connect with a wider student network through leadership, internships, opportunities and\n' +
-        'discussions around India\'s growth and development',
-    fullDesc: 'A mix of innovation, leadership, discussion, technical activities and social responsibility. From Youth Parliament and cloud sessions to hackathon opportunities and leadership programmes, the club encourages students to look beyond academics and develop a wider perspective. ',
+    brief: 'Connect with a wider student network through leadership, internships, opportunities and discussions around India\'s growth and development.',
+    fullDesc: 'A mix of innovation, leadership, discussion, technical activities and social responsibility. From Youth Parliament and cloud sessions to hackathons and leadership programs.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Anushka Shekhawat',
+      role: 'Youth Parliament Lead',
+      image: '/captains/indgenius.jpg',
+      email: 'indgenius.lead@piet.ac.in',
     },
   },
   {
@@ -324,31 +297,28 @@ const CLUBS_DATA = [
     category: 'COMMUNITY',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/aptineus.png',
-    brief: 'Connect with a wider student network through leadership, internships, opportunities and\n' +
-        'discussions around India\'s growth and development',
-    fullDesc: 'The Sports & Athletics Club manages campus tournaments for cricket, football, basketball, badminton, and esports. We train student athletes for state and national inter-college championships.',
+    brief: 'Focusing on aptitude, logical reasoning, soft skills and interview prep to help students excel in placement drives and competitive exams.',
+    fullDesc: 'Aptineus conducts aptitude sprints, group discussions, mock interviews, and quantitative reasoning bootcamps for senior placement success.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Harsh Yadav',
+      role: 'Aptitude & Training Captain',
+      image: '/captains/aptenius.jpg',
+      email: 'aptineus.lead@piet.ac.in',
     },
   },
   {
     id: 'graduate-gateway-club',
-    name: 'Graduate Gateway Club',
+    name: 'Graduate Gateway',
     category: 'COMMUNITY',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/graduate_gateway.png',
-    brief: 'Graduate Gateway focuses on higher education, competitive examinations and career pathways through sessions such as CAT and UPSC guidance and aptitude activities. ',
-    fullDesc: 'The Sports & Athletics Club manages campus tournaments for cricket, football, basketball, badminton, and esports. We train student athletes for state and national inter-college championships.',
+    brief: 'Focuses on higher education, competitive examinations and career pathways through sessions such as CAT and UPSC guidance and aptitude activities.',
+    fullDesc: 'Graduate Gateway assists students aspiring for GATE, CAT, GRE, UPSC, and higher studies abroad with mentorship sessions and resource libraries.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Rishabh Nandi',
+      role: 'Higher Ed & Exam Mentor',
+      image: '/captains/co-chair.jpg',
+      email: 'gateway.lead@piet.ac.in',
     },
   },
   {
@@ -357,15 +327,13 @@ const CLUBS_DATA = [
     category: 'COMMUNITY',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/esports.png',
-    brief: 'For competitive gamers who enjoy tournaments, strategy and teamwork — with\n' +
-        'opportunities to explore game development too.',
-    fullDesc: 'For those whose competition happens on a screen. The club brings students together for tournaments, gaming sessions and inter-college competitions, with activities including College Rivals 3, an OMEN Valorant Tournament and an IEEE gaming session. ',
+    brief: 'For competitive gamers who enjoy tournaments, strategy and teamwork — with opportunities to explore game development too.',
+    fullDesc: 'Brings students together for gaming tournaments, Valorant leagues, BGMI cups, and game design sessions with College Rivals.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Gajendra Singh',
+      role: 'Gaming Tournament Director',
+      image: '/captains/esports.jpg',
+      email: 'esports.lead@piet.ac.in',
     },
   },
   {
@@ -374,31 +342,28 @@ const CLUBS_DATA = [
     category: 'COMMUNITY',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/pbic.png',
-    brief: 'Got a startup idea? PBIC helps students explore entrepreneurship, develop business plans and pitch their ideas.',
-    fullDesc: 'The Sports & Athletics Club manages campus tournaments for cricket, football, basketball, badminton, and esports. We train student athletes for state and national inter-college championships.',
+    brief: 'Got a startup idea? PBIC helps students explore entrepreneurship, develop business plans and pitch their ideas to incubators.',
+    fullDesc: 'Poornima Business Incubation Centre (PBIC) guides aspiring student entrepreneurs from ideation to pitching, seed funding, and startup registration.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Dev Pratap Singh Rathore',
+      role: 'Incubation & Startup Lead',
+      image: '/captains/pbic.jpg',
+      email: 'pbic.lead@piet.ac.in',
     },
   },
   {
     id: 'helping-hands-club',
-    name: 'Helping Hands Club',
+    name: 'Helping Hands',
     category: 'COMMUNITY',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/helping_hands.png',
-    brief: 'A student-led community focused on giving back through blood donation, donation drives,\n' +
-        'awareness activities and community service.',
-    fullDesc: 'Some student experiences aren\'t about competitions or careers. Helping Hands works around community support, essential resources and educational empowerment, with initiatives such as blood donation and Vastradaan drives. It\'s a reminder that college can also be about what you give back. ',
+    brief: 'A student-led community focused on giving back through blood donation, donation drives, awareness activities and community service.',
+    fullDesc: 'Focused on community support, essential resource distribution, and educational empowerment initiatives such as blood donation and Vastradaan drives.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Aditya Agarwal',
+      role: 'Community Relief Head',
+      image: '/captains/helping-hands.jpg',
+      email: 'helpinghands.lead@piet.ac.in',
     },
   },
   {
@@ -407,14 +372,13 @@ const CLUBS_DATA = [
     category: 'COMMUNITY',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/wise.png',
-    brief: 'WISE focuses on supporting women pursuing careers in science and engineering through discussions, educational initiatives, career development and community-building. The club also organised a Women\'s Hackathon focused on empowering women through innovation, teamwork and real-world problem solving. ',
-    fullDesc: 'The Sports & Athletics Club manages campus tournaments for cricket, football, basketball, badminton, and esports. We train student athletes for state and national inter-college championships.',
+    brief: 'Supporting women pursuing careers in science and engineering through discussions, educational initiatives, career development and hackathons.',
+    fullDesc: 'Women in Science & Engineering (WISE) empowers female engineers through technical hackathons, leadership seminars, and career mentorship.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Anisha Agarwal',
+      role: 'Women in STEM Chair',
+      image: '/captains/wise.jpg',
+      email: 'wise.lead@piet.ac.in',
     },
   },
   {
@@ -422,15 +386,14 @@ const CLUBS_DATA = [
     name: 'IETE Club',
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--blue',
-    // logo: '/clubs/iete.png',
-    brief: 'A community for students passionate about electronics, telecommunication and technology. Learn through hands-on experiences, build new skills, and connect with the industry. ',
-    fullDesc: 'The IETE Student Forum is a space for students interested in electronics, telecommunication, information technology, and related fields to learn beyond the classroom. Through workshops, seminars, competitions, industrial visits, and hands-on projects, students get opportunities to explore new technologies and gain practical experience. ',
+    logo: '/clubs/iete.jpeg',
+    brief: 'A community for students passionate about electronics, telecommunication and technology. Learn through hands-on experiences and build new skills.',
+    fullDesc: 'IETE Student Forum provides a space for electronics, telecom, and IoT enthusiasts to explore hardware design, PCB etching, and embedded systems.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Arohi Jalan',
+      role: 'Telecom & Electronics Head',
+      image: '/captains/iete.jpg',
+      email: 'iete.lead@piet.ac.in',
     },
   },
   {
@@ -439,30 +402,28 @@ const CLUBS_DATA = [
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/mechatron.png',
-    brief: 'Learn by building. Mechatron is a hands-on technical community exploring Robotics, AI, VR, Automation, Embedded Systems and Computer Vision. Through workshops, hackathons, competitions and interdisciplinary projects, students turn ideas into working solutions. ',
-    fullDesc: 'The Sports & Athletics Club manages campus tournaments for cricket, football, basketball, badminton, and esports. We train student athletes for state and national inter-college championships.',
+    brief: 'Learn by building. Mechatron is a hands-on technical community exploring Robotics, AI, VR, Automation, Embedded Systems and Computer Vision.',
+    fullDesc: 'Combines mechanical, electronics, and software engineering. Students build robots, VR experiences, automated machines, and computer vision projects.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Navya Sharma',
+      role: 'Automation & Robotics Head',
+      image: '/captains/mechatron.jpg',
+      email: 'mechatron.lead@piet.ac.in',
     },
   },
   {
     id: 'yi-club',
-    name: 'Young Indians Club',
+    name: 'Young Indians (Yi)',
     category: 'COMMUNITY',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/yi.png',
-    brief: 'A platform for young minds to explore leadership, entrepreneurship, innovation and social impact. ',
-    fullDesc: 'Young minds. Bigger ideas. Real impact. Yi brings together students and young professionals to explore leadership, entrepreneurship, innovation and social impact. Through workshops, competitions, industry interactions and community initiatives, the club encourages students to collaborate, take initiative and contribute to building a better future. ',
+    brief: 'A platform for young minds to explore leadership, entrepreneurship, innovation and social impact in partnership with CII.',
+    fullDesc: 'Yi brings together students to explore leadership, innovation, and social impact through industry interactions, national summits, and youth summits.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Pranjal Sharma',
+      role: 'Young Indians Student Chair',
+      image: '/captains/yi.jpg',
+      email: 'yi.lead@piet.ac.in',
     },
   },
   {
@@ -471,14 +432,13 @@ const CLUBS_DATA = [
     category: 'CULTURAL',
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/iks.jpeg',
-    brief: 'A space to explore India’s rich knowledge, traditions, sciences and cultural heritage, while connecting ancient wisdom with modern learning. ',
-    fullDesc: 'IKS is a space to explore India’s rich heritage, traditional knowledge and cultural wisdom across areas such as science, philosophy, arts, literature and everyday practices. The club encourages students to understand the relevance of this knowledge in today’s world through discussions, activities and cultural experiences. ',
+    brief: 'A space to explore India’s rich knowledge, traditions, sciences and cultural heritage, while connecting ancient wisdom with modern learning.',
+    fullDesc: 'IKS explores traditional Indian sciences, architecture, philosophy, and arts, connecting ancient insights with modern engineering and sustainability.',
     captain: {
-      name: 'Captain Name',
-      role: 'Sports Captain',
-      image: '/Logo.svg',
-      email: 'sports.captain@piet.ac.in',
-      bio: 'Varsity athlete organizing orientation sports leagues and fitness challenges.',
+      name: 'Ojasva Dixit',
+      role: 'Heritage & Science Lead',
+      image: '/captains/iks.jpeg',
+      email: 'iks.lead@piet.ac.in',
     },
   },
 ]
@@ -511,20 +471,32 @@ function Council() {
 
 
             <h1 className="page-welcome__line">STUDENT COUNCIL</h1>
+
+            {/* HERO 3D ROTATING CARD STACK */}
+            <div className="council-rotator-wrap">
+              <div className="rotator-card">
+                <div className="rotator-card__content">
+                  <img src="/clubs/acm.png" alt="ACM Logo" className="rotator-card__logo" />
+                  <span className="rotator-card__title">ACM CHAPTER</span>
+                </div>
+              </div>
+              <div className="rotator-card">
+                <div className="rotator-card__content">
+                  <img src="/clubs/cyborgs.png" alt="Cyborgs Logo" className="rotator-card__logo" />
+                  <span className="rotator-card__title">THE CYBORGS</span>
+                </div>
+              </div>
+              <div className="rotator-card">
+                <div className="rotator-card__content">
+                  <img src="/clubs/debug.png" alt="Debug Club Logo" className="rotator-card__logo" />
+                  <span className="rotator-card__title">DEBUG CLUB</span>
+                </div>
+              </div>
+            </div>
+
             <p className="page-lead" style={{ marginTop: '1rem' }}>
               Explore campus student clubs, executive boards, and meet the captains leading Pehla Kadam 2026.
             </p>
-
-            <button
-              type="button"
-              className="page-swipe-hint"
-              onClick={() => navigate('/about')}
-              style={{ marginTop: '1.5rem' }}
-              aria-label="Back to About page"
-            >
-              <span className="page-swipe-hint__arrow">←</span>
-              <span>BACK TO ABOUT</span>
-            </button>
           </div>
 
           <div className="page-hero__footer">
@@ -575,6 +547,19 @@ function Council() {
                 ))}
               </div>
             </RevealOnScroll>
+
+            {/* BACK TO ABOUT PILL BUTTON AT BOTTOM OF PAGE */}
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3.5rem', marginBottom: '1.5rem' }}>
+              <button
+                type="button"
+                className="page-swipe-hint"
+                onClick={() => navigate('/about')}
+                aria-label="Back to About page"
+              >
+                <span className="page-swipe-hint__arrow">←</span>
+                <span>BACK TO ABOUT</span>
+              </button>
+            </div>
           </div>
         </section>
       </div>
@@ -623,22 +608,6 @@ function Council() {
                 {activeClub.fullDesc}
               </p>
 
-              {/* KEY ACTIVITIES */}
-              {activeClub.activities && (
-                <div style={{ marginTop: '1.25rem' }}>
-                  <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '0.85rem', color: 'var(--text-dim)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                    FLAGSHIP ACTIVITIES
-                  </h4>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                    {activeClub.activities.map((act, i) => (
-                      <span key={i} className="page-card__pill" style={{ fontSize: '0.78rem', padding: '0.3rem 0.75rem' }}>
-                        ✦ {act}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-
               {/* CAPTAIN PROFILE CARD */}
               <div className="captain-card">
                 <div className="captain-avatar-frame">
@@ -669,4 +638,3 @@ function Council() {
 }
 
 export default Council
-

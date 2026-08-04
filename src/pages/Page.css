@@ -932,6 +932,174 @@
   margin-top: 0.35rem;
 }
 
+/* ========================================================
+   COUNCIL HERO 3D ROTATING CARD STACK (Campus Theme)
+   ======================================================== */
+.council-rotator-wrap {
+  position: relative;
+  overflow: visible;
+  width: clamp(220px, 85vw, 360px);
+  height: clamp(200px, 45vh, 260px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem auto 1rem;
+  --w-card: clamp(140px, 42vw, 190px);
+  --h-card: clamp(180px, 50vh, 240px);
+  --rotate-card: 14deg;
+  --insetX-card: 28px;
+  --t-card: calc(var(--insetX-card) * 1.1);
+  --w-wrap-card: calc(var(--w-card) + calc(calc(var(--w-card) / 2) * 2));
+}
+
+.rotator-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  overflow: hidden;
+  animation: rotator-rotate 9s cubic-bezier(0.75, 0, 0, 1.01) infinite 0s;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.09);
+  order: var(--order);
+  width: var(--w-card);
+  height: var(--h-card);
+  z-index: var(--z1);
+  top: var(--t1);
+  left: var(--l1);
+  right: var(--r1);
+  transform: var(--trans1);
+  --pd: 6px;
+  --round: 18px;
+  --x1: var(--insetX-card);
+  --x2: calc(var(--w-wrap-card) - calc(var(--w-card) + var(--insetX-card)));
+  --to-left: rotate(calc(var(--rotate-card) * -1));
+  --to-center: calc(var(--w-card) / 2);
+  --to-right: rotate(calc(var(--rotate-card) * 1));
+  padding: 0.75rem;
+  box-sizing: border-box;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.rotator-card__content {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(37, 99, 235, 0.04));
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+
+.rotator-card__logo {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 4px 10px rgba(15, 23, 42, 0.08));
+}
+
+.rotator-card__title {
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.rotator-card:nth-child(1) {
+  --order: 2;
+  --z1: 2;
+  --t1: 0;
+  --l1: var(--to-center);
+  --r1: var(--to-center);
+  --trans1: rotate(calc(var(--rotate-card) * 0));
+  --z2: 0;
+  --t2: var(--t-card);
+  --l2: var(--x1);
+  --r2: var(--x2);
+  --trans2: var(--to-left);
+  --z3: 0;
+  --t3: var(--t-card);
+  --l3: var(--x2);
+  --r3: var(--x1);
+  --trans3: var(--to-right);
+  border-color: var(--border-blue);
+}
+
+.rotator-card:nth-child(2) {
+  --order: 3;
+  --z1: 0;
+  --t1: var(--t-card);
+  --l1: var(--x2);
+  --r1: var(--x1);
+  --trans1: var(--to-right);
+  --z2: 2;
+  --t2: 0;
+  --l2: var(--to-center);
+  --r2: var(--to-center);
+  --trans2: rotate(calc(var(--rotate-card) * 0));
+  --z3: 0;
+  --t3: var(--t-card);
+  --l3: var(--x1);
+  --r3: var(--x2);
+  --trans3: var(--to-left);
+  border-color: rgba(217, 119, 6, 0.3);
+}
+
+.rotator-card:nth-child(3) {
+  --order: 1;
+  --z1: 0;
+  --t1: var(--t-card);
+  --l1: var(--x1);
+  --r1: var(--x2);
+  --trans1: var(--to-left);
+  --z2: 0;
+  --t2: var(--t-card);
+  --l2: var(--x2);
+  --r2: var(--x1);
+  --trans2: var(--to-right);
+  --z3: 2;
+  --t3: 0;
+  --l3: var(--to-center);
+  --r3: var(--to-center);
+  --trans3: rotate(calc(var(--rotate-card) * 0));
+  border-color: rgba(79, 70, 229, 0.3);
+}
+
+@keyframes rotator-rotate {
+  0%, 99.99% {
+    z-index: var(--z1);
+    top: var(--t1);
+    left: var(--l1);
+    right: var(--r1);
+    transform: var(--trans1);
+  }
+  33.33% {
+    z-index: var(--z2);
+    top: var(--t2);
+    left: var(--l2);
+    right: var(--r2);
+    transform: var(--trans2);
+  }
+  66.66% {
+    z-index: var(--z3);
+    top: var(--t3);
+    left: var(--l3);
+    right: var(--r3);
+    transform: var(--trans3);
+  }
+}
+
 /* Media Breakpoints */
 @media (min-width: 768px) {
   .page-hero {
@@ -943,10 +1111,12 @@
   .page-swipe-hint__arrow,
   .page-scroll-line,
   .page-eyebrow__dot,
-  .page-sparkle {
+  .page-sparkle,
+  .rotator-card {
     animation: none;
   }
 }
+
 
 
 
