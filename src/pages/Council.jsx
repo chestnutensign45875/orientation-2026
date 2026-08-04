@@ -373,7 +373,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Harsh Yadav',
       role: 'Aptitude & Training Captain',
-      image: '/captains/aptenius.jpg',
+      image: '/captains/aptineus.jpeg',
       email: 'aptineusclub@poornima.org',
       instagram: 'https://instagram.com/aptineus_club',
     },
