@@ -198,8 +198,8 @@ const CLUBS_DATA = [
       name: 'Lakshy Parmar',
       role: 'Captain',
       image: '/captains/udaan.jpg',
-      email: 'udaan.lead@piet.ac.in',
-      instagram: 'https://instagram.com/udaan_piet',
+      email: 'udaan@poornima.org',
+      instagram: 'https://www.instagram.com/udaan_aeromodelling_club?igsh=ZmQ1cG40bHJuZDNl',
     },
   },
   {
@@ -374,8 +374,8 @@ const CLUBS_DATA = [
       name: 'Harsh Yadav',
       role: 'Aptitude & Training Captain',
       image: '/captains/aptenius.jpg',
-      email: 'aptineus.lead@piet.ac.in',
-      instagram: 'https://instagram.com/aptineus_piet',
+      email: 'aptineusclub@poornima.org',
+      instagram: 'https://instagram.com/aptineus_club',
     },
   },
   {
@@ -485,9 +485,9 @@ const CLUBS_DATA = [
     captain: {
       name: 'Navya Sharma',
       role: 'Captain',
-      image: '/captains/mechatron.jpg',
+      image: '/captains/mechatron.jpeg',
       email: 'mechatron.lead@piet.ac.in',
-      instagram: 'https://instagram.com/mechatron_piet',
+      instagram: 'https://www.instagram.com/mechatron.piet?igsh=OTBhdnYxczNyb28x',
     },
   },
   {
@@ -557,20 +557,17 @@ function Council() {
             <div className="council-rotator-wrap">
               <div className="rotator-card">
                 <div className="rotator-card__content">
-                  <img src="/clubs/acm.png" alt="ACM Logo" className="rotator-card__logo" />
-                  <span className="rotator-card__title">ACM CHAPTER</span>
+                  <img src="/council/1.jpeg" alt="Council 1" className="rotator-card__logo" />
                 </div>
               </div>
               <div className="rotator-card">
                 <div className="rotator-card__content">
-                  <img src="/clubs/cyborgs.png" alt="Cyborgs Logo" className="rotator-card__logo" />
-                  <span className="rotator-card__title">THE CYBORGS</span>
+                  <img src="/council/2.jpeg" alt="Council 2" className="rotator-card__logo" />
                 </div>
               </div>
               <div className="rotator-card">
                 <div className="rotator-card__content">
-                  <img src="/clubs/debug.png" alt="Debug Club Logo" className="rotator-card__logo" />
-                  <span className="rotator-card__title">DEBUG CLUB</span>
+                  <img src="/council/3.jpeg" alt="Council 3" className="rotator-card__logo" />
                 </div>
               </div>
             </div>
