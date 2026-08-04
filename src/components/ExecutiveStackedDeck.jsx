@@ -122,16 +122,7 @@ export default function ExecutiveStackedDeck() {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Left Navigation Arrow */}
-      <button
-        type="button"
-        className="deck-nav-btn deck-nav-btn--left"
-        onClick={handlePrev}
-        aria-label="Previous executive card"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-          <path d="M19 12H5M12 19l-7-7 7-7" />
-        </svg>
-      </button>
+
 
       {/* Stacked Deck Container with Touch Swipe Support */}
       <div
@@ -197,16 +188,6 @@ export default function ExecutiveStackedDeck() {
       </div>
 
       {/* Right Navigation Arrow */}
-      <button
-        type="button"
-        className="deck-nav-btn deck-nav-btn--right"
-        onClick={handleNext}
-        aria-label="Next executive card"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-          <path d="M5 12h14M12 5l7 7-7 7" />
-        </svg>
-      </button>
     </div>
   )
 }
