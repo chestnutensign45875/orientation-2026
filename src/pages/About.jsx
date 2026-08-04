@@ -78,48 +78,10 @@ function About() {
         {/* ABOUT COLLEGE CONTENT SECTION (READY FOR USER TO FILL IN) */}
         <section className="page-content-wrap">
           <div className="page-content">
-            
-            {/* Card 1: About Pehla Kadam 2026 Orientation */}
-            <RevealOnScroll scrollContainerRef={scrollRef}>
-              <div className="page-card">
-                <div className="page-card__header">
-                  <span className="page-card__pill">INTRODUCTION PROGRAM</span>
-                  <span className="page-card__pill page-card__pill--amber">PEHLA KADAM 2026</span>
-                </div>
-                
-                <h2 className="page-card__title">So… where did you just land?</h2>
-                
-                <div className="content-placeholder">
-                  <span className="content-placeholder__badge">
-                    Welcome to Poornima Institute of Engineering & Technology, Jaipur.
-                  </span>
-                  <p className="content-placeholder__hint">
-                    Starting college comes with plenty of questions — new classrooms, new people, new routines and a completely new experience. You don't need all the answers right away. Everyone starts somewhere.
-                  </p>
-                </div>
-              </div>
-            </RevealOnScroll>
+
 
             {/* Card 2: About Poornima Group & PIET */}
-            <RevealOnScroll scrollContainerRef={scrollRef} delay={0.1}>
-              <div className="page-card">
-                <div className="page-card__header">
-                  <span className="page-card__pill">INSTITUTE OVERVIEW</span>
-                  <span className="page-card__pill page-card__pill--amber">POORNIMA GROUP</span>
-                </div>
 
-                <h2 className="page-card__title">What can you study here?</h2>
-
-                <div className="content-placeholder">
-                  <span className="content-placeholder__badge">
-                    Find your path, one step at a time.
-                  </span>
-                  <p className="content-placeholder__hint">
-                    PIET offers a range of engineering programmes, giving students different ways to explore technology, discover their interests and build their future.
-                  </p>
-                </div>
-              </div>
-            </RevealOnScroll>
 
             {/* Card 3: Freshers Guide & Highlights */}
             <RevealOnScroll scrollContainerRef={scrollRef} delay={0.2}>
@@ -149,14 +111,16 @@ function About() {
                   <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
                 </div>
 
-                <h2 className="page-card__title">More than a course </h2>
+                <h2 className="page-card__title">Welcome to Pehla Kadam 2026</h2>
 
                 <div className="content-placeholder">
                   <span className="content-placeholder__badge">
-                  Your college story happens outside the classroom too.
+                  Your Journey Begins Here.
                   </span>
                   <p className="content-placeholder__hint">
-                    From first friendships and club meetings to competitions, projects, fests and unexpected moments, college becomes a collection of experiences you never planned for.
+                    The Official Orientation Program of Poornima Institute of Engineering & Technology, Jaipur.
+
+                    Step into a world of innovation, friendships, inspiration, and unforgettable experiences. Pehla Kadam is designed to welcome every fresher into the PIET family with interactive sessions, cultural celebrations, motivational talks, exciting competitions, and performances by renowned personalities.
                   </p>
                 </div>
               </div>
@@ -169,98 +133,22 @@ function About() {
                   <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
                 </div>
 
-                <h2 className="page-card__title">First time here?  </h2>
+                <h2 className="page-card__title">About Pehla Kadam</h2>
 
                 <div className="content-placeholder">
                   <span className="content-placeholder__badge">
-                  Let's get you around
+                  More than an Orientation Programme.
                   </span>
                   <p className="content-placeholder__hint">
-                    Get familiar with your classrooms, labs, library, activity spaces, canteen and the places you'll soon know by heart.
+                    Pehla Kadam is the flagship induction program of Poornima Institute of Engineering & Technology (PIET), Jaipur, created to make every fresher's transition into college life exciting, comfortable, and inspiring.
+
+                    Over five memorable days, you'll connect with faculty, seniors, industry experts, and fellow students while discovering endless opportunities in academics, innovation, leadership, sports, clubs, and campus life.
+
+                    Whether you're stepping into your first classroom or your first college fest, this is where your journey truly begins.
                   </p>
                 </div>
               </div>
             </RevealOnScroll>
-
-            <RevealOnScroll scrollContainerRef={scrollRef} delay={0.2}>
-              <div className="page-card">
-                <div className="page-card__header">
-                  <span className="page-card__pill">STUDENT GUIDE</span>
-                  <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
-                </div>
-
-                <h2 className="page-card__title">Looking for your people? </h2>
-
-                <div className="content-placeholder">
-                  <span className="content-placeholder__badge">
-                  Find a community that feels like yours.
-                  </span>
-                  <p className="content-placeholder__hint">
-                    Explore clubs and student communities across technology, sports, creativity, entrepreneurship, photography, drama and more.
-                  </p>
-                </div>
-              </div>
-            </RevealOnScroll>
-
-            <RevealOnScroll scrollContainerRef={scrollRef} delay={0.2}>
-              <div className="page-card">
-                <div className="page-card__header">
-                  <span className="page-card__pill">STUDENT GUIDE</span>
-                  <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
-                </div>
-
-                <h2 className="page-card__title">Beyond the classroom </h2>
-
-                <div className="content-placeholder">
-                  <span className="content-placeholder__badge">
-                  Try something you’ve never tried before.
-                  </span>
-                  <p className="content-placeholder__hint">
-                    Join a club, compete, volunteer, perform, build or play. You don't need to be good at something before you start — sometimes you discover your strengths by simply giving things a chance.                   </p>
-                </div>
-              </div>
-            </RevealOnScroll>
-
-            <RevealOnScroll scrollContainerRef={scrollRef} delay={0.2}>
-              <div className="page-card">
-                <div className="page-card__header">
-                  <span className="page-card__pill">STUDENT GUIDE</span>
-                  <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
-                </div>
-
-                <h2 className="page-card__title">Got an idea? </h2>
-
-                <div className="content-placeholder">
-                  <span className="content-placeholder__badge">
-                  Turn curiosity into something real.
-                  </span>
-                  <p className="content-placeholder__hint">
-                    Explore hackathons, projects, internships, entrepreneurship and other opportunities that take you beyond your regular timetable and syllabus.
-                  </p>
-                </div>
-              </div>
-            </RevealOnScroll>
-
-            <RevealOnScroll scrollContainerRef={scrollRef} delay={0.2}>
-              <div className="page-card">
-                <div className="page-card__header">
-                  <span className="page-card__pill">STUDENT GUIDE</span>
-                  <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
-                </div>
-
-                <h2 className="page-card__title">What happens after class? </h2>
-
-                <div className="content-placeholder">
-                  <span className="content-placeholder__badge">
-                  Some of the best memories aren't planned.
-                  </span>
-                  <p className="content-placeholder__hint">
-                    EFests, workshops, competitions, sports and celebrations bring a different energy to campus — and often become the moments you remember years later.
-                  </p>
-                </div>
-              </div>
-            </RevealOnScroll>
-
 
 
           </div>

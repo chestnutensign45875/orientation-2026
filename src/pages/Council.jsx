@@ -6,6 +6,57 @@ import RevealOnScroll from '../components/RevealOnScroll'
 import InteractiveSparkles from '../components/InteractiveSparkles'
 import './Page.css'
 
+const EXECUTIVE_LEADS = [
+  {
+    id: 'chair',
+    role: 'CHAIR',
+    name: 'Rohan Dey',
+    image: '/captains/chair.jpg',
+    badge: 'HEAD OF COUNCIL',
+    badgeClass: 'page-card__pill--blue',
+    initRotate: 14,
+    initX: 45,
+    targetRotate: 4,
+    targetX: 0,
+  },
+  {
+    id: 'advisory',
+    role: 'Advisory',
+    name: 'Anusha Shandilya',
+    // image: '/captains/chair.jpg',
+    badge: 'HEAD OF COUNCIL',
+    badgeClass: 'page-card__pill--blue',
+    initRotate: -14,
+    initX: -45,
+    targetRotate: -4,
+    targetX: 0,
+  },
+  {
+    id: 'co-chair-1',
+    role: 'CO-CHAIR',
+    name: 'Suhani Kumari',
+    image: '/captains/co-chair1.jpg',
+    badge: 'EXECUTIVE BOARD',
+    badgeClass: 'page-card__pill--amber',
+    initRotate: -14,
+    initX: -45,
+    targetRotate: -4,
+    targetX: 0,
+  },
+  {
+    id: 'co-chair-2',
+    role: 'CO-CHAIR',
+    name: 'Purushotam Lingwal',
+    image: '/captains/co-chair2.jpg',
+    badge: 'EXECUTIVE BOARD',
+    badgeClass: 'page-card__pill--amber',
+    initRotate: 14,
+    initX: 45,
+    targetRotate: 4,
+    targetX: 0,
+  },
+]
+
 const CLUBS_DATA = [
   {
     id: 'acm',
@@ -20,6 +71,7 @@ const CLUBS_DATA = [
       role: 'Captain',
       image: '/captains/acm.jpg',
       email: 'acm.captain@piet.ac.in',
+      instagram: 'https://instagram.com/acm_piet',
     },
   },
   {
@@ -32,9 +84,10 @@ const CLUBS_DATA = [
     fullDesc: 'If cloud computing interests you, this is another place to explore it. From Buzz the Cloud to a Tech Escape Room and UI Sprint, the club mixes learning with hands-on challenges and experimentation.',
     captain: {
       name: 'Aarya Maheshwari',
-      role: 'AWS Captain',
+      role: 'Captain',
       image: '/captains/aws.jpg',
       email: 'aws.lead@piet.ac.in',
+      instagram: 'https://instagram.com/aws_piet',
     },
   },
   {
@@ -47,9 +100,10 @@ const CLUBS_DATA = [
     fullDesc: "Programming, web development, Android development and gaming — all under one roof. Students explore backend development, cloud computing, cybersecurity and Linux through activities such as Backend Matters, Cloud Roadmap, CyberQuest and Linux Unlocked.",
     captain: {
       name: 'Ayush Sharma',
-      role: 'Debug Club Captain',
+      role: 'Captain',
       image: '/captains/debug.jpg',
       email: 'debug.lead@piet.ac.in',
+      instagram: 'https://instagram.com/debug_piet',
     },
   },
   {
@@ -62,9 +116,10 @@ const CLUBS_DATA = [
     fullDesc: 'AI, Machine Learning, Web Development, Python, Automation, and UI/UX. Cyborgs brings together students who want to explore technology beyond the classroom — from their first line of code to real-world projects and workshops.',
     captain: {
       name: 'Divyansh Dua',
-      role: 'Cyborgs Captain',
+      role: 'Captain',
       image: '/captains/cyborgs.jpg',
       email: 'cyborgs.lead@piet.ac.in',
+      instagram: 'https://instagram.com/cyborgs_piet',
     },
   },
   {
@@ -76,10 +131,11 @@ const CLUBS_DATA = [
     brief: 'Discover emerging technologies, work on innovative projects and develop technical and professional skills through workshops and competitions.',
     fullDesc: 'ISTE focuses on holistic technical growth, professional skill workshops, hackathons, and multidisciplinary engineering projects across departments.',
     captain: {
-      name: '',
-      role: 'Ananya Gupta',
+      name: 'Ananya Gupta',
+      role: 'Captain',
       image: '/captains/iste.jpg',
       email: 'iste.lead@piet.ac.in',
+      instagram: 'https://instagram.com/iste_piet',
     },
   },
   {
@@ -92,9 +148,10 @@ const CLUBS_DATA = [
     fullDesc: 'IEEE student branch brings international tech standards, research paper workshops, hardware design sessions, and global network connections to campus.',
     captain: {
       name: 'Kartik Khurana',
-      role: 'IEEE Branch Chair',
+      role: 'Captain',
       image: '/captains/ieee.jpg',
       email: 'ieee.lead@piet.ac.in',
+      instagram: 'https://instagram.com/ieee_piet',
     },
   },
   {
@@ -107,9 +164,10 @@ const CLUBS_DATA = [
     fullDesc: 'The Microsoft Learn Student Ambassadors community gives students opportunities to develop technical and leadership skills, connect with professionals and access Microsoft resources.',
     captain: {
       name: 'Satyendra Singh',
-      role: 'Microsoft Student Ambassador',
+      role: 'Captain',
       image: '/captains/mlsa.jpg',
       email: 'mlsa.lead@piet.ac.in',
+      instagram: 'https://instagram.com/mlsa_piet',
     },
   },
   {
@@ -122,9 +180,10 @@ const CLUBS_DATA = [
     fullDesc: 'This is where ideas move beyond the "what if" stage. Inventive brings students together around technology, engineering, creative problem-solving and realistic projects.',
     captain: {
       name: 'Yash Raj Sodha',
-      role: 'Innovation & Prototype Lead',
+      role: 'Captain',
       image: '/captains/inventive.jpg',
       email: 'inventive.lead@piet.ac.in',
+      instagram: 'https://instagram.com/inventive_piet',
     },
   },
   {
@@ -137,9 +196,10 @@ const CLUBS_DATA = [
     fullDesc: 'Hands-on exposure to RC aircraft, gliders, aircraft design and construction, with students participating in project exhibitions, competitions and flight expos.',
     captain: {
       name: 'Lakshy Parmar',
-      role: 'Aeromodelling Lead',
+      role: 'Captain',
       image: '/captains/udaan.jpg',
       email: 'udaan.lead@piet.ac.in',
+      instagram: 'https://instagram.com/udaan_piet',
     },
   },
   {
@@ -152,9 +212,11 @@ const CLUBS_DATA = [
     fullDesc: 'Vibrant Vision celebrates visual arts, handicrafts, poster design, installation art, and creative expressions across campus events.',
     captain: {
       name: 'Tarushi Khandelwal',
-      role: 'Arts & Craft Head',
+      role: 'Captain',
       image: '/captains/vibrant-vision.jpg',
-      email: 'vibrantvision.lead@piet.ac.in',},
+      email: 'vibrantvision.lead@piet.ac.in',
+      instagram: 'https://instagram.com/vibrantvision_piet',
+    },
   },
   {
     id: 'dk-club',
@@ -166,9 +228,10 @@ const CLUBS_DATA = [
     fullDesc: 'Dance, music, performances and cultural expression. A space for students to learn, collaborate and perform alongside people who share the same passion.',
     captain: {
       name: 'Mahika Khanna',
-      role: 'Performing Arts Captain',
+      role: 'Captain',
       image: '/captains/dk.jpg',
       email: 'dk.lead@piet.ac.in',
+      instagram: 'https://instagram.com/desikalakaarz_piet',
     },
   },
   {
@@ -181,9 +244,10 @@ const CLUBS_DATA = [
     fullDesc: 'Joshiley Drama Club provides students a platform to explore theatre, street plays (Nukkad Natak), scriptwriting, and full-length stage productions.',
     captain: {
       name: 'Shriyam Tailong',
-      role: 'Theatre & Stage Director',
+      role: 'Captain',
       image: '/captains/jdc.jpg',
       email: 'jdc.lead@piet.ac.in',
+      instagram: 'https://instagram.com/joshiley_piet',
     },
   },
   {
@@ -196,9 +260,10 @@ const CLUBS_DATA = [
     fullDesc: 'SPIC MACAY gives students opportunities to experience Indian classical music, dance, theatre and traditional arts featuring interactions with accomplished national artists.',
     captain: {
       name: 'Himanshu Soni',
-      role: 'Spic Macay Captain',
-      image: '/captains/spic.jpeg',
+      role: 'Captain',
+      image: '/captains/co-chair.jpg',
       email: 'spicmacay.lead@piet.ac.in',
+      instagram: 'https://instagram.com/spicmacay_piet',
     },
   },
   {
@@ -211,9 +276,10 @@ const CLUBS_DATA = [
     fullDesc: 'Poetry, storytelling, debates, extempore, MUNs, and public speaking. The Literary Club gives students opportunities to develop writing, communication and stage confidence.',
     captain: {
       name: 'Kanupriya Sharma',
-      role: 'Editor-in-Chief & Debater',
+      role: 'Captain',
       image: '/captains/literary.jpg',
       email: 'literary.lead@piet.ac.in',
+      instagram: 'https://instagram.com/literary_piet',
     },
   },
   {
@@ -225,10 +291,11 @@ const CLUBS_DATA = [
     brief: 'Because college shouldn\'t happen entirely behind a desk. Coordinates college-level sporting activities and teams across volleyball, cricket, basketball and table tennis.',
     fullDesc: 'The Sports & Athletics Club manages campus tournaments for cricket, football, basketball, badminton, and esports. We train student athletes for state and national inter-college championships.',
     captain: {
-      name: 'Nitish Sharma',
+      name: 'Sports Captain',
       role: 'Varsity Sports Lead',
-      image: '/captains/esports.jpg',
+      // image: '/captains/esports.jpg',
       email: 'sports.captain@piet.ac.in',
+      instagram: 'https://instagram.com/sports_piet',
     },
   },
   {
@@ -241,9 +308,10 @@ const CLUBS_DATA = [
     fullDesc: 'Perfect Pixels explores photography, cinematography, filmmaking, social media, and digital content creation, including photo walks and campus coverage.',
     captain: {
       name: 'Anshul Sharma',
-      role: 'Head of Photography & Film',
+      role: 'Captain',
       image: '/captains/pp.jpg',
       email: 'pixels.lead@piet.ac.in',
+      instagram: 'https://instagram.com/perfectpixels_piet',
     },
   },
   {
@@ -253,12 +321,13 @@ const CLUBS_DATA = [
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/nss.png',
     brief: 'Get involved beyond campus through cleanliness drives, educational outreach, awareness campaigns and community service initiatives.',
-    fullDesc: 'The NSS club mobilizes student volunteers for blood donation drives, tree plantation initiatives, rural education workshops, and campus sustainability projects.',
+    fullDesc: 'The Social Welfare & NSS wing mobilizes student volunteers for blood donation drives, tree plantation initiatives, rural education workshops, and campus sustainability projects.',
     captain: {
       name: 'Vaibhav Sharma',
-      role: 'NSS Lead Coordinator',
+      role: 'Captain',
       image: '/captains/nss.jpg',
       email: 'nss.lead@piet.ac.in',
+      instagram: 'https://instagram.com/nss_piet',
     },
   },
   {
@@ -271,9 +340,10 @@ const CLUBS_DATA = [
     fullDesc: 'Drawing, painting, sculpture, crafting, graphic design, audio and video editing — a creative space to explore digital design tools.',
     captain: {
       name: 'Shalini Choudhary',
-      role: 'Graphic Design Head',
+      role: 'Captain',
       image: '/captains/origin.jpg',
       email: 'origin.lead@piet.ac.in',
+      instagram: 'https://instagram.com/origin_piet',
     },
   },
   {
@@ -286,9 +356,10 @@ const CLUBS_DATA = [
     fullDesc: 'A mix of innovation, leadership, discussion, technical activities and social responsibility. From Youth Parliament and cloud sessions to hackathons and leadership programs.',
     captain: {
       name: 'Anushka Shekhawat',
-      role: 'Youth Parliament Lead',
+      role: 'Captain',
       image: '/captains/indgenius.jpg',
       email: 'indgenius.lead@piet.ac.in',
+      instagram: 'https://instagram.com/indgenius_piet',
     },
   },
   {
@@ -304,6 +375,7 @@ const CLUBS_DATA = [
       role: 'Aptitude & Training Captain',
       image: '/captains/aptenius.jpg',
       email: 'aptineus.lead@piet.ac.in',
+      instagram: 'https://instagram.com/aptineus_piet',
     },
   },
   {
@@ -316,9 +388,10 @@ const CLUBS_DATA = [
     fullDesc: 'Graduate Gateway assists students aspiring for GATE, CAT, GRE, UPSC, and higher studies abroad with mentorship sessions and resource libraries.',
     captain: {
       name: 'Rishabh Nandi',
-      role: 'Higher Ed & Exam Mentor',
-      image: '/captains/co-chair.jpg',
+      role: 'Captain',
+      // image: '/captains/co-chair.jpg',
       email: 'gateway.lead@piet.ac.in',
+      instagram: 'https://instagram.com/gradgateway_piet',
     },
   },
   {
@@ -334,6 +407,7 @@ const CLUBS_DATA = [
       role: 'Gaming Tournament Director',
       image: '/captains/esports.jpg',
       email: 'esports.lead@piet.ac.in',
+      instagram: 'https://instagram.com/esports_piet',
     },
   },
   {
@@ -346,9 +420,10 @@ const CLUBS_DATA = [
     fullDesc: 'Poornima Business Incubation Centre (PBIC) guides aspiring student entrepreneurs from ideation to pitching, seed funding, and startup registration.',
     captain: {
       name: 'Dev Pratap Singh Rathore',
-      role: 'Incubation & Startup Lead',
+      role: 'Captain',
       image: '/captains/pbic.jpg',
       email: 'pbic.lead@piet.ac.in',
+      instagram: 'https://instagram.com/pbic_piet',
     },
   },
   {
@@ -361,9 +436,10 @@ const CLUBS_DATA = [
     fullDesc: 'Focused on community support, essential resource distribution, and educational empowerment initiatives such as blood donation and Vastradaan drives.',
     captain: {
       name: 'Aditya Agarwal',
-      role: 'Community Relief Head',
+      role: 'Captain',
       image: '/captains/helping-hands.jpg',
       email: 'helpinghands.lead@piet.ac.in',
+      instagram: 'https://instagram.com/helpinghands_piet',
     },
   },
   {
@@ -376,9 +452,10 @@ const CLUBS_DATA = [
     fullDesc: 'Women in Science & Engineering (WISE) empowers female engineers through technical hackathons, leadership seminars, and career mentorship.',
     captain: {
       name: 'Anisha Agarwal',
-      role: 'Women in STEM Chair',
+      role: 'Captain',
       image: '/captains/wise.jpg',
       email: 'wise.lead@piet.ac.in',
+      instagram: 'https://instagram.com/wise_piet',
     },
   },
   {
@@ -386,14 +463,15 @@ const CLUBS_DATA = [
     name: 'IETE Club',
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--blue',
-    logo: '/clubs/iete.jpeg',
+    logo: '/clubs/ieee.png',
     brief: 'A community for students passionate about electronics, telecommunication and technology. Learn through hands-on experiences and build new skills.',
     fullDesc: 'IETE Student Forum provides a space for electronics, telecom, and IoT enthusiasts to explore hardware design, PCB etching, and embedded systems.',
     captain: {
-      name: 'Arohi Jalan',
-      role: 'Telecom & Electronics Head',
+      name: 'Aarohi Jalan',
+      role: 'Captain',
       image: '/captains/iete.jpg',
       email: 'iete.lead@piet.ac.in',
+      instagram: 'https://instagram.com/iete_piet',
     },
   },
   {
@@ -406,9 +484,10 @@ const CLUBS_DATA = [
     fullDesc: 'Combines mechanical, electronics, and software engineering. Students build robots, VR experiences, automated machines, and computer vision projects.',
     captain: {
       name: 'Navya Sharma',
-      role: 'Automation & Robotics Head',
+      role: 'Captain',
       image: '/captains/mechatron.jpg',
       email: 'mechatron.lead@piet.ac.in',
+      instagram: 'https://instagram.com/mechatron_piet',
     },
   },
   {
@@ -421,9 +500,10 @@ const CLUBS_DATA = [
     fullDesc: 'Yi brings together students to explore leadership, innovation, and social impact through industry interactions, national summits, and youth summits.',
     captain: {
       name: 'Pranjal Sharma',
-      role: 'Young Indians Student Chair',
+      role: 'Captain',
       image: '/captains/yi.jpg',
       email: 'yi.lead@piet.ac.in',
+      instagram: 'https://instagram.com/yi_piet',
     },
   },
   {
@@ -436,9 +516,10 @@ const CLUBS_DATA = [
     fullDesc: 'IKS explores traditional Indian sciences, architecture, philosophy, and arts, connecting ancient insights with modern engineering and sustainability.',
     captain: {
       name: 'Ojasva Dixit',
-      role: 'Heritage & Science Lead',
+      role: 'Captain',
       image: '/captains/iks.jpeg',
       email: 'iks.lead@piet.ac.in',
+      instagram: 'https://instagram.com/iks_piet',
     },
   },
 ]
@@ -497,6 +578,61 @@ function Council() {
             <p className="page-lead" style={{ marginTop: '1rem' }}>
               Explore campus student clubs, executive boards, and meet the captains leading Pehla Kadam 2026.
             </p>
+
+            {/* EXECUTIVE BOARD CHAIR & CO-CHAIRS (Scroll Fan Expansion Animation) */}
+            <div className="exec-board-section">
+              <span className="page-card__pill page-card__pill--blue">EXECUTIVE BOARD</span>
+              <h2 className="page-card__title" style={{ marginTop: '0.6rem', fontSize: '1.6rem' }}>CHAIR &amp; CO-CHAIRPERSONS</h2>
+
+              <motion.div
+                className="exec-board-container"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+              >
+                {EXECUTIVE_LEADS.map((lead, idx) => (
+                  <motion.div
+                    key={lead.id}
+                    className="exec-glass-card"
+                    variants={{
+                      hidden: {
+                        opacity: 0,
+                        y: 40,
+                        rotate: lead.initRotate,
+                        x: lead.initX,
+                        scale: 0.92,
+                      },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        rotate: lead.targetRotate,
+                        x: lead.targetX,
+                        scale: 1,
+                        transition: {
+                          type: 'spring',
+                          stiffness: 220,
+                          damping: 22,
+                          delay: idx * 0.12,
+                        },
+                      },
+                    }}
+                    whileHover={{
+                      rotate: 0,
+                      scale: 1.05,
+                      y: -10,
+                      transition: { type: 'spring', stiffness: 350, damping: 20 },
+                    }}
+                  >
+                    <div className="exec-avatar-frame">
+                      <img src={lead.image} alt={lead.name} className="exec-avatar-img" />
+                    </div>
+                    <span className="exec-role">{lead.role}</span>
+                    <h3 className="exec-name">{lead.name}</h3>
+                    <p className="exec-bio">{lead.bio}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           </div>
 
           <div className="page-hero__footer">
@@ -616,7 +752,7 @@ function Council() {
                     alt={activeClub.captain.name}
                     className="captain-avatar-img"
                     onError={(e) => {
-                      e.target.src = '/Logo.svg' // Fallback if image fails to load
+                      e.target.src = '/Logo.svg'
                     }}
                   />
                 </div>
@@ -624,9 +760,34 @@ function Council() {
                   <span className="captain-role">{activeClub.captain.role}</span>
                   <h3 className="captain-name">{activeClub.captain.name}</h3>
                   <p className="captain-bio">{activeClub.captain.bio}</p>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--blue)', fontWeight: 600, marginTop: '0.25rem' }}>
-                    ✉ {activeClub.captain.email}
-                  </span>
+
+                  {/* CAPTAIN INSTAGRAM & EMAIL SOCIAL LINKS */}
+                  <div className="captain-social-bar">
+                    <a
+                      href={activeClub.captain.instagram || 'https://instagram.com/'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="captain-social-link captain-social-link--insta"
+                    >
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                      </svg>
+                      <span>INSTAGRAM</span>
+                    </a>
+
+                    <a
+                      href={`mailto:${activeClub.captain.email}`}
+                      className="captain-social-link captain-social-link--email"
+                    >
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                      </svg>
+                      <span>EMAIL</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
