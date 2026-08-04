@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import BlurredBackground from '../components/BlurredBackground'
 import RevealOnScroll from '../components/RevealOnScroll'
 import InteractiveSparkles from '../components/InteractiveSparkles'
+import ExecutiveStackedDeck from '../components/ExecutiveStackedDeck'
 import './Page.css'
 
 const EXECUTIVE_LEADS = [
@@ -318,7 +319,7 @@ const CLUBS_DATA = [
     id: 'social-welfare-club',
     name: 'NSS',
     category: 'COMMUNITY',
-    badgeClass: 'page-card__pill--amber',
+    badgeClass: 'page-card__pill--blue',
     logo: '/clubs/nss.png',
     brief: 'Get involved beyond campus through cleanliness drives, educational outreach, awareness campaigns and community service initiatives.',
     fullDesc: 'The NSS Club encourages students to engage with society through community service, awareness drives, volunteering and social initiatives. It helps develop empathy, responsibility and leadership while creating opportunities to contribute to the community. ',
@@ -462,7 +463,7 @@ const CLUBS_DATA = [
     id: 'iete-club',
     name: 'IETE Club',
     category: 'TECHNICAL',
-    badgeClass: 'page-card__pill--blue',
+    badgeClass: 'page-card__pill--amber',
     logo: '/clubs/iete.jpeg',
     brief: 'A community for students passionate about electronics, telecommunication and technology. Learn through hands-on experiences and build new skills.',
     fullDesc: 'IETE Student Forum provides a space for electronics, telecom, and IoT enthusiasts to explore hardware design, PCB etching, and embedded systems.',
@@ -478,7 +479,7 @@ const CLUBS_DATA = [
     id: 'mechatron-club',
     name: 'Mechatron Club',
     category: 'TECHNICAL',
-    badgeClass: 'page-card__pill--blue',
+    badgeClass: 'page-card__pill--amber',
     logo: '/clubs/mechatron.png',
     brief: 'Learn by building. Mechatron is a hands-on technical community exploring Robotics, AI, VR, Automation, Embedded Systems and Computer Vision.',
     fullDesc: 'Combines mechanical, electronics, and software engineering. Students build robots, VR experiences, automated machines, and computer vision projects.',
@@ -576,59 +577,11 @@ function Council() {
               Explore campus student clubs, executive boards, and meet the captains leading Pehla Kadam 2026.
             </p>
 
-            {/* EXECUTIVE BOARD CHAIR & CO-CHAIRS (Scroll Fan Expansion Animation) */}
+            {/* EXECUTIVE BOARD CHAIR & CO-CHAIRS (Stacked Deck with Auto Switching) */}
             <div className="exec-board-section">
               <span className="page-card__pill page-card__pill--blue">EXECUTIVE BOARD</span>
-              <h2 className="page-card__title" style={{ marginTop: '0.6rem', fontSize: '1.6rem' }}>CHAIR &amp; CO-CHAIRPERSONS</h2>
-
-              <motion.div
-                className="exec-board-container"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.3 }}
-              >
-                {EXECUTIVE_LEADS.map((lead, idx) => (
-                  <motion.div
-                    key={lead.id}
-                    className="exec-glass-card"
-                    variants={{
-                      hidden: {
-                        opacity: 0,
-                        y: 40,
-                        rotate: lead.initRotate,
-                        x: lead.initX,
-                        scale: 0.92,
-                      },
-                      visible: {
-                        opacity: 1,
-                        y: 0,
-                        rotate: lead.targetRotate,
-                        x: lead.targetX,
-                        scale: 1,
-                        transition: {
-                          type: 'spring',
-                          stiffness: 220,
-                          damping: 22,
-                          delay: idx * 0.12,
-                        },
-                      },
-                    }}
-                    whileHover={{
-                      rotate: 0,
-                      scale: 1.05,
-                      y: -10,
-                      transition: { type: 'spring', stiffness: 350, damping: 20 },
-                    }}
-                  >
-                    <div className="exec-avatar-frame">
-                      <img src={lead.image} alt={lead.name} className="exec-avatar-img" />
-                    </div>
-                    <span className="exec-role">{lead.role}</span>
-                    <h3 className="exec-name">{lead.name}</h3>
-                    <p className="exec-bio">{lead.bio}</p>
-                  </motion.div>
-                ))}
-              </motion.div>
+              <h2 className="page-card__title" style={{ marginTop: '0.6rem', fontSize: '1.6rem' }}>CHAIR &amp; CO-CHAIR S</h2>
+              <ExecutiveStackedDeck />
             </div>
           </div>
 
