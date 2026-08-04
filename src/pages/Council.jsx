@@ -65,7 +65,7 @@ const CLUBS_DATA = [
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/acm.png',
     brief: 'A community for students interested in computer science, coding, open source, technical events and developing real-world problem-solving skills.',
-    fullDesc: 'PIET ACM Student Chapter is dedicated to empowering students through hands-on technical projects, algorithmic problem-solving, open-source development, and national hackathons. Members gain mentorship from industry seniors and alumni.',
+    fullDesc: 'The ACM Club is a community for students passionate about computing, programming and technology. Through coding sessions, workshops, competitions, hackathons and collaborative projects, members strengthen their technical and problem-solving skills while exploring new areas of computing. ',
     captain: {
       name: 'Khyati Arora',
       role: 'Captain',
@@ -129,7 +129,7 @@ const CLUBS_DATA = [
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/iste.png',
     brief: 'Discover emerging technologies, work on innovative projects and develop technical and professional skills through workshops and competitions.',
-    fullDesc: 'ISTE focuses on holistic technical growth, professional skill workshops, hackathons, and multidisciplinary engineering projects across departments.',
+    fullDesc: 'The ISTE Club provides students with a platform to explore engineering, technology and innovation beyond the classroom. Through workshops, technical sessions, competitions and hands-on projects, members develop practical skills, problem-solving abilities and industry awareness while working together on new ideas. ',
     captain: {
       name: 'Ananya Gupta',
       role: 'Captain',
@@ -321,7 +321,7 @@ const CLUBS_DATA = [
     badgeClass: 'page-card__pill--amber',
     logo: '/clubs/nss.png',
     brief: 'Get involved beyond campus through cleanliness drives, educational outreach, awareness campaigns and community service initiatives.',
-    fullDesc: 'The Social Welfare & NSS wing mobilizes student volunteers for blood donation drives, tree plantation initiatives, rural education workshops, and campus sustainability projects.',
+    fullDesc: 'The NSS Club encourages students to engage with society through community service, awareness drives, volunteering and social initiatives. It helps develop empathy, responsibility and leadership while creating opportunities to contribute to the community. ',
     captain: {
       name: 'Vaibhav Sharma',
       role: 'Captain',
@@ -369,7 +369,7 @@ const CLUBS_DATA = [
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/aptineus.png',
     brief: 'Focusing on aptitude, logical reasoning, soft skills and interview prep to help students excel in placement drives and competitive exams.',
-    fullDesc: 'Aptineus conducts aptitude sprints, group discussions, mock interviews, and quantitative reasoning bootcamps for senior placement success.',
+    fullDesc: 'The Aptineus Club focuses on developing students\' aptitude, logical reasoning, communication and problem-solving skills through interactive activities, challenges and learning sessions. It helps students build confidence and prepare for academic, competitive and professional opportunities. ',
     captain: {
       name: 'Harsh Yadav',
       role: 'Aptitude & Training Captain',
@@ -417,7 +417,7 @@ const CLUBS_DATA = [
     badgeClass: 'page-card__pill--blue',
     logo: '/clubs/pbic.png',
     brief: 'Got a startup idea? PBIC helps students explore entrepreneurship, develop business plans and pitch their ideas to incubators.',
-    fullDesc: 'Poornima Business Incubation Centre (PBIC) guides aspiring student entrepreneurs from ideation to pitching, seed funding, and startup registration.',
+    fullDesc: 'The Poornima Business Incubation Centre (PBIC) provides students with a platform to explore entrepreneurship, innovation and startup ideas. It helps students develop their ideas, understand the business side of innovation, work with teams and take their concepts closer to becoming real ventures. ',
     captain: {
       name: 'Dev Pratap Singh Rathore',
       role: 'Captain',
