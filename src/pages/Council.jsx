@@ -23,7 +23,7 @@ const EXECUTIVE_LEADS = [
     id: 'advisory',
     role: 'Advisory',
     name: 'Anusha Shandilya',
-    // image: '/captains/chair.jpg',
+    image: '/captains/advisary.jpeg',
     badge: 'HEAD OF COUNCIL',
     badgeClass: 'page-card__pill--blue',
     initRotate: -14,
@@ -150,8 +150,8 @@ const CLUBS_DATA = [
       name: 'Kartik Khurana',
       role: 'Captain',
       image: '/captains/ieee.jpg',
-      email: 'ieee.lead@piet.ac.in',
-      instagram: 'https://instagram.com/ieee_piet',
+      email: 'ieee@poornima.org',
+      instagram: 'https://www.instagram.com/ieee.piet',
     },
   },
   {
@@ -463,7 +463,7 @@ const CLUBS_DATA = [
     name: 'IETE Club',
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--blue',
-    logo: '/clubs/ieee.png',
+    logo: '/clubs/iete.jpeg',
     brief: 'A community for students passionate about electronics, telecommunication and technology. Learn through hands-on experiences and build new skills.',
     fullDesc: 'IETE Student Forum provides a space for electronics, telecom, and IoT enthusiasts to explore hardware design, PCB etching, and embedded systems.',
     captain: {
