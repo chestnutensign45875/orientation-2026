@@ -94,16 +94,7 @@ function About() {
                     Welcome to Poornima Institute of Engineering & Technology, Jaipur.
                   </span>
                   <p className="content-placeholder__hint">
-                    Starting college comes with a lot of questions.
-                    Where's my classroom? Who am I going to sit with? Which club should I join? What is
-                    college actually going to be like? And, most importantly… am I going to survive
-                    engineering?
-                    You don't need to have all the answers right away. Everyone starts somewhere.
-                    Established in 2007, PIET is now home to 1,700+ students, each with a different
-                    reason for being here. Some are here to code and build. Some are passionate about
-                    sports, creativity or entrepreneurship. And some are still figuring out what they enjoy
-                    and where they want to go.
-                    And that's perfectly okay
+                    Starting college comes with plenty of questions — new classrooms, new people, new routines and a completely new experience. You don't need all the answers right away. Everyone starts somewhere.
                   </p>
                 </div>
               </div>
@@ -117,24 +108,14 @@ function About() {
                   <span className="page-card__pill page-card__pill--amber">POORNIMA GROUP</span>
                 </div>
 
-                <h2 className="page-card__title">Because college is more than a course.</h2>
+                <h2 className="page-card__title">What can you study here?</h2>
 
                 <div className="content-placeholder">
                   <span className="content-placeholder__badge">
-                    That's the side of PIET we want you to discover.
+                    Find your path, one step at a time.
                   </span>
                   <p className="content-placeholder__hint">
-                    It's the person sitting next to you on your first day.
-                    It's finding that one place on campus where you always end up hanging out.
-                    It's joining a club because your friend convinced you to "just come once."
-                    It's spending three hours fixing a project that should have taken thirty minutes.
-                    It's walking into a competition with no idea what you're doing — and coming out
-                    knowing something new.
-                    It's the fest you almost decided not to attend.
-                    It's the random conversation that turns into a friendship.
-                    It's the people you didn't know you'd meet when you first walked through the gates.
-                    And somewhere between classes, deadlines, events, mistakes, late evenings and
-                    completely unplanned moments, you start creating a life that is uniquely yours
+                    PIET offers a range of engineering programmes, giving students different ways to explore technology, discover their interests and build their future.
                   </p>
                 </div>
               </div>
@@ -148,20 +129,14 @@ function About() {
                   <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
                 </div>
 
-                <h2 className="page-card__title">Okay, now for the official stuff.</h2>
+                <h2 className="page-card__title">About PIET </h2>
 
                 <div className="content-placeholder">
                   <span className="content-placeholder__badge">
-                  Because every good introduction needs a little bit of paperwork. :)
+                  More than just a number.
                   </span>
                   <p className="content-placeholder__hint">
-                    Established: 2007
-                    Student Community: 1,700+
-                    Affiliated to: Rajasthan Technical University
-                    Approved by: AICTE
-                    Recognized under: UGC 2(f)
-                    That's the formal introduction.
-                    Now let's talk about the part you'll actually remember.
+                    Established in 2007, PIET is home to 1,700+ students, with a community built around technology, creativity, sports, entrepreneurship and exploration.
                   </p>
                 </div>
               </div>
@@ -174,21 +149,119 @@ function About() {
                   <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
                 </div>
 
-                <h2 className="page-card__title">Want something beyond the classroom?</h2>
+                <h2 className="page-card__title">More than a course </h2>
 
                 <div className="content-placeholder">
                   <span className="content-placeholder__badge">
-                  Your degree is only one part of your college experience.
+                  Your college story happens outside the classroom too.
                   </span>
                   <p className="content-placeholder__hint">
-                    Join a club. Participate in a competition. Volunteer for an event. Step onto a stage.
-                    Pick up a camera. Build something. Play a sport.
-                    You don't have to be good at something before you try it.
-                    Sometimes, you discover what you're good at by simply giving it a chance.
+                    From first friendships and club meetings to competitions, projects, fests and unexpected moments, college becomes a collection of experiences you never planned for.
                   </p>
                 </div>
               </div>
             </RevealOnScroll>
+
+            <RevealOnScroll scrollContainerRef={scrollRef} delay={0.2}>
+              <div className="page-card">
+                <div className="page-card__header">
+                  <span className="page-card__pill">STUDENT GUIDE</span>
+                  <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
+                </div>
+
+                <h2 className="page-card__title">First time here?  </h2>
+
+                <div className="content-placeholder">
+                  <span className="content-placeholder__badge">
+                  Let's get you around
+                  </span>
+                  <p className="content-placeholder__hint">
+                    Get familiar with your classrooms, labs, library, activity spaces, canteen and the places you'll soon know by heart.
+                  </p>
+                </div>
+              </div>
+            </RevealOnScroll>
+
+            <RevealOnScroll scrollContainerRef={scrollRef} delay={0.2}>
+              <div className="page-card">
+                <div className="page-card__header">
+                  <span className="page-card__pill">STUDENT GUIDE</span>
+                  <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
+                </div>
+
+                <h2 className="page-card__title">Looking for your people? </h2>
+
+                <div className="content-placeholder">
+                  <span className="content-placeholder__badge">
+                  Find a community that feels like yours.
+                  </span>
+                  <p className="content-placeholder__hint">
+                    Explore clubs and student communities across technology, sports, creativity, entrepreneurship, photography, drama and more.
+                  </p>
+                </div>
+              </div>
+            </RevealOnScroll>
+
+            <RevealOnScroll scrollContainerRef={scrollRef} delay={0.2}>
+              <div className="page-card">
+                <div className="page-card__header">
+                  <span className="page-card__pill">STUDENT GUIDE</span>
+                  <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
+                </div>
+
+                <h2 className="page-card__title">Beyond the classroom </h2>
+
+                <div className="content-placeholder">
+                  <span className="content-placeholder__badge">
+                  Try something you’ve never tried before.
+                  </span>
+                  <p className="content-placeholder__hint">
+                    Join a club, compete, volunteer, perform, build or play. You don't need to be good at something before you start — sometimes you discover your strengths by simply giving things a chance.                   </p>
+                </div>
+              </div>
+            </RevealOnScroll>
+
+            <RevealOnScroll scrollContainerRef={scrollRef} delay={0.2}>
+              <div className="page-card">
+                <div className="page-card__header">
+                  <span className="page-card__pill">STUDENT GUIDE</span>
+                  <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
+                </div>
+
+                <h2 className="page-card__title">Got an idea? </h2>
+
+                <div className="content-placeholder">
+                  <span className="content-placeholder__badge">
+                  Turn curiosity into something real.
+                  </span>
+                  <p className="content-placeholder__hint">
+                    Explore hackathons, projects, internships, entrepreneurship and other opportunities that take you beyond your regular timetable and syllabus.
+                  </p>
+                </div>
+              </div>
+            </RevealOnScroll>
+
+            <RevealOnScroll scrollContainerRef={scrollRef} delay={0.2}>
+              <div className="page-card">
+                <div className="page-card__header">
+                  <span className="page-card__pill">STUDENT GUIDE</span>
+                  <span className="page-card__pill page-card__pill--amber">BATCH OF 2026</span>
+                </div>
+
+                <h2 className="page-card__title">What happens after class? </h2>
+
+                <div className="content-placeholder">
+                  <span className="content-placeholder__badge">
+                  Some of the best memories aren't planned.
+                  </span>
+                  <p className="content-placeholder__hint">
+                    EFests, workshops, competitions, sports and celebrations bring a different energy to campus — and often become the moments you remember years later.
+                  </p>
+                </div>
+              </div>
+            </RevealOnScroll>
+
+
 
           </div>
         </section>
