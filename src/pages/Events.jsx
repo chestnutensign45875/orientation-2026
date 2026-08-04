@@ -22,7 +22,6 @@ const TIMELINE_SLOTS = [
     title: 'Morning Registration & Campus Welcome',
     venue: 'Main Gate & Auditorium Foyer',
     speaker: 'Orientation Steering Team',
-    desc: 'Welcome kit distribution, ID card verification, and morning assembly for incoming batch.',
     image: '', // Place event image URL here e.g. '/events/slot1.jpg'
   },
   {
@@ -37,7 +36,6 @@ const TIMELINE_SLOTS = [
     title: 'Keynote Address & Leadership Session',
     venue: 'PIET Main Auditorium',
     speaker: 'Director & Executive Board',
-    desc: 'Inaugural address introducing academic vision, campus guidelines, and student leadership.',
     image: '',
   },
   {
@@ -49,12 +47,9 @@ const TIMELINE_SLOTS = [
     startMin: 0,
     endHour: 12,
     endMin: 0,
-    title: 'Lunch Break & Networking Lounge',
-    venue: 'Central Student Cafeteria',
+    title: 'Lunch Break ',
     speaker: 'Hospitality Team',
-    desc: 'Nutritious lunch, refreshment counters, and informal networking with senior student mentors.',
     isBreak: true,
-    image: '',
   },
   {
     id: 'slot-4',
@@ -68,7 +63,6 @@ const TIMELINE_SLOTS = [
     title: 'Departmental Expos & Hands-on Workshops',
     venue: 'Academic Blocks & Labs',
     speaker: 'HODs & Student Club Leads',
-    desc: 'Interactive department tours, lab demonstrations, and hands-on technical sessions.',
     image: '',
   },
   {
@@ -83,7 +77,6 @@ const TIMELINE_SLOTS = [
     title: 'Cultural Showcase & Grand Finale',
     venue: 'Open Air Amphitheatre',
     speaker: 'Cultural Board & Student Clubs',
-    desc: 'Mainstage dance, music, theatrical performances, and announcement of upcoming schedules.',
     image: '',
   },
 ]
@@ -305,40 +298,44 @@ function Events() {
                                   </span>
                                 )}
 
-                                <div className="timeline-card__venue">
-                                  📍 <span>{slot.venue}</span>
-                                </div>
+                                {slot.venue && !slot.isBreak ? (
+                                  <div className="timeline-card__venue">
+                                    📍 <span>{slot.venue}</span>
+                                  </div>
+                                ) : null}
                               </div>
 
                               <h3 className="timeline-card__title">{slot.title}</h3>
 
-                              {/* EVENT IMAGE HOLDER */}
-                              <div className="timeline-card__image-frame">
-                                {slot.image ? (
-                                  <img
-                                    src={slot.image}
-                                    alt={slot.title}
-                                    className="timeline-card__img"
-                                    onError={(e) => {
-                                      e.target.style.display = 'none'
-                                      if (e.target.nextSibling) {
-                                        e.target.nextSibling.style.display = 'flex'
-                                      }
-                                    }}
-                                  />
-                                ) : null}
-                                <div
-                                  className="timeline-card__image-placeholder"
-                                  style={{ display: slot.image ? 'none' : 'flex' }}
-                                >
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                                    <circle cx="8.5" cy="8.5" r="1.5" />
-                                    <polyline points="21 15 16 10 5 21" />
-                                  </svg>
-                                  <span>EVENT IMAGE HOLDER ({slot.slotNum})</span>
+                              {/* EVENT IMAGE HOLDER (Hidden for Lunch Break) */}
+                              {!slot.isBreak ? (
+                                <div className="timeline-card__image-frame">
+                                  {slot.image ? (
+                                    <img
+                                      src={slot.image}
+                                      alt={slot.title}
+                                      className="timeline-card__img"
+                                      onError={(e) => {
+                                        e.target.style.display = 'none'
+                                        if (e.target.nextSibling) {
+                                          e.target.nextSibling.style.display = 'flex'
+                                        }
+                                      }}
+                                    />
+                                  ) : null}
+                                  <div
+                                    className="timeline-card__image-placeholder"
+                                    style={{ display: slot.image ? 'none' : 'flex' }}
+                                  >
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                      <circle cx="8.5" cy="8.5" r="1.5" />
+                                      <polyline points="21 15 16 10 5 21" />
+                                    </svg>
+                                    <span>EVENT IMAGE HOLDER ({slot.slotNum})</span>
+                                  </div>
                                 </div>
-                              </div>
+                              ) : null}
 
                               <p className="timeline-card__desc">{slot.desc}</p>
 
