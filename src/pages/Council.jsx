@@ -102,8 +102,8 @@ const CLUBS_DATA = [
       name: 'Ayush Sharma',
       role: 'Captain',
       image: '/captains/debug.jpg',
-      email: 'debug.lead@piet.ac.in',
-      instagram: 'https://instagram.com/debug_piet',
+      email: 'debugclub@poornima.org',
+      instagram: 'https://instagram.com/debugclub',
     },
   },
   {
