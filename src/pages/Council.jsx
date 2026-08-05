@@ -118,7 +118,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Divyansh Dua',
       role: 'Captain',
-      image: '/captains/cyborgs.jpg',
+      image: '/captains/cyborgs.jpeg',
       email: 'cyborgs.lead@piet.ac.in',
       instagram: 'https://instagram.com/cyborgs_piet',
     },
