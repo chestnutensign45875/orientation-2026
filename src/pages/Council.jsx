@@ -167,7 +167,7 @@ const CLUBS_DATA = [
       name: 'Satyendra Singh',
       role: 'Captain',
       image: '/captains/mlsa.jpg',
-      email: 'mlsa.lead@piet.ac.in',
+      email: 'mlsa.piet@poornima.org',
       instagram: 'https://instagram.com/mlsa.piet',
     },
   },
