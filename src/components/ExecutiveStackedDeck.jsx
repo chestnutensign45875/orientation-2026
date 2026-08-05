@@ -30,7 +30,7 @@ const EXEC_CARDS = [
     id: 'co-chair-2',
     role: 'CO-CHAIR',
     name: 'Purushotam Lingwal',
-    image: '/captains/co-chair2.jpg',
+    image: '/captains/co-chair2.jpeg',
     badge: 'EXECUTIVE BOARD',
     badgeClass: 'page-card__pill--amber',
   },

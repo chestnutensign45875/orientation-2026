@@ -167,8 +167,8 @@ const CLUBS_DATA = [
       name: 'Satyendra Singh',
       role: 'Captain',
       image: '/captains/mlsa.jpg',
-      email: 'mlsa.piet@poornima.org',
-      instagram: 'https://instagram.com/mlsa.piet',
+      email: 'mlsa.lead@piet.ac.in',
+      instagram: 'https://instagram.com/mlsa_piet',
     },
   },
   {
@@ -391,8 +391,8 @@ const CLUBS_DATA = [
       name: 'Rishabh Nandi',
       role: 'Captain',
       // image: '/captains/co-chair.jpg',
-      email: 'graduate@poornima.org',
-      instagram: 'https://instagram.com/graduategateway.club',
+      email: 'gateway.lead@piet.ac.in',
+      instagram: 'https://instagram.com/gradgateway_piet',
     },
   },
   {
