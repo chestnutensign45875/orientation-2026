@@ -61,13 +61,29 @@
   animation: float-sparkle 3.5s ease-in-out infinite alternate;
 }
 
-.page-sparkle--blue { color: var(--blue); }
-.page-sparkle--amber { color: var(--amber); }
+.page-sparkle--blue {
+  color: var(--blue);
+}
+
+.page-sparkle--amber {
+  color: var(--amber);
+}
 
 @keyframes float-sparkle {
-  0% { transform: translateY(0) rotate(0deg) scale(0.95); opacity: 0.75; }
-  50% { transform: translateY(-8px) rotate(12deg) scale(1.1); opacity: 1; }
-  100% { transform: translateY(0) rotate(0deg) scale(0.95); opacity: 0.75; }
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.95);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(12deg) scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg) scale(0.95);
+    opacity: 0.75;
+  }
 }
 
 /* ========================================================
@@ -147,8 +163,8 @@
 
 .deck-card-bg--1 {
   transform: rotate(-4.8deg) translate(-8px, 6px) scale(0.97);
-  background: linear-gradient(135deg, #ffffff, rgba(37, 99, 235, 0.03));
-  border-color: rgba(37, 99, 235, 0.18);
+  background: linear-gradient(135deg, #ffffff, rgba(15, 43, 92, 0.06));
+  border-color: var(--navy-border);
   z-index: 1;
 }
 
@@ -297,6 +313,7 @@
   .deck-nav-btn--left {
     left: -3.5rem;
   }
+
   .deck-nav-btn--right {
     right: -3.5rem;
   }
@@ -332,7 +349,7 @@
 
 
 
-/* Hero & Welcome Section - Fully Centered */
+/* Hero & Welcome Section - Fully Centered + Grid BG */
 .page-hero {
   position: relative;
   min-height: 100svh;
@@ -343,6 +360,33 @@
   text-align: center;
   padding: clamp(4rem, 10vw, 5.5rem) clamp(1.25rem, 4vw, 2rem) clamp(2.5rem, 6vw, 3.5rem);
   box-sizing: border-box;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      rgba(15, 43, 92, 0.03) 0px,
+      rgba(15, 43, 92, 0.03) 1px,
+      transparent 1px,
+      transparent 56px),
+    repeating-linear-gradient(90deg,
+      rgba(15, 43, 92, 0.03) 0px,
+      rgba(15, 43, 92, 0.03) 1px,
+      transparent 1px,
+      transparent 56px);
+  mask-image: radial-gradient(ellipse at 50% 100%, black 0%, transparent 55%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 100%, black 0%, transparent 55%);
+  opacity: 0.5;
+}
+
+.page-hero>* {
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -357,7 +401,7 @@
   text-align: center;
 }
 
-/* Eyebrow Pill Badge */
+/* Eyebrow Pill Badge — Dark Blue Grid Accent */
 .page-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -365,15 +409,15 @@
   padding: 0.4rem 1rem;
   margin-bottom: clamp(0.85rem, 2.5vw, 1.35rem);
   border-radius: 999px;
-  background: rgba(37, 99, 235, 0.08);
-  border: 1px solid var(--border-blue);
-  color: var(--blue-dark);
+  background: rgba(15, 43, 92, 0.06);
+  border: 1px solid var(--navy-border);
+  color: var(--navy-accent);
   font-family: var(--font-display), sans-serif;
   font-size: clamp(0.74rem, 2vw, 0.84rem);
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  box-shadow: 0 4px 14px var(--blue-glow);
+  box-shadow: 0 4px 14px var(--navy-glow);
 }
 
 .page-eyebrow__dot {
@@ -386,8 +430,17 @@
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 0.5; transform: scale(0.9); }
-  50% { opacity: 1; transform: scale(1.3); }
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
 }
 
 /* Main Hero Welcome Title - Centered */
@@ -415,7 +468,10 @@
 .page-welcome__sub {
   display: block;
   margin-top: 0.5rem;
-  color: var(--blue);
+  background: linear-gradient(135deg, var(--blue-dark), var(--navy-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-family: var(--font-display), sans-serif;
   font-size: clamp(1.3rem, 5.5vw, 2.5rem);
   font-weight: 800;
@@ -550,8 +606,15 @@
 }
 
 @keyframes nudge-right {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(6px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
 }
 
 .page-scroll-cue {
@@ -565,7 +628,7 @@
   width: 2px;
   height: 2.2rem;
   border-radius: 999px;
-  background: linear-gradient(180deg, var(--blue), transparent);
+  background: linear-gradient(180deg, var(--navy-accent), var(--blue), transparent);
   animation: pulse-line 2s ease-in-out infinite;
 }
 
@@ -580,8 +643,19 @@
 }
 
 @keyframes pulse-line {
-  0%, 100% { opacity: 0.35; transform: scaleY(0.7); transform-origin: top; }
-  50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleY(0.7);
+    transform-origin: top;
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
 }
 
 /* Page Content Body & Sections */
@@ -590,6 +664,33 @@
   z-index: 2;
   padding-block: clamp(2rem, 6vw, 4rem);
   width: 100%;
+}
+
+.page-content-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      rgba(15, 43, 92, 0.04) 0px,
+      rgba(15, 43, 92, 0.04) 1px,
+      transparent 1px,
+      transparent 48px),
+    repeating-linear-gradient(90deg,
+      rgba(15, 43, 92, 0.04) 0px,
+      rgba(15, 43, 92, 0.04) 1px,
+      transparent 1px,
+      transparent 48px);
+  mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%);
+  opacity: 0.6;
+}
+
+.page-content-wrap>* {
+  position: relative;
+  z-index: 1;
 }
 
 .page-content {
@@ -675,7 +776,7 @@
   text-align: center;
 }
 
-/* User Content Placeholder Box - Centered */
+/* User Content Placeholder Box - Centered + Grid Border */
 .content-placeholder {
   position: relative;
   min-height: 12rem;
@@ -686,18 +787,49 @@
   justify-content: center;
   text-align: center;
   padding: 2.25rem 1.5rem;
-  border: 2px dashed rgba(37, 99, 235, 0.25);
-  background: rgba(37, 99, 235, 0.02);
+  border: 1.5px solid rgba(15, 43, 92, 0.18);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 14px;
+  overflow: hidden;
+}
+
+.content-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      rgba(15, 43, 92, 0.05) 0px,
+      rgba(15, 43, 92, 0.05) 1px,
+      transparent 1px,
+      transparent 20px),
+    repeating-linear-gradient(90deg,
+      rgba(15, 43, 92, 0.05) 0px,
+      rgba(15, 43, 92, 0.05) 1px,
+      transparent 1px,
+      transparent 20px);
+  mask-image: radial-gradient(ellipse at 50% 50%, black 0%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 0%, transparent 80%);
+  opacity: 0.6;
+}
+
+.content-placeholder>* {
+  position: relative;
+  z-index: 1;
 }
 
 .content-placeholder__badge {
   display: inline-block;
   padding: 0.35rem 0.95rem;
   margin-bottom: 0.75rem;
-  background: rgba(37, 99, 235, 0.1);
-  border: 1px solid var(--border-blue);
-  color: var(--blue-dark);
+  background: rgba(15, 43, 92, 0.08);
+  border: 1px solid var(--navy-border);
+  color: var(--navy-accent);
   font-family: var(--font-display), sans-serif;
   font-size: 0.75rem;
   font-weight: 800;
@@ -720,8 +852,44 @@
    STUDENT COUNCIL & CLUBS GRID SYSTEM
    ======================================================== */
 .clubs-section-header {
+  position: relative;
   margin-bottom: 2rem;
+  padding: 1.5rem;
   text-align: center;
+  border: 1px solid rgba(15, 43, 92, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.clubs-section-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      rgba(15, 43, 92, 0.06) 0px,
+      rgba(15, 43, 92, 0.06) 1px,
+      transparent 1px,
+      transparent 24px),
+    repeating-linear-gradient(90deg,
+      rgba(15, 43, 92, 0.06) 0px,
+      rgba(15, 43, 92, 0.06) 1px,
+      transparent 1px,
+      transparent 24px);
+  mask-image: linear-gradient(180deg, black 0%, transparent 85%);
+  -webkit-mask-image: linear-gradient(180deg, black 0%, transparent 85%);
+  opacity: 0.55;
+}
+
+.clubs-section-header>* {
+  position: relative;
+  z-index: 1;
 }
 
 .clubs-grid {
@@ -732,8 +900,10 @@
 }
 
 .club-tile {
-  background: #ffffff;
-  border: 1.5px solid var(--border);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(15, 43, 92, 0.14);
   border-radius: 20px;
   padding: 1.75rem 1.5rem;
   display: flex;
@@ -741,7 +911,7 @@
   justify-content: space-between;
   text-align: left;
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 12px 32px rgba(10, 25, 47, 0.06), 0 2px 8px rgba(15, 43, 92, 0.03);
   transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -749,8 +919,25 @@
 
 .club-tile:hover {
   transform: translateY(-5px);
-  border-color: var(--border-blue);
-  box-shadow: 0 18px 42px rgba(37, 99, 235, 0.12);
+  border-color: var(--navy-border);
+  box-shadow: 0 20px 44px rgba(15, 43, 92, 0.15);
+}
+
+@media (max-width: 640px) {
+  .clubs-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .club-tile {
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-color: rgba(15, 43, 92, 0.18);
+    border-radius: 18px;
+    padding: 1.35rem 1.15rem;
+    box-shadow: 0 8px 24px rgba(10, 25, 47, 0.08);
+  }
 }
 
 .club-tile__header {
@@ -869,6 +1056,7 @@
 }
 
 .captain-card {
+  position: relative;
   margin-top: 1.75rem;
   padding: 1.5rem;
   border-radius: 18px;
@@ -1079,13 +1267,16 @@
 }
 
 @keyframes rotator-rotate {
-  0%, 99.99% {
+
+  0%,
+  99.99% {
     z-index: var(--z1);
     top: var(--t1);
     left: var(--l1);
     right: var(--r1);
     transform: var(--trans1);
   }
+
   33.33% {
     z-index: var(--z2);
     top: var(--t2);
@@ -1093,6 +1284,7 @@
     right: var(--r2);
     transform: var(--trans2);
   }
+
   66.66% {
     z-index: var(--z3);
     top: var(--t3);
@@ -1407,9 +1599,20 @@
 }
 
 @keyframes node-pulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
-  70% { transform: scale(1.15); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+  }
+
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
 }
 
 /* TIMELINE EVENT CARD */
@@ -1648,13 +1851,11 @@
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(37, 99, 235, 0.02),
-    rgba(37, 99, 235, 0.02) 10px,
-    rgba(255, 255, 255, 0.5) 10px,
-    rgba(255, 255, 255, 0.5) 20px
-  );
+  background: repeating-linear-gradient(45deg,
+      rgba(37, 99, 235, 0.02),
+      rgba(37, 99, 235, 0.02) 10px,
+      rgba(255, 255, 255, 0.5) 10px,
+      rgba(255, 255, 255, 0.5) 20px);
 }
 
 /* ========================================================
@@ -1686,6 +1887,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .page-swipe-hint__arrow,
   .page-scroll-line,
   .page-eyebrow__dot,
@@ -1696,9 +1898,768 @@
 }
 
 
+/* ========================================================
+   DARK BLUE GRID BORDER UI SYSTEM
+   Mobile-first grid mesh patterns on card components.
+   Uses ::before pseudo-element with repeating-linear-gradient
+   to draw subtle dark blue grid lines along card edges.
+   ======================================================== */
+
+/* ---- Grid CSS Custom Properties ---- */
+:root {
+  --grid-color: rgba(15, 43, 92, 0.07);
+  --grid-color-strong: rgba(15, 43, 92, 0.12);
+  --grid-color-accent: rgba(10, 25, 47, 0.16);
+  --grid-size: 28px;
+  --grid-line: 1px;
+  --grid-radius: 20px;
+}
+
+/* ---- Base Grid Pattern Mixin (applied via ::before) ---- */
+
+/* -- PAGE-CARD grid border -- */
+.page-card {
+  overflow: hidden;
+}
+
+.page-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent var(--grid-size)),
+    repeating-linear-gradient(90deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent var(--grid-size));
+  mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 75%);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.page-card:hover::before {
+  opacity: 1;
+}
+
+.page-card>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* -- TIMELINE-CARD grid border -- */
+.timeline-card {
+  overflow: hidden;
+}
+
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent var(--grid-size)),
+    repeating-linear-gradient(90deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent var(--grid-size));
+  mask-image: linear-gradient(180deg, black 0%, transparent 70%);
+  -webkit-mask-image: linear-gradient(180deg, black 0%, transparent 70%);
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-card:hover::before {
+  opacity: 1;
+}
+
+.timeline-card>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* -- CLUB-TILE grid border -- */
+.club-tile {
+  overflow: hidden;
+}
+
+.club-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent var(--grid-size)),
+    repeating-linear-gradient(90deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent var(--grid-size));
+  mask-image: radial-gradient(ellipse at 100% 0%, black 0%, transparent 65%);
+  -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 0%, transparent 65%);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.club-tile:hover::before {
+  opacity: 0.9;
+}
+
+.club-tile>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* -- EXEC-GLASS-CARD grid border -- */
+.exec-glass-card {
+  overflow: hidden;
+}
+
+.exec-glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent 24px),
+    repeating-linear-gradient(90deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent 24px);
+  mask-image: radial-gradient(ellipse at 50% 100%, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 100%, black 0%, transparent 70%);
+  opacity: 0.45;
+  transition: opacity 0.3s ease;
+}
+
+.exec-glass-card:hover::before {
+  opacity: 0.85;
+}
+
+.exec-glass-card>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* -- EVENTS-LOCK-CARD grid border -- */
+.events-lock-card {
+  overflow: hidden;
+}
+
+.events-lock-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      var(--grid-color-strong) 0px,
+      var(--grid-color-strong) var(--grid-line),
+      transparent var(--grid-line),
+      transparent 32px),
+    repeating-linear-gradient(90deg,
+      var(--grid-color-strong) 0px,
+      var(--grid-color-strong) var(--grid-line),
+      transparent var(--grid-line),
+      transparent 32px);
+  mask-image: radial-gradient(ellipse at 50% 50%, black 0%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 0%, transparent 80%);
+  opacity: 0.4;
+}
+
+.events-lock-card>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* -- MAP-IFRAME-WRAPPER grid border accent -- */
+.map-iframe-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    repeating-linear-gradient(0deg,
+      rgba(15, 43, 92, 0.18) 0px,
+      rgba(15, 43, 92, 0.18) var(--grid-line),
+      transparent var(--grid-line),
+      transparent 36px),
+    repeating-linear-gradient(90deg,
+      rgba(15, 43, 92, 0.18) 0px,
+      rgba(15, 43, 92, 0.18) var(--grid-line),
+      transparent var(--grid-line),
+      transparent 36px);
+  mask-image: linear-gradient(180deg, black 0%, transparent 35%),
+    linear-gradient(0deg, black 0%, transparent 35%);
+  mask-composite: add;
+  -webkit-mask-image: linear-gradient(180deg, black 0%, transparent 35%),
+    linear-gradient(0deg, black 0%, transparent 35%);
+  -webkit-mask-composite: source-over;
+  opacity: 0.6;
+}
+
+/* -- CLUB-MODAL-CONTAINER grid border -- */
+.club-modal-container {
+  overflow: hidden;
+}
+
+.club-modal-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent 32px),
+    repeating-linear-gradient(90deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent 32px);
+  mask-image: linear-gradient(180deg, black 0%, transparent 50%);
+  -webkit-mask-image: linear-gradient(180deg, black 0%, transparent 50%);
+  opacity: 0.45;
+}
+
+.club-modal-container>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* -- CAPTAIN-CARD grid border -- */
+.captain-card {
+  overflow: hidden;
+}
+
+.captain-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent 22px),
+    repeating-linear-gradient(90deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent 22px);
+  mask-image: radial-gradient(ellipse at 0% 50%, black 0%, transparent 60%);
+  -webkit-mask-image: radial-gradient(ellipse at 0% 50%, black 0%, transparent 60%);
+  opacity: 0.4;
+}
+
+.captain-card>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* -- DECK-CARD-ACTIVE grid border -- */
+.deck-card-active {
+  overflow: hidden;
+}
+
+.deck-card-active::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(0deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent var(--grid-size)),
+    repeating-linear-gradient(90deg,
+      var(--grid-color) 0px,
+      var(--grid-color) var(--grid-line),
+      transparent var(--grid-line),
+      transparent var(--grid-size));
+  mask-image: radial-gradient(ellipse at 50% 100%, black 0%, transparent 65%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 100%, black 0%, transparent 65%);
+  opacity: 0.45;
+  transition: opacity 0.3s ease;
+}
+
+.deck-card-active:hover::before {
+  opacity: 0.85;
+}
+
+.deck-card-active>* {
+  position: relative;
+  z-index: 1;
+}
 
 
+/* ========================================================
+   MOBILE-FIRST GRID BORDER INTENSIFICATION
+   Stronger grid patterns, tighter grid size, deeper
+   dark blue accent on mobile viewports.
+   ======================================================== */
+@media (max-width: 640px) {
+  :root {
+    --grid-size: 22px;
+    --grid-color: rgba(15, 43, 92, 0.09);
+    --grid-color-strong: rgba(15, 43, 92, 0.15);
+  }
 
+  /* -- Hero grid: tighter, more visible on mobile -- */
+  .page-hero::before {
+    opacity: 0.7;
+    background:
+      repeating-linear-gradient(0deg,
+        rgba(15, 43, 92, 0.05) 0px,
+        rgba(15, 43, 92, 0.05) 1px,
+        transparent 1px,
+        transparent 36px),
+      repeating-linear-gradient(90deg,
+        rgba(15, 43, 92, 0.05) 0px,
+        rgba(15, 43, 92, 0.05) 1px,
+        transparent 1px,
+        transparent 36px);
+    mask-image: radial-gradient(ellipse at 50% 100%, black 0%, transparent 65%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 100%, black 0%, transparent 65%);
+  }
 
+  /* -- Content wrap grid: tighter on mobile -- */
+  .page-content-wrap::before {
+    opacity: 0.75;
+    background:
+      repeating-linear-gradient(0deg,
+        rgba(15, 43, 92, 0.055) 0px,
+        rgba(15, 43, 92, 0.055) 1px,
+        transparent 1px,
+        transparent 32px),
+      repeating-linear-gradient(90deg,
+        rgba(15, 43, 92, 0.055) 0px,
+        rgba(15, 43, 92, 0.055) 1px,
+        transparent 1px,
+        transparent 32px);
+  }
 
+  /* -- Content placeholder: stronger grid on mobile -- */
+  .content-placeholder {
+    border-color: rgba(15, 43, 92, 0.22);
+    background: rgba(255, 255, 255, 0.7);
+  }
 
+  .content-placeholder::before {
+    opacity: 0.8;
+    background:
+      repeating-linear-gradient(0deg,
+        rgba(15, 43, 92, 0.07) 0px,
+        rgba(15, 43, 92, 0.07) 1px,
+        transparent 1px,
+        transparent 16px),
+      repeating-linear-gradient(90deg,
+        rgba(15, 43, 92, 0.07) 0px,
+        rgba(15, 43, 92, 0.07) 1px,
+        transparent 1px,
+        transparent 16px);
+  }
+
+  /* -- Section headers: stronger grid + border on mobile -- */
+  .clubs-section-header {
+    border-color: rgba(15, 43, 92, 0.18);
+    padding: 1.25rem;
+  }
+
+  .clubs-section-header::before {
+    opacity: 0.7;
+  }
+
+  /* -- Card components (existing) -- */
+  .page-card::before {
+    opacity: 0.75;
+    mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 85%);
+  }
+
+  .page-card {
+    border-color: rgba(15, 43, 92, 0.18);
+    box-shadow: 0 10px 30px rgba(10, 25, 47, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .timeline-card::before {
+    opacity: 0.7;
+    mask-image: linear-gradient(180deg, black 0%, transparent 80%);
+    -webkit-mask-image: linear-gradient(180deg, black 0%, transparent 80%);
+  }
+
+  .timeline-card {
+    border-color: rgba(15, 43, 92, 0.18);
+    box-shadow: 0 12px 32px rgba(10, 25, 47, 0.08);
+  }
+
+  .club-tile::before {
+    opacity: 0.65;
+    mask-image: radial-gradient(ellipse at 100% 0%, black 0%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 0%, transparent 75%);
+  }
+
+  .exec-glass-card::before {
+    opacity: 0.6;
+  }
+
+  .exec-glass-card {
+    border-color: rgba(15, 43, 92, 0.18);
+  }
+
+  .events-lock-card::before {
+    opacity: 0.55;
+  }
+
+  .events-lock-card {
+    border-color: rgba(15, 43, 92, 0.2);
+  }
+
+  .deck-card-active::before {
+    opacity: 0.6;
+  }
+
+  .deck-card-active {
+    border-color: rgba(15, 43, 92, 0.16);
+    box-shadow: 0 14px 36px rgba(10, 25, 47, 0.08);
+  }
+
+  .map-iframe-wrapper {
+    border-color: var(--navy-border);
+  }
+
+  .map-iframe-wrapper::before {
+    opacity: 0.75;
+  }
+
+  /* -- Eyebrow pill on mobile -- */
+  .page-eyebrow {
+    background: rgba(15, 43, 92, 0.08);
+    border-color: rgba(15, 43, 92, 0.3);
+  }
+}
+
+/* ========================================================
+   DESKTOP GRID BORDER REFINEMENT
+   Slightly larger grid, subtler lines, elegant hover reveals.
+   ======================================================== */
+@media (min-width: 1024px) {
+  :root {
+    --grid-size: 34px;
+    --grid-color: rgba(15, 43, 92, 0.055);
+  }
+
+  /* -- Hero grid: very subtle on desktop -- */
+  .page-hero::before {
+    opacity: 0.35;
+    background:
+      repeating-linear-gradient(0deg,
+        rgba(15, 43, 92, 0.025) 0px,
+        rgba(15, 43, 92, 0.025) 1px,
+        transparent 1px,
+        transparent 72px),
+      repeating-linear-gradient(90deg,
+        rgba(15, 43, 92, 0.025) 0px,
+        rgba(15, 43, 92, 0.025) 1px,
+        transparent 1px,
+        transparent 72px);
+  }
+
+  /* -- Content wrap grid: wider, subtler on desktop -- */
+  .page-content-wrap::before {
+    opacity: 0.45;
+    background:
+      repeating-linear-gradient(0deg,
+        rgba(15, 43, 92, 0.03) 0px,
+        rgba(15, 43, 92, 0.03) 1px,
+        transparent 1px,
+        transparent 64px),
+      repeating-linear-gradient(90deg,
+        rgba(15, 43, 92, 0.03) 0px,
+        rgba(15, 43, 92, 0.03) 1px,
+        transparent 1px,
+        transparent 64px);
+  }
+
+  .content-placeholder::before {
+    opacity: 0.45;
+  }
+
+  .clubs-section-header::before {
+    opacity: 0.4;
+  }
+
+  .page-card::before {
+    opacity: 0.5;
+  }
+
+  .page-card:hover::before {
+    opacity: 0.9;
+    mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 90%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 90%);
+  }
+
+  .timeline-card::before {
+    opacity: 0.4;
+  }
+
+  .timeline-card:hover::before {
+    opacity: 0.85;
+  }
+
+  .club-tile::before {
+    opacity: 0.4;
+  }
+
+  .club-tile:hover::before {
+    opacity: 0.85;
+  }
+
+  .exec-glass-card::before {
+    opacity: 0.35;
+  }
+
+  .exec-glass-card:hover::before {
+    opacity: 0.8;
+  }
+
+  .deck-card-active::before {
+    opacity: 0.35;
+  }
+
+  .deck-card-active:hover::before {
+    opacity: 0.8;
+  }
+}
+
+/* ==========================================================================
+   MOBILE & DESKTOP ENHANCEMENTS FOR ABOUT PAGE & CARDS
+   ========================================================================== */
+
+/* Mobile Swipe Guide Banner */
+.mobile-swipe-guide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.06);
+  border: 1px dashed rgba(37, 99, 235, 0.25);
+  color: var(--blue-dark);
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mobile-swipe-guide__icon {
+  font-size: 0.85rem;
+  animation: nudge-x 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes nudge-x {
+  0% { transform: translateX(-2px); }
+  100% { transform: translateX(2px); }
+}
+
+@media (min-width: 768px) {
+  .mobile-swipe-guide {
+    display: none;
+  }
+}
+
+/* About Stats Grid */
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .about-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.about-stat-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 0.6rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: default;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-stat-badge:hover {
+  border-color: var(--border-blue);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.12);
+}
+
+.about-stat-badge__number {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  font-weight: 900;
+  color: var(--blue-dark);
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-stat-badge__label {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(0.65rem, 1.8vw, 0.72rem);
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
+/* Highlight Tags Bar */
+.about-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+.about-highlight-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.06);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  color: var(--text-primary);
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(0.7rem, 2vw, 0.78rem);
+  font-weight: 700;
+  cursor: default;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.about-highlight-tag:hover {
+  background: rgba(37, 99, 235, 0.12);
+  border-color: var(--blue);
+}
+
+/* Category Filter Tabs for Campus Clubs */
+.club-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0 2rem;
+  width: 100%;
+}
+
+.club-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(0.72rem, 2vw, 0.8rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.club-filter-btn:hover {
+  background: #ffffff;
+  border-color: var(--border-blue);
+  color: var(--blue-dark);
+}
+
+.club-filter-btn.is-active {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);
+}
+
+.club-filter-btn__count {
+  font-size: 0.68rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+}
+
+.club-filter-btn:not(.is-active) .club-filter-btn__count {
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--text-dim);
+}
+

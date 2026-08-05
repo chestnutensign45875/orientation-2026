@@ -7,15 +7,22 @@
   --bg-card-hover: #ffffff;
   --bg-glass: rgba(253, 251, 247, 0.9);
 
-  /* Light Theme Color Palette (Royal Blue, Golden Amber, Deep Indigo, Teal) */
+  /* Light Theme Color Palette with Dark Blue Accents */
   --blue: #2563eb;
   --blue-dark: #1e40af;
   --blue-glow: rgba(37, 99, 235, 0.15);
-  
+
+  /* Deep Dark Blue Blend Tokens */
+  --navy-deep: #0a192f;
+  --navy-accent: #0f2b5c;
+  --navy-blend: rgba(10, 25, 47, 0.12);
+  --navy-glow: rgba(15, 43, 92, 0.22);
+  --navy-border: rgba(15, 43, 92, 0.25);
+
   --amber: #d97706;
   --amber-gold: #f59e0b;
   --amber-glow: rgba(217, 119, 6, 0.15);
-  
+
   --indigo: #4f46e5;
   --teal: #0d9488;
   --cream: #ffffff;
@@ -79,6 +86,3 @@ a {
 button {
   font-family: inherit;
 }
-
-
-

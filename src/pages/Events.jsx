@@ -276,7 +276,11 @@ function Events() {
                             </div>
 
                             {/* EVENT GLASS CARD */}
-                            <div className="timeline-card">
+                            <motion.div
+                              className="timeline-card"
+                              whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                              whileTap={{ scale: 0.985 }}
+                            >
                               <div className="timeline-card__header">
                                 {/* DYNAMIC STATUS BADGE */}
                                 {status.type === 'live' && (
@@ -347,7 +351,7 @@ function Events() {
                                   🕒 {slot.timeRange}
                                 </span>
                               </div>
-                            </div>
+                            </motion.div>
                           </motion.div>
                         )
                       })}

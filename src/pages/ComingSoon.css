@@ -9,6 +9,7 @@
 }
 
 .coming-soon-card {
+  position: relative;
   width: min(960px, 100%);
   background: #faf8f5;
   border-radius: 12px;
@@ -21,6 +22,39 @@
   padding: clamp(2rem, 5vw, 3.25rem) clamp(2rem, 5vw, 3.5rem);
   align-items: center;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+.coming-soon-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(15, 43, 92, 0.06) 0px,
+      rgba(15, 43, 92, 0.06) 1px,
+      transparent 1px,
+      transparent 28px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(15, 43, 92, 0.06) 0px,
+      rgba(15, 43, 92, 0.06) 1px,
+      transparent 1px,
+      transparent 28px
+    );
+  mask-image: radial-gradient(ellipse at 0% 100%, black 0%, transparent 65%);
+  -webkit-mask-image: radial-gradient(ellipse at 0% 100%, black 0%, transparent 65%);
+  opacity: 0.55;
+}
+
+.coming-soon-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .coming-soon-content {
