@@ -7,7 +7,18 @@ import './Page.css'
 
 function Map() {
   const scrollRef = useRef(null)
+  const containerRef = useRef(null)
   const navigate = useNavigate()
+
+  const handleFullscreen = () => {
+    if (containerRef.current) {
+      if (containerRef.current.requestFullscreen) {
+        containerRef.current.requestFullscreen()
+      } else if (containerRef.current.webkitRequestFullscreen) {
+        containerRef.current.webkitRequestFullscreen()
+      }
+    }
+  }
 
   return (
     <article className="page">
@@ -24,18 +35,19 @@ function Map() {
           </div>
         </div>
 
+        {/* HERO HEADER */}
         <header className="page-hero">
           <InteractiveSparkles />
 
           <div className="page-hero__inner">
             <div className="page-eyebrow">
               <span className="page-eyebrow__dot" />
-              <span>NAVIGATION &amp; VENUES</span>
+              <span>INTERACTIVE 360° TOUR</span>
             </div>
 
-            <h1 className="page-welcome__line">CAMPUS MAP</h1>
+            <h1 className="page-welcome__line">CAMPUS VIRTUAL TOUR</h1>
             <p className="page-lead" style={{ marginTop: '1rem' }}>
-              Find your way around Poornima Institute campus, key orientation venues, auditoriums, labs, and student facilities.
+              Explore Poornima Institute campus in immersive 360° VR. Navigate auditoriums, academic blocks, labs, and orientation venues.
             </p>
           </div>
 
@@ -44,46 +56,61 @@ function Map() {
               <div className="page-scroll-line" />
               <span className="page-scroll-label">SCROLL</span>
             </div>
-            <button
-              type="button"
-              className="page-swipe-hint"
-              onClick={() => navigate('/about')}
-              aria-label="Back to About page"
-            >
-              <span className="page-swipe-hint__arrow">←</span>
-              <span>ABOUT</span>
-            </button>
           </div>
-
         </header>
 
-
-        <section className="page-content-wrap">
-          <div className="page-content">
+        {/* MAP SECTION */}
+        <section className="page-content-wrap" style={{ paddingBlock: '1rem 3rem' }}>
+          <div className="page-content" style={{ maxWidth: '1200px' }}>
             <RevealOnScroll scrollContainerRef={scrollRef}>
-              <div className="page-card">
-                <span className="page-card__corner page-card__corner--tl">+</span>
-                <span className="page-card__corner page-card__corner--tr">+</span>
-                <span className="page-card__corner page-card__corner--bl">+</span>
-                <span className="page-card__corner page-card__corner--br">+</span>
+              <div className="map-tour-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.75rem' }}>
+                <span className="page-card__pill page-card__pill--blue">360° IMMERSIVE VIEW</span>
+                <button
+                  type="button"
+                  onClick={handleFullscreen}
+                  style={{
+                    background: 'rgba(37, 99, 235, 0.08)',
+                    border: '1px solid var(--border-blue)',
+                    color: 'var(--blue-dark)',
+                    borderRadius: '999px',
+                    padding: '0.4rem 1rem',
+                    fontSize: '0.78rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.45rem',
+                  }}
+                >
+                  <span>⛶</span> FULLSCREEN 360° TOUR
+                </button>
+              </div>
 
-                <div className="page-card__header">
-                  <span className="page-card__tag">LOCATION // PIET JAIPUR</span>
-                  <span className="page-card__tag">INTERACTIVE GUIDE</span>
-                </div>
-
-                <h2 className="page-card__title">POORNIMA CAMPUS MAP</h2>
-
-                <div className="content-placeholder">
-                  <span className="content-placeholder__badge">
-                    /* FILL IN CAMPUS MAP / IMAGE EMBED HERE */
-                  </span>
-                  <p className="content-placeholder__hint">
-                    Add interactive SVG map, Google Maps embed, or campus diagram image here.
-                  </p>
-                </div>
+              {/* 360° IFRAME CONTAINER */}
+              <div className="map-iframe-wrapper" ref={containerRef}>
+                <iframe
+                  className="map-iframe"
+                  src="https://kuula.co/share/collection/7TZs8?logo=0&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1"
+                  title="Poornima Campus 360 Virtual Tour"
+                  allow="xr-spatial-tracking; gyroscope; accelerometer; compass; stereo; VR; fullscreen"
+                  allowFullScreen
+                  loading="lazy"
+                />
               </div>
             </RevealOnScroll>
+
+            {/* BACK TO ABOUT PILL BUTTON AT BOTTOM */}
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3.5rem', marginBottom: '1.5rem' }}>
+              <button
+                type="button"
+                className="page-swipe-hint"
+                onClick={() => navigate('/about')}
+                aria-label="Back to About page"
+              >
+                <span className="page-swipe-hint__arrow">←</span>
+                <span>BACK TO ABOUT</span>
+              </button>
+            </div>
           </div>
         </section>
       </div>
@@ -92,4 +119,3 @@ function Map() {
 }
 
 export default Map
-
