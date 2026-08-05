@@ -168,7 +168,7 @@ const CLUBS_DATA = [
       role: 'Captain',
       image: '/captains/mlsa.jpg',
       email: 'mlsa.lead@piet.ac.in',
-      instagram: 'https://instagram.com/mlsa_piet',
+      instagram: 'https://instagram.com/mlsa.piet',
     },
   },
   {
