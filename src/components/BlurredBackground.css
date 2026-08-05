@@ -21,16 +21,38 @@
   inset: 0;
   background:
     radial-gradient(
-      circle at 50% 25%,
-      rgba(37, 99, 235, 0.08) 0%,
-      transparent 65%
+      circle at 50% 15%,
+      rgba(15, 43, 92, 0.16) 0%,
+      rgba(37, 99, 235, 0.07) 45%,
+      transparent 75%
     ),
     linear-gradient(
       180deg,
-      rgba(253, 251, 247, 0.45) 0%,
-      rgba(253, 251, 247, 0.78) 55%,
+      rgba(10, 25, 47, 0.08) 0%,
+      rgba(253, 251, 247, 0.42) 30%,
+      rgba(253, 251, 247, 0.78) 65%,
       rgba(253, 251, 247, 0.94) 100%
     );
+}
+
+/* Mobile-first dark blue ambient vignette blend */
+@media (max-width: 640px) {
+  .blurred-bg__overlay {
+    background:
+      radial-gradient(
+        circle at 50% 20%,
+        rgba(10, 25, 47, 0.22) 0%,
+        rgba(15, 43, 92, 0.12) 50%,
+        transparent 80%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(10, 25, 47, 0.14) 0%,
+        rgba(253, 251, 247, 0.45) 35%,
+        rgba(253, 251, 247, 0.82) 70%,
+        rgba(253, 251, 247, 0.95) 100%
+      );
+  }
 }
 
 .blurred-bg__grain {

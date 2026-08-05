@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import BlurredBackground from '../components/BlurredBackground'
 import RevealOnScroll from '../components/RevealOnScroll'
 import InteractiveSparkles from '../components/InteractiveSparkles'
@@ -61,9 +62,11 @@ function Map() {
             <RevealOnScroll scrollContainerRef={scrollRef}>
               <div className="map-tour-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.75rem' }}>
                 <span className="page-card__pill page-card__pill--blue">360° IMMERSIVE VIEW</span>
-                <button
+                <motion.button
                   type="button"
                   onClick={handleFullscreen}
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.95 }}
                   style={{
                     background: 'rgba(37, 99, 235, 0.08)',
                     border: '1px solid var(--border-blue)',
@@ -79,11 +82,18 @@ function Map() {
                   }}
                 >
                   <span>⛶</span> FULLSCREEN 360° TOUR
-                </button>
+                </motion.button>
               </div>
 
               {/* 360° IFRAME CONTAINER */}
-              <div className="map-iframe-wrapper" ref={containerRef}>
+              <motion.div
+                className="map-iframe-wrapper"
+                ref={containerRef}
+                initial={{ opacity: 0, scale: 0.96 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+              >
                 <iframe
                   className="map-iframe"
                   src="https://kuula.co/share/collection/7TZs8?logo=0&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1"
@@ -92,7 +102,7 @@ function Map() {
                   allowFullScreen
                   loading="lazy"
                 />
-              </div>
+              </motion.div>
             </RevealOnScroll>
 
             {/* BACK TO ABOUT PILL BUTTON AT BOTTOM */}

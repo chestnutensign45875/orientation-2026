@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import BlurredBackground from '../components/BlurredBackground'
@@ -7,56 +7,7 @@ import InteractiveSparkles from '../components/InteractiveSparkles'
 import ExecutiveStackedDeck from '../components/ExecutiveStackedDeck'
 import './Page.css'
 
-const EXECUTIVE_LEADS = [
-  {
-    id: 'chair',
-    role: 'CHAIR',
-    name: 'Rohan Dey',
-    image: '/captains/chair.jpg',
-    badge: 'HEAD OF COUNCIL',
-    badgeClass: 'page-card__pill--blue',
-    initRotate: 14,
-    initX: 45,
-    targetRotate: 4,
-    targetX: 0,
-  },
-  {
-    id: 'advisory',
-    role: 'Advisory',
-    name: 'Anusha Shandilya',
-    image: '/captains/advisary.jpeg',
-    badge: 'HEAD OF COUNCIL',
-    badgeClass: 'page-card__pill--blue',
-    initRotate: -14,
-    initX: -45,
-    targetRotate: -4,
-    targetX: 0,
-  },
-  {
-    id: 'co-chair-1',
-    role: 'CO-CHAIR',
-    name: 'Suhani Kumari',
-    image: '/captains/co-chair1.jpg',
-    badge: 'EXECUTIVE BOARD',
-    badgeClass: 'page-card__pill--amber',
-    initRotate: -14,
-    initX: -45,
-    targetRotate: -4,
-    targetX: 0,
-  },
-  {
-    id: 'co-chair-2',
-    role: 'CO-CHAIR',
-    name: 'Purushotam Lingwal',
-    image: '/captains/co-chair2.jpg',
-    badge: 'EXECUTIVE BOARD',
-    badgeClass: 'page-card__pill--amber',
-    initRotate: 14,
-    initX: 45,
-    targetRotate: 4,
-    targetX: 0,
-  },
-]
+const CATEGORIES = ['ALL', 'TECHNICAL', 'CULTURAL', 'COMMUNITY', 'MEDIA & PUB', 'ATHLETICS']
 
 const CLUBS_DATA = [
   {
@@ -390,7 +341,6 @@ const CLUBS_DATA = [
     captain: {
       name: 'Rishabh Nandi',
       role: 'Captain',
-      // image: '/captains/co-chair.jpg',
       email: 'gateway.lead@piet.ac.in',
       instagram: 'https://instagram.com/gradgateway_piet',
     },
@@ -529,21 +479,48 @@ function Council() {
   const scrollRef = useRef(null)
   const navigate = useNavigate()
   const [activeClub, setActiveClub] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState('ALL')
+
+  const filteredClubs = useMemo(() => {
+    if (selectedCategory === 'ALL') return CLUBS_DATA
+    return CLUBS_DATA.filter((club) => club.category === selectedCategory)
+  }, [selectedCategory])
+
+  const categoryCounts = useMemo(() => {
+    const counts = { ALL: CLUBS_DATA.length }
+    CLUBS_DATA.forEach((club) => {
+      counts[club.category] = (counts[club.category] || 0) + 1
+    })
+    return counts
+  }, [])
 
   return (
     <article className="page">
       <BlurredBackground src="/page.png" scrollContainerRef={scrollRef} />
 
       <div className="page-scroll" ref={scrollRef}>
-        {/* TOP LOGOS BAR (Left: /piet.png | Right: /Logo.svg) */}
-        <div className="top-logos-bar">
-          <div className="top-logo-item">
+        {/* TOP LOGOS BAR (Left: /piet.png | Right: /Logo.svg) with Framer Motion */}
+        <motion.div
+          className="top-logos-bar"
+          initial={{ opacity: 0, y: -25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <motion.div
+            className="top-logo-item"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <img src="/piet.png" alt="PIET Logo" className="top-logo-img--left" />
-          </div>
-          <div className="top-logo-item">
+          </motion.div>
+          <motion.div
+            className="top-logo-item"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <img src="/Logo.svg" alt="ACM Logo" className="top-logo-img--right" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* HERO HEADER */}
         <header className="page-hero">
@@ -551,11 +528,22 @@ function Council() {
 
           <div className="page-hero__inner">
 
+            <motion.h1
+              className="page-welcome__line"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              STUDENT COUNCIL
+            </motion.h1>
 
-            <h1 className="page-welcome__line">STUDENT COUNCIL</h1>
-
-            {/* HERO 3D ROTATING CARD STACK */}
-            <div className="council-rotator-wrap">
+            {/* HERO 3D ROTATING CARD STACK WITH FLOAT ANIMATION */}
+            <motion.div
+              className="council-rotator-wrap"
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
               <div className="rotator-card">
                 <div className="rotator-card__content">
                   <img src="/council/1.jpeg" alt="Council 1" className="rotator-card__logo" />
@@ -571,80 +559,145 @@ function Council() {
                   <img src="/council/3.jpeg" alt="Council 3" className="rotator-card__logo" />
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <p className="page-lead" style={{ marginTop: '1rem' }}>
+            <motion.p
+              className="page-lead"
+              style={{ marginTop: '1rem' }}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.5 }}
+            >
               Explore campus student clubs, executive boards, and meet the captains leading Pehla Kadam 2026.
-            </p>
+            </motion.p>
 
             {/* EXECUTIVE BOARD CHAIR & CO-CHAIRS (Stacked Deck with Auto Switching) */}
-            <div className="exec-board-section">
+            <motion.div
+              className="exec-board-section"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45, duration: 0.6 }}
+            >
               <span className="page-card__pill page-card__pill--blue">EXECUTIVE BOARD</span>
-              <h2 className="page-card__title" style={{ marginTop: '0.6rem', fontSize: '1.6rem' }}>CHAIR &amp; CO-CHAIR S</h2>
+              <h2 className="page-card__title" style={{ marginTop: '0.6rem', fontSize: '1.6rem' }}>CHAIR &amp; CO-CHAIRS</h2>
               <ExecutiveStackedDeck />
-            </div>
+            </motion.div>
           </div>
 
+          {/* Animated Scroll Cue Footer */}
           <div className="page-hero__footer">
-            <div className="page-scroll-cue">
-              <div className="page-scroll-line" />
-              <span className="page-scroll-label">SCROLL</span>
-            </div>
+            <motion.div
+              className="page-scroll-cue"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              <motion.div
+                className="page-scroll-line"
+                animate={{ scaleY: [0.6, 1.1, 0.6], opacity: [0.4, 1, 0.4] }}
+                transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+              />
+              <motion.span
+                className="page-scroll-label"
+                animate={{ y: [0, 4, 0] }}
+                transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+              >
+                SCROLL
+              </motion.span>
+            </motion.div>
           </div>
         </header>
 
-        {/* CLUBS GRID SECTION */}
+        {/* CLUBS GRID SECTION WITH ANIMATED CATEGORY TABS */}
         <section className="page-content-wrap">
           <div className="page-content">
             <RevealOnScroll scrollContainerRef={scrollRef}>
               <div className="clubs-section-header">
                 <span className="page-card__pill page-card__pill--amber">CAMPUS CLUBS</span>
-                <h2 className="page-card__title" style={{ marginTop: '0.75rem' }}>SELECT A CLUB TO VIEW DETAILS</h2>
+                <h2 className="page-card__title" style={{ marginTop: '0.75rem' }}>EXPLORE 29 CAMPUS CLUBS</h2>
               </div>
 
-              <div className="clubs-grid">
-                {CLUBS_DATA.map((club) => (
-                  <motion.div
-                    key={club.id}
-                    className="club-tile"
-                    onClick={() => setActiveClub(club)}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <div className="club-tile__header">
-                      <div className="club-tile__logo-wrap">
-                        <img src={club.logo} alt={`${club.name} Logo`} className="club-tile__logo-img" />
-                      </div>
-                      <span className={`page-card__pill ${club.badgeClass}`}>
-                        {club.category}
+              {/* Animated Category Filter Pills */}
+              <div className="club-filter-tabs">
+                {CATEGORIES.map((cat) => {
+                  const isActive = selectedCategory === cat
+                  return (
+                    <motion.button
+                      key={cat}
+                      type="button"
+                      className={`club-filter-btn ${isActive ? 'is-active' : ''}`}
+                      onClick={() => setSelectedCategory(cat)}
+                      whileHover={{ scale: 1.04 }}
+                      whileTap={{ scale: 0.94 }}
+                      layout
+                    >
+                      <span>{cat}</span>
+                      <span className="club-filter-btn__count">
+                        {categoryCounts[cat] || 0}
                       </span>
-                    </div>
-
-                    <div>
-                      <h3 className="club-tile__title">{club.name}</h3>
-                      <p className="club-tile__brief">{club.brief}</p>
-                    </div>
-
-                    <div className="club-tile__action">
-                      <span>VIEW CLUB &amp; CAPTAIN</span>
-                      <span className="club-tile__action-arrow">→</span>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.button>
+                  )
+                })}
               </div>
+
+              {/* Filterable Club Tiles Grid with Layout Transitions */}
+              <motion.div className="clubs-grid" layout>
+                <AnimatePresence mode="popLayout">
+                  {filteredClubs.map((club, idx) => (
+                    <motion.div
+                      key={club.id}
+                      className="club-tile"
+                      onClick={() => setActiveClub(club)}
+                      layout
+                      initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.9, y: -15 }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 380,
+                        damping: 26,
+                        delay: Math.min(idx * 0.03, 0.3),
+                      }}
+                      whileHover={{ scale: 1.025, y: -3 }}
+                      whileTap={{ scale: 0.96 }}
+                    >
+                      <div className="club-tile__header">
+                        <div className="club-tile__logo-wrap">
+                          <img src={club.logo} alt={`${club.name} Logo`} className="club-tile__logo-img" />
+                        </div>
+                        <span className={`page-card__pill ${club.badgeClass}`}>
+                          {club.category}
+                        </span>
+                      </div>
+
+                      <div>
+                        <h3 className="club-tile__title">{club.name}</h3>
+                        <p className="club-tile__brief">{club.brief}</p>
+                      </div>
+
+                      <div className="club-tile__action">
+                        <span>VIEW CLUB &amp; CAPTAIN</span>
+                        <span className="club-tile__action-arrow">→</span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </motion.div>
             </RevealOnScroll>
 
-            {/* BACK TO ABOUT PILL BUTTON AT BOTTOM OF PAGE */}
+            {/* BACK TO ABOUT PILL BUTTON WITH TAP ANIMATION */}
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3.5rem', marginBottom: '1.5rem' }}>
-              <button
+              <motion.button
                 type="button"
                 className="page-swipe-hint"
                 onClick={() => navigate('/about')}
                 aria-label="Back to About page"
+                whileHover={{ scale: 1.04, x: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <span className="page-swipe-hint__arrow">←</span>
                 <span>BACK TO ABOUT</span>
-              </button>
+              </motion.button>
             </div>
           </div>
         </section>
@@ -662,20 +715,22 @@ function Council() {
           >
             <motion.div
               className="club-modal-container"
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              initial={{ scale: 0.88, opacity: 0, y: 25 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              transition={{ type: 'spring', stiffness: 380, damping: 28 }}
+              exit={{ scale: 0.88, opacity: 0, y: 20 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 26 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button
+              <motion.button
                 type="button"
                 className="club-modal__close-btn"
                 onClick={() => setActiveClub(null)}
                 aria-label="Close modal"
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
               >
                 ✕
-              </button>
+              </motion.button>
 
               <div className="club-tile__header" style={{ marginBottom: '1rem' }}>
                 <div className="club-tile__logo-wrap" style={{ width: '4rem', height: '4rem' }}>
@@ -709,15 +764,17 @@ function Council() {
                 <div className="captain-info">
                   <span className="captain-role">{activeClub.captain.role}</span>
                   <h3 className="captain-name">{activeClub.captain.name}</h3>
-                  <p className="captain-bio">{activeClub.captain.bio}</p>
+                  {activeClub.captain.bio && <p className="captain-bio">{activeClub.captain.bio}</p>}
 
                   {/* CAPTAIN INSTAGRAM & EMAIL SOCIAL LINKS */}
                   <div className="captain-social-bar">
-                    <a
+                    <motion.a
                       href={activeClub.captain.instagram || 'https://instagram.com/'}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="captain-social-link captain-social-link--insta"
+                      whileHover={{ scale: 1.04 }}
+                      whileTap={{ scale: 0.94 }}
                     >
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -725,18 +782,20 @@ function Council() {
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                       </svg>
                       <span>INSTAGRAM</span>
-                    </a>
+                    </motion.a>
 
-                    <a
+                    <motion.a
                       href={`mailto:${activeClub.captain.email}`}
                       className="captain-social-link captain-social-link--email"
+                      whileHover={{ scale: 1.04 }}
+                      whileTap={{ scale: 0.94 }}
                     >
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                         <polyline points="22,6 12,13 2,6" />
                       </svg>
                       <span>EMAIL</span>
-                    </a>
+                    </motion.a>
                   </div>
                 </div>
               </div>
@@ -749,3 +808,4 @@ function Council() {
 }
 
 export default Council
+

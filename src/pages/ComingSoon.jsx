@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import './ComingSoon.css'
 
 function formatTime(date) {
@@ -93,7 +94,13 @@ function ComingSoon() {
 
   return (
     <div className="coming-soon-page">
-      <section className="coming-soon-card" aria-labelledby="headline">
+      <motion.section
+        className="coming-soon-card"
+        aria-labelledby="headline"
+        initial={{ opacity: 0, scale: 0.94, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+      >
         <div className="coming-soon-content">
           <time className="coming-soon-clock" dateTime={now.toISOString()}>
             {formatTime(now)}
@@ -119,7 +126,7 @@ function ComingSoon() {
         <div className="coming-soon-visual">
           <RocketIllustration />
         </div>
-      </section>
+      </motion.section>
     </div>
   )
 }
