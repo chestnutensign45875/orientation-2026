@@ -183,8 +183,8 @@ const CLUBS_DATA = [
       name: 'Yash Raj Sodha',
       role: 'Captain',
       image: '/captains/inventive.jpeg',
-      email: 'inventive.lead@piet.ac.in',
-      instagram: 'https://instagram.com/inventive_piet',
+      email: 'inventive.club@poornima.org',
+      instagram: 'https://www.instagram.com/inventiveclubpiet',
     },
   },
   {
@@ -326,7 +326,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Vaibhav Sharma',
       role: 'Captain',
-      image: '/captains/nss.jpg',
+      image: '/captains/nss.jpeg',
       email: 'nss.piet@poornima.org',
       instagram: 'https://www.instagram.com/nss.pietjaipur',
     },
