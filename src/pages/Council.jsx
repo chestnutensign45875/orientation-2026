@@ -118,7 +118,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Divyansh Dua',
       role: 'Captain',
-      image: '/captains/cyborgs.jpg',
+      image: '/captains/cyborgs.jpeg',
       email: 'cyborgs.lead@piet.ac.in',
       instagram: 'https://instagram.com/cyborgs_piet',
     },
@@ -150,7 +150,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Kartik Khurana',
       role: 'Captain',
-      image: '/captains/ieee.jpg',
+      image: '/captains/ieee.jpeg',
       email: 'ieee@poornima.org',
       instagram: 'https://www.instagram.com/ieee.piet',
     },
@@ -182,7 +182,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Yash Raj Sodha',
       role: 'Captain',
-      image: '/captains/inventive.jpg',
+      image: '/captains/inventive.jpeg',
       email: 'inventive.lead@piet.ac.in',
       instagram: 'https://instagram.com/inventive_piet',
     },
@@ -262,7 +262,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Himanshu Soni',
       role: 'Captain',
-      image: '/captains/co-chair.jpg',
+      image: '/captains/spic.jpeg',
       email: 'spicmacay.lead@piet.ac.in',
       instagram: 'https://instagram.com/spicmacay_piet',
     },
