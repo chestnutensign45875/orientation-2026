@@ -391,8 +391,8 @@ const CLUBS_DATA = [
       name: 'Rishabh Nandi',
       role: 'Captain',
       // image: '/captains/co-chair.jpg',
-      email: 'gateway.lead@piet.ac.in',
-      instagram: 'https://instagram.com/gradgateway_piet',
+      email: 'graduate@poornima.org',
+      instagram: 'https://instagram.com/graduategateway.club',
     },
   },
   {
