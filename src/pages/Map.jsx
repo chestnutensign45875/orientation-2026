@@ -40,10 +40,6 @@ function Map() {
           <InteractiveSparkles />
 
           <div className="page-hero__inner">
-            <div className="page-eyebrow">
-              <span className="page-eyebrow__dot" />
-              <span>INTERACTIVE 360° TOUR</span>
-            </div>
 
             <h1 className="page-welcome__line">CAMPUS VIRTUAL TOUR</h1>
             <p className="page-lead" style={{ marginTop: '1rem' }}>
@@ -72,7 +68,7 @@ function Map() {
                     background: 'rgba(37, 99, 235, 0.08)',
                     border: '1px solid var(--border-blue)',
                     color: 'var(--blue-dark)',
-                    borderRadius: '999px',
+                    borderRadius: '9px',
                     padding: '0.4rem 1rem',
                     fontSize: '0.78rem',
                     fontWeight: 700,

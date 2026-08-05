@@ -1664,7 +1664,7 @@
   position: relative;
   width: 100%;
   height: clamp(540px, 78vh, 850px);
-  border-radius: 24px;
+  border-radius: 9px;
   overflow: hidden;
   border: 1.5px solid var(--border-blue);
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
