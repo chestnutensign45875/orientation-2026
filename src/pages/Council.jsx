@@ -404,9 +404,9 @@ const CLUBS_DATA = [
     captain: {
       name: 'Anisha Agarwal',
       role: 'Captain',
-      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030743/wise_ncnnlf.jpg',
-      email: 'wise.lead@piet.ac.in',
-      instagram: 'https://instagram.com/wise_piet',
+      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786039874/wise_kd755w.jpg',
+      email: 'wise@poornima.org',
+      instagram: 'https://instagram.com/wise.piet_',
     },
   },
   {
