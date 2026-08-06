@@ -112,20 +112,20 @@
 
 /* LEFT LOGO (piet.png) SIZE SETTINGS */
 .top-logo-img--left {
-  width: clamp(3.2rem, 10vw, 4.8rem);
+  width: clamp(4.5rem, 14vw, 7.2rem);
   height: auto;
-  max-height: 4rem;
+  max-height: 6rem;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.12));
 }
 
 /* RIGHT LOGO (Logo.svg) SIZE SETTINGS */
 .top-logo-img--right {
-  width: clamp(3.2rem, 10vw, 4.8rem);
+  width: clamp(4.5rem, 14vw, 7.2rem);
   height: auto;
-  max-height: 4rem;
+  max-height: 6rem;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.12));
 }
 
 /* ========================================================
@@ -3076,5 +3076,51 @@
   .page-content {
     max-width: 88rem;
   }
+}
+
+/* ========================================================
+   BRANCHES STACKED DECK DUAL BUTTON STYLES
+   ======================================================== */
+.branch-action-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.5rem;
+  border-radius: 12px;
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.branch-action-btn--primary {
+  background: var(--blue);
+  color: #ffffff;
+  border: 1px solid var(--blue-dark);
+}
+
+.branch-action-btn--primary:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
+
+.branch-action-btn--secondary {
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--blue-dark);
+  border: 1px solid var(--border-blue);
+}
+
+.branch-action-btn--secondary:hover {
+  background: #ffffff;
+  border-color: var(--blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
 }
 

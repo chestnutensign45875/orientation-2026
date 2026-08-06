@@ -5,6 +5,7 @@ import RotatingWords from '../components/RotatingWords'
 import TextReveal from '../components/TextReveal'
 import RevealOnScroll from '../components/RevealOnScroll'
 import StackedCardDeck from '../components/StackedCardDeck'
+import BranchStackedDeck from '../components/BranchStackedDeck'
 import InteractiveSparkles from '../components/InteractiveSparkles'
 import './Page.css'
 
@@ -280,6 +281,40 @@ function About() {
                     Whether you're stepping into your first classroom or your first college fest, this is where your journey truly begins.
                   </p>
                 </div>
+              </motion.div>
+            </RevealOnScroll>
+
+            {/* Card 4: Academic Branches & Course Schemes (Stacked Deck Carousel) */}
+            <RevealOnScroll scrollContainerRef={scrollRef} delay={0.25}>
+              <motion.div
+                className="page-card"
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                whileTap={{ scale: 0.985 }}
+              >
+                <div className="page-card__header">
+                  <motion.span
+                    className="page-card__pill"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    ACADEMICS &amp; DEPARTMENTS
+                  </motion.span>
+                  <motion.span
+                    className="page-card__pill page-card__pill--amber"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    COURSES &amp; SCHEMES
+                  </motion.span>
+                </div>
+
+                <h2 className="page-card__title">Academic Branches &amp; Courses</h2>
+                <p className="page-lead" style={{ fontSize: '0.92rem', marginBottom: '0.5rem' }}>
+                  Explore engineering specializations, credit schemes, and detailed academic curriculum at PIET.
+                </p>
+
+                {/* BRANCHES STACKED CARD DECK */}
+                <BranchStackedDeck />
               </motion.div>
             </RevealOnScroll>
 
