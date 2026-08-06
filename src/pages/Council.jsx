@@ -23,7 +23,7 @@ const CLUBS_DATA = [
       role: 'Captain',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786034898/IMG-20260806-WA0011.jpg_bzrkua.jpg',
       email: 'acm@poornima.org',
-      instagram: 'https://instagram.com/acm_chapter.piet',
+      instagram: 'https://www.instagram.com/acm.chapter_piet',
     },
   },
   {
