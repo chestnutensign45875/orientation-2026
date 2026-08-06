@@ -95,7 +95,7 @@ const CLUBS_DATA = [
     name: 'IEEE',
     category: 'TECHNICAL',
     badgeClass: 'page-card__pill--amber',
-    logo: '/clubs/ieee.png',
+    logo: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030617/ieee_q3lp7j.png',
     brief: 'A space to explore technology beyond the classroom through workshops, hands-on sessions, industry interaction and innovative projects.',
     fullDesc: 'IEEE student branch brings international tech standards, research paper workshops, hardware design sessions, and global network connections to campus.',
     captain: {
