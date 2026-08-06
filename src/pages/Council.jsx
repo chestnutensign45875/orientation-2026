@@ -420,7 +420,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Aarohi Jalan',
       role: 'Captain',
-      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030743/iete_bgdvzl.jpg',
+      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786037559/iete1_ytdqcw.jpg',
       email: 'piet.ietechapter@poornima.org',
       instagram: 'https://instagram.com/iete.piet_jaipur',
     },
