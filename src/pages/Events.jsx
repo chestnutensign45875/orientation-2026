@@ -141,16 +141,16 @@ function Events() {
 
   return (
     <article className="page">
-      <BlurredBackground src="/page.png" scrollContainerRef={scrollRef} />
+      <BlurredBackground src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031295/page_rx5cr9.png" scrollContainerRef={scrollRef} />
 
       <div className="page-scroll" ref={scrollRef}>
         {/* TOP LOGOS BAR (Left: /piet.png | Right: /Logo.svg) */}
         <div className="top-logos-bar">
           <div className="top-logo-item">
-            <img src="/piet.png" alt="PIET Logo" className="top-logo-img--left" />
+            <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031296/piet_ppyo4j.png" alt="PIET Logo" className="top-logo-img--left" />
           </div>
           <div className="top-logo-item">
-            <img src="/Logo.svg" alt="ACM Logo" className="top-logo-img--right" />
+            <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031295/Logo_mieuoo.svg" alt="ACM Logo" className="top-logo-img--right" />
           </div>
         </div>
 
@@ -167,17 +167,17 @@ function Events() {
             <div className="council-rotator-wrap">
               <div className="rotator-card">
                 <div className="rotator-card__content">
-                  <img src="/events/1.jpeg" alt="Past Event Highlight 1" className="rotator-card__logo" />
+                  <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030716/1_jatxuh.jpg" alt="Past Event Highlight 1" className="rotator-card__logo" />
                 </div>
               </div>
               <div className="rotator-card">
                 <div className="rotator-card__content">
-                  <img src="/events/2.jpeg" alt="Past Event Highlight 2" className="rotator-card__logo" />
+                  <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031173/2_bo0jvx.jpg" alt="Past Event Highlight 2" className="rotator-card__logo" />
                 </div>
               </div>
               <div className="rotator-card">
                 <div className="rotator-card__content">
-                  <img src="/events/3.jpeg" alt="Past Event Highlight 3" className="rotator-card__logo" />
+                  <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030718/3_vmgn3w.jpg" alt="Past Event Highlight 3" className="rotator-card__logo" />
                 </div>
               </div>
             </div>

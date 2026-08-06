@@ -1886,6 +1886,44 @@
   }
 }
 
+/* Desktop Viewport Optimization (Reduces excess side space without altering mobile view) */
+@media (min-width: 1024px) {
+  .page-hero {
+    padding-top: 4rem;
+  }
+
+  .page-hero__inner {
+    max-width: 66rem;
+  }
+
+  .page-lead {
+    max-width: 48rem;
+  }
+
+  .page-content {
+    max-width: 76rem;
+    padding-inline: 2.5rem;
+  }
+
+  .clubs-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+
+  .events-lock-card {
+    max-width: 680px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .page-content {
+    max-width: 82rem;
+  }
+  .page-hero__inner {
+    max-width: 72rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
 
   .page-swipe-hint__arrow,
@@ -3039,4 +3077,4 @@
     max-width: 88rem;
   }
 }
-
+

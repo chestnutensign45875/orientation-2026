@@ -59,7 +59,7 @@ function About() {
   return (
     <article className="page">
       {/* Campus Background (/page.png) at 70% opacity with soft light overlay */}
-      <BlurredBackground src="/page.png" scrollContainerRef={scrollRef} />
+      <BlurredBackground src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031295/page_rx5cr9.png" scrollContainerRef={scrollRef} />
 
       <div className="page-scroll" ref={scrollRef}>
         {/* TOP LOGOS BAR (Left: /piet.png | Right: /Logo.svg) with Framer Motion Entrance */}
@@ -74,14 +74,14 @@ function About() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src="/piet.png" alt="PIET Logo" className="top-logo-img--left" />
+            <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031296/piet_ppyo4j.png" alt="PIET Logo" className="top-logo-img--left" />
           </motion.div>
           <motion.div
             className="top-logo-item"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src="/Logo.svg" alt="ACM Logo" className="top-logo-img--right" />
+            <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031295/Logo_mieuoo.svg" alt="ACM Logo" className="top-logo-img--right" />
           </motion.div>
         </motion.div>
 
