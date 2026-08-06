@@ -421,8 +421,8 @@ const CLUBS_DATA = [
       name: 'Aarohi Jalan',
       role: 'Captain',
       image: '/captains/iete.jpg',
-      email: 'iete.lead@piet.ac.in',
-      instagram: 'https://instagram.com/iete_piet',
+      email: 'piet.ietechapter@poornima.org',
+      instagram: 'https://instagram.com/iete.piet_jaipur',
     },
   },
   {
