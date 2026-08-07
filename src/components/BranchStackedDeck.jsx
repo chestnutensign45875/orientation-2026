@@ -5,29 +5,58 @@ const BRANCHES_DATA = [
   {
     id: 'cse',
     branchName: 'COMPUTER SCIENCE & ENGG.',
-    category: 'B.TECH CSE',
+    category: 'COMPUTER ENGINEERING',
     badgeClass: 'page-card__pill--blue',
     desc: 'Core computer science, software engineering, algorithms, full-stack development, and cloud computing systems.',
     curriculumUrl: '#',
-    creditSchemeUrl: '#',
+  },
+  {
+    id: 'cse',
+    branchName: 'COMPUTER SCIENCE & ENGG.(REGIONAL)',
+    category: 'COMPUTER ENGINEERING',
+    badgeClass: 'page-card__pill--blue',
+    desc: 'Core computer science, software engineering, algorithms, full-stack development, and cloud computing systems.',
+    curriculumUrl: '#',
   },
   {
     id: 'cse-ai',
     branchName: 'CSE (ARTIFICIAL INTELLIGENCE)',
-    category: 'AI & MACHINE LEARNING',
+    category: 'ARTIFICIAL INTELLIGENCE & DATA SCIENCE',
     badgeClass: 'page-card__pill--amber',
     desc: 'Neural networks, machine learning models, computer vision, natural language processing, and autonomous systems.',
     curriculumUrl: '#',
-    creditSchemeUrl: '#',
+  },
+  {
+    id: 'cse-ai',
+    branchName: 'CSE (ARTIFICIAL INTELLIGENCE & DATA SCIENCE)',
+    category: 'ARTIFICIAL INTELLIGENCE & DATA SCIENCE',
+    badgeClass: 'page-card__pill--amber',
+    desc: 'Neural networks, machine learning models, computer vision, natural language processing, and autonomous systems.',
+    curriculumUrl: '#',
   },
   {
     id: 'cse-ds',
     branchName: 'CSE (DATA SCIENCE)',
-    category: 'DATA SCIENCE & ANALYTICS',
+    category: 'ARTIFICIAL INTELLIGENCE & DATA SCIENCE',
     badgeClass: 'page-card__pill--blue',
     desc: 'Big data analytics, statistical modeling, predictive analytics, enterprise data pipelines, and data visualization.',
     curriculumUrl: '#',
-    creditSchemeUrl: '#',
+  },
+  {
+    id: 'cse-iot',
+    branchName: 'CSE (INTERNET OF THINGS)',
+    category: 'INTERNET OF THINGS',
+    badgeClass: 'page-card__pill--blue',
+    desc: 'Big data analytics, statistical modeling, predictive analytics, enterprise data pipelines, and data visualization.',
+    curriculumUrl: '#',
+  },
+  {
+    id: 'ece',
+    branchName: 'ELECTRONICS AND COMMUNICATION ENGINEERING',
+    category: 'INTERNET OF THINGS',
+    badgeClass: 'page-card__pill--blue',
+    desc: 'Big data analytics, statistical modeling, predictive analytics, enterprise data pipelines, and data visualization.',
+    curriculumUrl: '#',
   },
 ]
 
@@ -182,16 +211,6 @@ export default function BranchStackedDeck() {
                 }}
               >
                 <span>CURRICULUM</span>
-              </button>
-              <button
-                type="button"
-                className="branch-action-btn branch-action-btn--secondary"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  handleButtonClick(activeCard.creditSchemeUrl, 'Credit Scheme')
-                }}
-              >
-                <span>CREDIT SCHEME</span>
               </button>
             </div>
           </motion.div>
