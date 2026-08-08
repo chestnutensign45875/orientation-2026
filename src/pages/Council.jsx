@@ -166,8 +166,8 @@ const CLUBS_DATA = [
       name: 'Tarushi Khandelwal',
       role: 'Captain',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030739/vibrant-vision_nndfpa.jpg',
-      email: 'vibrantvision.lead@piet.ac.in',
-      instagram: 'https://instagram.com/vibrantvision_piet',
+      email: 'vibrant@poornima.org',
+      instagram: 'https://instagram.com/vibrantvision.piet',
     },
   },
   {
@@ -230,8 +230,8 @@ const CLUBS_DATA = [
       name: 'Kanupriya Sharma',
       role: 'Captain',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030738/literary_jzyms4.jpg',
-      email: 'literary.lead@piet.ac.in',
-      instagram: 'https://instagram.com/literary_piet',
+      email: 'literaryclub.piet@poornima.org',
+      instagram: 'https://instagram.com/literary_club_piet',
     },
   },
   {
