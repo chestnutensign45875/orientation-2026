@@ -379,10 +379,10 @@ const CLUBS_DATA = [
   },
   {
     id: 'helping-hands-club',
-    name: 'Helping Hands',
+    name: 'Happy Hive',
     category: 'COMMUNITY',
     badgeClass: 'page-card__pill--blue',
-    logo: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030615/helping_hands_etwgl9.png',
+    logo: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786206898/HAPPY_HIVE_LOGO_pxk2hp.png',
     brief: 'A student-led community focused on giving back through blood donation, donation drives, awareness activities and community service.',
     fullDesc: 'Focused on community support, essential resource distribution, and educational empowerment initiatives such as blood donation and Vastradaan drives.',
     captain: {
