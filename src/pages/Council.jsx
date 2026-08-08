@@ -38,8 +38,8 @@ const CLUBS_DATA = [
       name: 'Aarya Maheshwari',
       role: 'Captain',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030741/aws_znbes1.jpg',
-      email: 'aws.lead@piet.ac.in',
-      instagram: 'https://instagram.com/aws_piet',
+      email: 'aws@poornima.org',
+      instagram: 'https://instagram.com/aws.piet',
     },
   },
   {
@@ -182,8 +182,8 @@ const CLUBS_DATA = [
       name: 'Mahika Khanna',
       role: 'Captain',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030730/dk_elfvuo.jpg',
-      email: 'dk.lead@piet.ac.in',
-      instagram: 'https://instagram.com/desikalakaarz_piet',
+      email: 'desikalakar@poornima.org',
+      instagram: 'https://www.instagram.com/kalakarzz',
     },
   },
   {
