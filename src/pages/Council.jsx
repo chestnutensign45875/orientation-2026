@@ -85,9 +85,9 @@ const CLUBS_DATA = [
     captain: {
       name: 'Ananya Gupta',
       role: 'Captain',
-      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030743/iste_e6jn3b.jpg',
-      email: 'iste.lead@piet.ac.in',
-      instagram: 'https://instagram.com/iste_piet',
+      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786255831/WhatsApp_Image_2026-08-09_at_11.37.42_ip7teo.jpg',
+      email: 'iste@poornima.org',
+      instagram: 'https://www.instagram.com/iste_piet',
     },
   },
   {
