@@ -37,7 +37,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Aarya Maheshwari',
       role: 'Captain',
-      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030741/aws_znbes1.jpg',
+      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786349669/copy_of_img_0827_utn3wk.heic',
       email: 'aws@poornima.org',
       instagram: 'https://instagram.com/aws.piet',
     },
