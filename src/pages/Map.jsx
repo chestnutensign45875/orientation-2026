@@ -1,23 +1,124 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { MapContainer, ImageOverlay, Marker, Popup, useMapEvents, useMap } from 'react-leaflet'
+import { CRS } from 'leaflet'
+import L from 'leaflet'
+import 'leaflet/dist/leaflet.css'
 import BlurredBackground from '../components/BlurredBackground'
 import RevealOnScroll from '../components/RevealOnScroll'
 import InteractiveSparkles from '../components/InteractiveSparkles'
 import './Page.css'
 
+// High-resolution map image dimensions rendered at 300 DPI from PDF (public/campusMap.png)
+const IMAGE_WIDTH = 4960
+const IMAGE_HEIGHT = 7016
+const bounds = [[0, 0], [IMAGE_HEIGHT, IMAGE_WIDTH]]
+
+// Custom Leaflet DivIcon matching campus light blue theme
+const createCampusPin = (iconSymbol = '📍') => {
+  return L.divIcon({
+    className: 'custom-campus-marker',
+    html: `
+      <div class="marker-pin">
+        <span class="marker-pin__inner">${iconSymbol}</span>
+      </div>
+    `,
+    iconSize: [36, 36],
+    iconAnchor: [18, 36],
+    popupAnchor: [0, -32],
+  })
+}
+
+// Sample initial campus locations (coordinates can be updated using ClickLogger)
+const BUILDINGS = [
+  {
+    id: 1,
+    name: 'Main Academic Block (PIET)',
+    position: [4697, 1426],
+    info: 'Central Administrative Offices, Dean Office, CSE & AI Labs',
+    icon: '🏫',
+  },
+  {
+    id: 2,
+    name: 'The Dome',
+    position: [3231, 3956],
+    info: 'Main dome for Pehla Kadam 2026 Orientation Events',
+    icon: '🎭',
+  },
+  {
+    id: 3,
+    name: 'PIET Central Library',
+    position: [4795, 2595],
+    info: 'Open 8:00 AM – 5:00 PM | Quiet Study Zones & E-Resources',
+    icon: '📚',
+  },
+  {
+    id: 4,
+    name: 'PIET Canteen',
+    position: [2761, 2637],
+    info: 'Food Court & Refreshment',
+    icon: '☕',
+  },
+  {
+    id: 5,
+    name: 'Volleyball Court',
+    position: [1576, 2637],
+    info: 'Sports & Athletics Ground',
+    icon: '🏀',
+  },
+  {
+    id: 6,
+    name: 'Open Library',
+    position: [2236, 1063],
+    info: 'Secondary Library , open 24 hours',
+    icon: "📚",
+  }
+]
+
+/**
+ * Temporary ClickLogger Component
+ * Logs clicked [lat, lng] coordinates in console and updates UI banner for easy copying
+ */
+function ClickLogger({ onCoordClick }) {
+  useMapEvents({
+    click(e) {
+      const lat = Math.round(e.latlng.lat)
+      const lng = Math.round(e.latlng.lng)
+      console.log('Clicked Coordinates:', [lat, lng])
+      if (onCoordClick) {
+        onCoordClick([lat, lng])
+      }
+    },
+  })
+  return null
+}
+
+/**
+ * MapController component to fit bounds automatically on mount
+ */
+function MapController({ bounds }) {
+  const map = useMap()
+  useEffect(() => {
+    if (map && bounds) {
+      map.fitBounds(bounds, { padding: [12, 12] })
+    }
+  }, [map, bounds])
+  return null
+}
+
 function Map() {
   const scrollRef = useRef(null)
-  const containerRef = useRef(null)
   const navigate = useNavigate()
+  const [lastClickedCoord, setLastClickedCoord] = useState(null)
+  const [copiedText, setCopiedText] = useState(false)
 
-  const handleFullscreen = () => {
-    if (containerRef.current) {
-      if (containerRef.current.requestFullscreen) {
-        containerRef.current.requestFullscreen()
-      } else if (containerRef.current.webkitRequestFullscreen) {
-        containerRef.current.webkitRequestFullscreen()
-      }
+  const handleCopyCoord = () => {
+    if (lastClickedCoord) {
+      const coordStr = `[${lastClickedCoord[0]}, ${lastClickedCoord[1]}]`
+      navigator.clipboard.writeText(coordStr)
+      setCopiedText(true)
+      setTimeout(() => setCopiedText(false), 2000)
     }
   }
 
@@ -26,7 +127,7 @@ function Map() {
       <BlurredBackground src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031295/page_rx5cr9.png" scrollContainerRef={scrollRef} />
 
       <div className="page-scroll" ref={scrollRef}>
-        {/* TOP LOGOS BAR (Left: /piet.png | Right: /Logo.svg) */}
+        {/* TOP LOGOS BAR (Left: piet.png | Right: Logo.svg) */}
         <div className="top-logos-bar">
           <div className="top-logo-item">
             <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031296/piet_ppyo4j.png" alt="PIET Logo" className="top-logo-img--left" />
@@ -36,73 +137,90 @@ function Map() {
           </div>
         </div>
 
-        {/* HERO HEADER */}
-        <header className="page-hero">
-          <InteractiveSparkles />
-
-          <div className="page-hero__inner">
-
-            <h1 className="page-welcome__line">CAMPUS VIRTUAL TOUR</h1>
-            <p className="page-lead" style={{ marginTop: '1rem' }}>
-              Explore Poornima Institute campus in immersive 360° VR. Navigate auditoriums, academic blocks, labs, and orientation venues.
-            </p>
-          </div>
-
-          <div className="page-hero__footer">
-            <div className="page-scroll-cue">
-              <div className="page-scroll-line" />
-              <span className="page-scroll-label">SCROLL</span>
-            </div>
-          </div>
-        </header>
-
-        {/* MAP SECTION */}
-        <section className="page-content-wrap" style={{ paddingBlock: '1rem 3rem' }}>
+        {/* MAP SECTION - FIRST THING USER SEES */}
+        <section className="page-content-wrap" style={{ paddingBlock: 'clamp(5rem, 12vw, 7rem) 3rem' }}>
           <div className="page-content" style={{ maxWidth: '1200px' }}>
             <RevealOnScroll scrollContainerRef={scrollRef}>
-              <div className="map-tour-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.75rem' }}>
-                <span className="page-card__pill page-card__pill--blue">360° IMMERSIVE VIEW</span>
-                <motion.button
-                  type="button"
-                  onClick={handleFullscreen}
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.95 }}
-                  style={{
-                    background: 'rgba(37, 99, 235, 0.08)',
-                    border: '1px solid var(--border-blue)',
-                    color: 'var(--blue-dark)',
-                    borderRadius: '9px',
-                    padding: '0.4rem 1rem',
-                    fontSize: '0.78rem',
-                    fontWeight: 700,
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.45rem',
-                  }}
+
+              {/* TEMPORARY CLICK LOGGER BANNER */}
+              {lastClickedCoord && (
+                <motion.div
+                  className="map-coord-banner"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
                 >
-                  <span>⛶</span> FULLSCREEN 360° TOUR
-                </motion.button>
+                  <span>
+                    📍 Last Clicked Coordinate: <strong>[{lastClickedCoord[0]}, {lastClickedCoord[1]}]</strong>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={handleCopyCoord}
+                    style={{
+                      background: 'var(--blue)',
+                      color: '#ffffff',
+                      border: 'none',
+                      padding: '0.35rem 0.85rem',
+                      borderRadius: '8px',
+                      fontSize: '0.75rem',
+                      fontWeight: 800,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {copiedText ? '✓ COPIED!' : '📋 COPY COORD'}
+                  </button>
+                </motion.div>
+              )}
+
+              {/* REACT LEAFLET MAP CONTAINER */}
+              <div className="leaflet-map-wrapper">
+                <MapContainer
+                  crs={CRS.Simple}
+                  bounds={bounds}
+                  maxBounds={bounds}
+                  maxBoundsViscosity={0.5}
+                  minZoom={-5}
+                  maxZoom={3}
+                  zoomSnap={0.25}
+                  scrollWheelZoom={true}
+                  style={{ height: '78vh', width: '100%' }}
+                >
+                  <MapController bounds={bounds} />
+                  <ImageOverlay url="/campusMap.png" bounds={bounds} />
+
+                  {/* Temporary ClickLogger for Coordinate Selection */}
+                  <ClickLogger onCoordClick={(coord) => setLastClickedCoord(coord)} />
+
+                  {/* Campus Location Markers */}
+                  {BUILDINGS.map((b) => (
+                    <Marker key={b.id} position={b.position} icon={createCampusPin(b.icon || '📍')}>
+                      <Popup>
+                        <div className="map-popup-title">{b.name}</div>
+                        <div className="map-popup-info">{b.info}</div>
+                      </Popup>
+                    </Marker>
+                  ))}
+                </MapContainer>
               </div>
 
-              {/* 360° IFRAME CONTAINER */}
-              <motion.div
-                className="map-iframe-wrapper"
-                ref={containerRef}
-                initial={{ opacity: 0, scale: 0.96 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
-              >
-                <iframe
-                  className="map-iframe"
-                  src="https://kuula.co/share/collection/7TZs8?logo=0&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1"
-                  title="Poornima Campus 360 Virtual Tour"
-                  allow="xr-spatial-tracking; gyroscope; accelerometer; compass; stereo; VR; fullscreen"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </motion.div>
+              {/* 
+                PREVIOUS 360° VR IFRAME TOUR (COMMENTED OUT AS REQUESTED)
+                <motion.div
+                  className="map-iframe-wrapper"
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, ease: 'easeOut' }}
+                >
+                  <iframe
+                    className="map-iframe"
+                    src="https://kuula.co/share/collection/7TZs8?logo=0&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1"
+                    title="Poornima Campus 360 Virtual Tour"
+                    allow="xr-spatial-tracking; gyroscope; accelerometer; compass; stereo; VR; fullscreen"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </motion.div>
+              */}
             </RevealOnScroll>
 
             {/* BACK TO ABOUT PILL BUTTON AT BOTTOM */}

@@ -3172,3 +3172,113 @@
   }
 }
 
+/* ========================================================
+   INTERACTIVE LEAFLET CAMPUS MAP STYLES & GLASS POPUPS
+   ======================================================== */
+.leaflet-map-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid var(--border-blue);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.14);
+  background: #fdfbf7;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: clamp(520px, 75vh, 800px);
+  background: #f4efe6 !important;
+  font-family: var(--font-sans), sans-serif;
+  border-radius: 20px;
+}
+
+/* Custom Pin Marker */
+.custom-campus-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+}
+
+.marker-pin {
+  width: 36px;
+  height: 36px;
+  border-radius: 50% 50% 50% 0;
+  background: var(--blue);
+  position: relative;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+  transition: all 0.25s ease;
+  border: 2px solid #ffffff;
+}
+
+.marker-pin:hover {
+  transform: rotate(-45deg) scale(1.18);
+  background: var(--blue-dark);
+}
+
+.marker-pin__inner {
+  transform: rotate(45deg);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* Leaflet Popup Custom Styling */
+.leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1.5px solid var(--border-blue) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15) !important;
+  padding: 0.25rem !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid var(--border-blue) !important;
+}
+
+.leaflet-popup-content {
+  margin: 0.75rem 1rem !important;
+  font-family: var(--font-sans), sans-serif !important;
+}
+
+.map-popup-title {
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.map-popup-info {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.map-coord-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 1.1rem;
+  background: rgba(37, 99, 235, 0.1);
+  border: 1.5px dashed var(--blue);
+  border-radius: 12px;
+  color: var(--blue-dark);
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+}
+
