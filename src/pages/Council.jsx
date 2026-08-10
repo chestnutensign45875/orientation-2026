@@ -640,38 +640,34 @@ function Council() {
                 })}
               </div>
 
-              {/* Filterable Club Tiles Grid with Layout Transitions */}
+              {/* Filterable Club Tiles Grid with Shared Expandable Layout Animations */}
               <motion.div className="clubs-grid" layout>
                 <AnimatePresence mode="popLayout">
-                  {filteredClubs.map((club, idx) => (
+                  {filteredClubs.map((club) => (
                     <motion.div
                       key={club.id}
+                      layoutId={`expandable-card-${club.id}`}
                       className="club-tile"
                       onClick={() => setActiveClub(club)}
-                      layout
-                      initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.9, y: -15 }}
                       transition={{
                         type: 'spring',
-                        stiffness: 380,
-                        damping: 26,
-                        delay: Math.min(idx * 0.03, 0.3),
+                        stiffness: 350,
+                        damping: 28,
                       }}
                       whileHover={{ scale: 1.025, y: -3 }}
                       whileTap={{ scale: 0.96 }}
                     >
                       <div className="club-tile__header">
-                        <div className="club-tile__logo-wrap">
+                        <motion.div className="club-tile__logo-wrap" layoutId={`expandable-logo-${club.id}`}>
                           <img src={club.logo} alt={`${club.name} Logo`} className="club-tile__logo-img" />
-                        </div>
-                        <span className={`page-card__pill ${club.badgeClass}`}>
+                        </motion.div>
+                        <motion.span layoutId={`expandable-pill-${club.id}`} className={`page-card__pill ${club.badgeClass}`}>
                           {club.category}
-                        </span>
+                        </motion.span>
                       </div>
 
                       <div>
-                        <h3 className="club-tile__title">{club.name}</h3>
+                        <motion.h3 layoutId={`expandable-title-${club.id}`} className="club-tile__title">{club.name}</motion.h3>
                         <p className="club-tile__brief">{club.brief}</p>
                       </div>
 
@@ -703,7 +699,7 @@ function Council() {
         </section>
       </div>
 
-      {/* CLUB DETAIL MODAL OVERLAY */}
+      {/* EXPANDABLE PROFILE CARD MODAL OVERLAY */}
       <AnimatePresence>
         {activeClub && (
           <motion.div
@@ -711,14 +707,13 @@ function Council() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
             onClick={() => setActiveClub(null)}
           >
             <motion.div
+              layoutId={`expandable-card-${activeClub.id}`}
               className="club-modal-container"
-              initial={{ scale: 0.88, opacity: 0, y: 25 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.88, opacity: 0, y: 20 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 26 }}
+              transition={{ type: 'spring', stiffness: 350, damping: 28 }}
               onClick={(e) => e.stopPropagation()}
             >
               <motion.button
@@ -733,72 +728,79 @@ function Council() {
               </motion.button>
 
               <div className="club-tile__header" style={{ marginBottom: '1rem' }}>
-                <div className="club-tile__logo-wrap" style={{ width: '4rem', height: '4rem' }}>
+                <motion.div className="club-tile__logo-wrap" layoutId={`expandable-logo-${activeClub.id}`} style={{ width: '4rem', height: '4rem' }}>
                   <img src={activeClub.logo} alt={activeClub.name} className="club-tile__logo-img" />
-                </div>
-                <span className={`page-card__pill ${activeClub.badgeClass}`}>
+                </motion.div>
+                <motion.span layoutId={`expandable-pill-${activeClub.id}`} className={`page-card__pill ${activeClub.badgeClass}`}>
                   {activeClub.category}
-                </span>
+                </motion.span>
               </div>
 
-              <h2 className="page-card__title" style={{ fontSize: '1.8rem', textAlign: 'left', marginBottom: '0.75rem' }}>
+              <motion.h2 layoutId={`expandable-title-${activeClub.id}`} className="page-card__title" style={{ fontSize: '1.8rem', textAlign: 'left', marginBottom: '0.75rem' }}>
                 {activeClub.name}
-              </h2>
+              </motion.h2>
 
-              <p className="page-lead" style={{ textAlign: 'left', maxWidth: '100%', fontSize: '0.98rem' }}>
-                {activeClub.fullDesc}
-              </p>
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 8 }}
+                transition={{ delay: 0.12, duration: 0.22 }}
+              >
+                <p className="page-lead" style={{ textAlign: 'left', maxWidth: '100%', fontSize: '0.98rem' }}>
+                  {activeClub.fullDesc}
+                </p>
 
-              {/* CAPTAIN PROFILE CARD */}
-              <div className="captain-card">
-                <div className="captain-avatar-frame">
-                  <img
-                    src={activeClub.captain.image}
-                    alt={activeClub.captain.name}
-                    className="captain-avatar-img"
-                    onError={(e) => {
-                      e.target.src = '/Logo.svg'
-                    }}
-                  />
-                </div>
-                <div className="captain-info">
-                  <span className="captain-role">{activeClub.captain.role}</span>
-                  <h3 className="captain-name">{activeClub.captain.name}</h3>
-                  {activeClub.captain.bio && <p className="captain-bio">{activeClub.captain.bio}</p>}
+                {/* CAPTAIN PROFILE CARD */}
+                <div className="captain-card">
+                  <div className="captain-avatar-frame">
+                    <img
+                      src={activeClub.captain.image}
+                      alt={activeClub.captain.name}
+                      className="captain-avatar-img"
+                      onError={(e) => {
+                        e.target.src = '/Logo.svg'
+                      }}
+                    />
+                  </div>
+                  <div className="captain-info">
+                    <span className="captain-role">{activeClub.captain.role}</span>
+                    <h3 className="captain-name">{activeClub.captain.name}</h3>
+                    {activeClub.captain.bio && <p className="captain-bio">{activeClub.captain.bio}</p>}
 
-                  {/* CAPTAIN INSTAGRAM & EMAIL SOCIAL LINKS */}
-                  <div className="captain-social-bar">
-                    <motion.a
-                      href={activeClub.captain.instagram || 'https://instagram.com/'}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="captain-social-link captain-social-link--insta"
-                      whileHover={{ scale: 1.04 }}
-                      whileTap={{ scale: 0.94 }}
-                    >
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                      </svg>
-                      <span>INSTAGRAM</span>
-                    </motion.a>
+                    {/* CAPTAIN INSTAGRAM & EMAIL SOCIAL LINKS */}
+                    <div className="captain-social-bar">
+                      <motion.a
+                        href={activeClub.captain.instagram || 'https://instagram.com/'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="captain-social-link captain-social-link--insta"
+                        whileHover={{ scale: 1.04 }}
+                        whileTap={{ scale: 0.94 }}
+                      >
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                        <span>INSTAGRAM</span>
+                      </motion.a>
 
-                    <motion.a
-                      href={`mailto:${activeClub.captain.email}`}
-                      className="captain-social-link captain-social-link--email"
-                      whileHover={{ scale: 1.04 }}
-                      whileTap={{ scale: 0.94 }}
-                    >
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                        <polyline points="22,6 12,13 2,6" />
-                      </svg>
-                      <span>EMAIL</span>
-                    </motion.a>
+                      <motion.a
+                        href={`mailto:${activeClub.captain.email}`}
+                        className="captain-social-link captain-social-link--email"
+                        whileHover={{ scale: 1.04 }}
+                        whileTap={{ scale: 0.94 }}
+                      >
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                          <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <span>EMAIL</span>
+                      </motion.a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </motion.div>
         )}
