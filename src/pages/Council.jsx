@@ -253,7 +253,7 @@ const CLUBS_DATA = [
   {
     id: 'perfect-pixel-club',
     name: 'Perfect Pixels',
-    category: 'COMMUNITY',
+    category: 'MEDIA & PUB',
     badgeClass: 'page-card__pill--blue',
     logo: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030618/perfect_pixels_powh90.png',
     brief: 'Capture campus life through photography, videography and visual storytelling while learning editing, content creation and filmmaking.',
