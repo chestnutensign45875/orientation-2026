@@ -341,6 +341,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Rishabh Nandi',
       role: 'Captain',
+      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1785948493/samples/man-portrait.jpg',
       email: 'gateway.lead@piet.ac.in',
       instagram: 'https://instagram.com/gradgateway_piet',
     },
