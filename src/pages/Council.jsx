@@ -261,7 +261,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Anshul Sharma',
       role: 'Captain',
-      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030738/pp_n6jyqf.jpg',
+      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786348542/WhatsApp_Image_2026-08-10_at_13.23.15_dmt908.jpg',
       email: 'pixels.lead@piet.ac.in',
       instagram: 'https://instagram.com/perfectpixels_piet',
     },
