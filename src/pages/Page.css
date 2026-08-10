@@ -3124,3 +3124,51 @@
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
 }
 
+/* ========================================================
+   MOBILE & TOUCH HARDWARE PERFORMANCE ACCELERATION (60FPS)
+   ======================================================== */
+.page-card,
+.club-tile,
+.deck-card-active,
+.exec-glass-card,
+.timeline-card,
+.rotator-card,
+.club-modal-container {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  /* Disable expensive real-time GPU backdrop-blur on mobile screens for smooth 60fps scrolling */
+  .page-card,
+  .club-tile,
+  .exec-glass-card,
+  .club-modal-overlay,
+  .club-modal-container,
+  .top-logos-bar {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .page-card {
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  .club-tile {
+    background: rgba(255, 255, 255, 0.98);
+  }
+
+  .exec-glass-card {
+    background: rgba(255, 255, 255, 0.98);
+  }
+
+  .club-modal-overlay {
+    background: rgba(15, 23, 42, 0.75);
+  }
+
+  .club-modal-container {
+    background: #ffffff;
+  }
+}
+
