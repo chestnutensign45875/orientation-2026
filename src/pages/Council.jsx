@@ -273,7 +273,7 @@ const CLUBS_DATA = [
     badgeClass: 'page-card__pill--blue',
     logo: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030616/nss_trfmvg.png',
     brief: 'Get involved beyond campus through cleanliness drives, educational outreach, awareness campaigns and community service initiatives.',
-    fullDesc: 'The NSS Club encourages students to engage with society through community service, awareness drives, volunteering and social initiatives. It helps develop empathy, responsibility and leadership while creating opportunities to contribute to the community. ',
+    fullDesc: 'The NSS Club encourages students to engage with society through community service, awareness drives, volunteering and social initiatives. It helps creating opportunities to contribute to the community. ',
     captain: {
       name: 'Vaibhav Sharma',
       role: 'Captain',
