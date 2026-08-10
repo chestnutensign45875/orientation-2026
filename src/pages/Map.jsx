@@ -76,23 +76,27 @@ const BUILDINGS = [
   }
 ]
 
+// Set to true when you want to pick coordinates, or false for production view
+const ENABLE_CLICK_LOGGER = false
+
 /**
- * Temporary ClickLogger Component
+ * ClickLogger Component
  * Logs clicked [lat, lng] coordinates in console and updates UI banner for easy copying
  */
-// function ClickLogger({ onCoordClick }) {
-//   useMapEvents({
-//     click(e) {
-//       const lat = Math.round(e.latlng.lat)
-//       const lng = Math.round(e.latlng.lng)
-//       console.log('Clicked Coordinates:', [lat, lng])
-//       if (onCoordClick) {
-//         onCoordClick([lat, lng])
-//       }
-//     },
-//   })
-//   return null
-// }
+function ClickLogger({ onCoordClick }) {
+  useMapEvents({
+    click(e) {
+      if (!ENABLE_CLICK_LOGGER) return
+      const lat = Math.round(e.latlng.lat)
+      const lng = Math.round(e.latlng.lng)
+      console.log('Clicked Coordinates:', [lat, lng])
+      if (onCoordClick) {
+        onCoordClick([lat, lng])
+      }
+    },
+  })
+  return null
+}
 
 /**
  * MapController component to fit bounds automatically on mount
@@ -142,8 +146,8 @@ function Map() {
           <div className="page-content" style={{ maxWidth: '1200px' }}>
             <RevealOnScroll scrollContainerRef={scrollRef}>
 
-              {/* TEMPORARY CLICK LOGGER BANNER */}
-              {lastClickedCoord && (
+              {/* CLICK LOGGER BANNER (Only visible when ENABLE_CLICK_LOGGER = true) */}
+              {ENABLE_CLICK_LOGGER && lastClickedCoord && (
                 <motion.div
                   className="map-coord-banner"
                   initial={{ opacity: 0, y: -10 }}
@@ -187,8 +191,8 @@ function Map() {
                   <MapController bounds={bounds} />
                   <ImageOverlay url="/campusMap.png" bounds={bounds} />
 
-                  {/* Temporary ClickLogger for Coordinate Selection */}
-                  <ClickLogger onCoordClick={(coord) => setLastClickedCoord(coord)} />
+                  {/* ClickLogger for Coordinate Selection */}
+                  {ENABLE_CLICK_LOGGER && <ClickLogger onCoordClick={(coord) => setLastClickedCoord(coord)} />}
 
                   {/* Campus Location Markers */}
                   {BUILDINGS.map((b) => (
