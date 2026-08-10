@@ -7,7 +7,6 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import BlurredBackground from '../components/BlurredBackground'
 import RevealOnScroll from '../components/RevealOnScroll'
-import InteractiveSparkles from '../components/InteractiveSparkles'
 import './Page.css'
 
 // High-resolution map image dimensions rendered at 300 DPI from PDF (public/campusMap.png)
