@@ -80,19 +80,19 @@ const BUILDINGS = [
  * Temporary ClickLogger Component
  * Logs clicked [lat, lng] coordinates in console and updates UI banner for easy copying
  */
-function ClickLogger({ onCoordClick }) {
-  useMapEvents({
-    click(e) {
-      const lat = Math.round(e.latlng.lat)
-      const lng = Math.round(e.latlng.lng)
-      console.log('Clicked Coordinates:', [lat, lng])
-      if (onCoordClick) {
-        onCoordClick([lat, lng])
-      }
-    },
-  })
-  return null
-}
+// function ClickLogger({ onCoordClick }) {
+//   useMapEvents({
+//     click(e) {
+//       const lat = Math.round(e.latlng.lat)
+//       const lng = Math.round(e.latlng.lng)
+//       console.log('Clicked Coordinates:', [lat, lng])
+//       if (onCoordClick) {
+//         onCoordClick([lat, lng])
+//       }
+//     },
+//   })
+//   return null
+// }
 
 /**
  * MapController component to fit bounds automatically on mount
