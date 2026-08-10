@@ -49,7 +49,7 @@ const CLUBS_DATA = [
     badgeClass: 'page-card__pill--amber',
     logo: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030615/debug_fcig0h.png',
     brief: 'For coders and problem-solvers who enjoy DSA, coding contests, hackathons, and figuring out why their code decided to stop working.',
-    fullDesc: "Programming, web development, Android development and gaming — all under one roof. Students explore backend development, cloud computing, cybersecurity and Linux through activities such as Backend Matters, Cloud Roadmap, CyberQuest and Linux Unlocked.",
+    fullDesc: "Programming, web development, DSA — all under one roof. Students explore backend development, cloud computing, cybersecurity and Linux through activities all year.",
     captain: {
       name: 'Ayush Sharma',
       role: 'Captain',
