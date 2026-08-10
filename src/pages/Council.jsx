@@ -293,9 +293,9 @@ const CLUBS_DATA = [
     captain: {
       name: 'Shalini Choudhary',
       role: 'Captain',
-      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030745/origin_pz58nc.jpg',
-      email: 'origin.lead@piet.ac.in',
-      instagram: 'https://instagram.com/origin_piet',
+      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786351606/WhatsApp_Image_2026-08-10_at_14.15.03_fcksxb.jpg',
+      email: 'origin.club@poornima.org',
+      instagram: 'https://instagram.com/origin.poornima',
     },
   },
   {
