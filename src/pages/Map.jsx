@@ -38,7 +38,7 @@ const BUILDINGS = [
   },
   {
     id: 2,
-    name: 'The Dome & Arbania Auditorium',
+    name: 'The Dome',
     category: 'AUDITORIUMS',
     position: [3335, 3896],
     info: 'Main auditorium & dome for Pehla Kadam 2026 Orientation Events',
@@ -56,10 +56,10 @@ const BUILDINGS = [
   },
   {
     id: 4,
-    name: 'PIET Canteen & Food Court',
+    name: 'PIET Canteen',
     category: 'DINING',
     position: [2761, 2637],
-    info: 'Food Court, Refreshments & Student Lounge',
+    info: 'Food Court, Refreshments',
     iconEmoji: '☕',
     color: '#059669', // Emerald Green
   },
