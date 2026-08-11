@@ -54,7 +54,7 @@ const cardsData = [
     path: '/council',
     category: 'LEADERSHIP & CLUBS',
     badgeClass: 'nav-card__badge--teal',
-    title: 'STUDENT COUNCIL',
+    title: "STUDENTS' COUNCIL",
     desc: 'Meet the student leads,  mentors, and team behind Pehla Kadam 2026.',
     btnText: 'MEET COUNCIL →',
     icon: (

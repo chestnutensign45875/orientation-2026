@@ -469,7 +469,7 @@ const CLUBS_DATA = [
     captain: {
       name: 'Ojasva Dixit',
       role: 'Captain',
-      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030731/iks_ejnw8s.jpg',
+      image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786444361/WhatsApp_Image_2026-08-11_at_15.48.05_c2h4gq.jpg',
       email: 'iks.lead@piet.ac.in',
       instagram: 'https://instagram.com/iks_piet',
     },
@@ -535,7 +535,7 @@ function Council() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              STUDENT COUNCIL
+              STUDENTS' COUNCIL
             </motion.h1>
 
             {/* HERO 3D ROTATING CARD STACK WITH FLOAT ANIMATION */}
@@ -811,4 +811,3 @@ function Council() {
 }
 
 export default Council
-
