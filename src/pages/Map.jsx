@@ -9,7 +9,6 @@ import BlurredBackground from '../components/BlurredBackground'
 import RevealOnScroll from '../components/RevealOnScroll'
 import './Page.css'
 
-// High-resolution map image dimensions (public/campusMap.png)
 const IMAGE_WIDTH = 4960
 const IMAGE_HEIGHT = 7016
 const bounds = [[0, 0], [IMAGE_HEIGHT, IMAGE_WIDTH]]
