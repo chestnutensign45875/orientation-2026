@@ -13,7 +13,6 @@ const IMAGE_WIDTH = 4960
 const IMAGE_HEIGHT = 7016
 const bounds = [[0, 0], [IMAGE_HEIGHT, IMAGE_WIDTH]]
 
-// Category filter definitions
 const CATEGORIES = [
   { id: 'ALL', label: 'ALL LOCATIONS', icon: '📍' },
   { id: 'ACADEMICS', label: 'ACADEMICS', icon: '🏛️' },
