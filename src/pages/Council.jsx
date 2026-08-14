@@ -1,5 +1,5 @@
-import { useState, useRef, useMemo } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useRef, useMemo, useEffect, useCallback } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import BlurredBackground from '../components/BlurredBackground'
 import RevealOnScroll from '../components/RevealOnScroll'
@@ -479,8 +479,41 @@ const CLUBS_DATA = [
 function Council() {
   const scrollRef = useRef(null)
   const navigate = useNavigate()
-  const [activeClub, setActiveClub] = useState(null)
+  const location = useLocation()
   const [selectedCategory, setSelectedCategory] = useState('ALL')
+
+  // Derive active club directly from URL hash (e.g. #club-acm)
+  const activeClub = useMemo(() => {
+    if (location.hash && location.hash.startsWith('#club-')) {
+      const clubId = location.hash.replace('#club-', '')
+      return CLUBS_DATA.find((c) => c.id.toLowerCase() === clubId.toLowerCase()) || null
+    }
+    return null
+  }, [location.hash])
+
+  const handleOpenClub = useCallback((club) => {
+    navigate(`#club-${club.id}`)
+  }, [navigate])
+
+  const handleCloseClub = useCallback(() => {
+    if (location.hash && location.hash.startsWith('#club-')) {
+      navigate(-1)
+    }
+  }, [location.hash, navigate])
+
+  // Close modal when Escape key is pressed
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        if (activeClub) {
+          e.preventDefault()
+          handleCloseClub()
+        }
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [activeClub, handleCloseClub])
 
   const filteredClubs = useMemo(() => {
     if (selectedCategory === 'ALL') return CLUBS_DATA
@@ -649,7 +682,7 @@ function Council() {
                       key={club.id}
                       layoutId={`expandable-card-${club.id}`}
                       className="club-tile"
-                      onClick={() => setActiveClub(club)}
+                      onClick={() => handleOpenClub(club)}
                       transition={{
                         type: 'spring',
                         stiffness: 350,
@@ -709,7 +742,7 @@ function Council() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            onClick={() => setActiveClub(null)}
+            onClick={handleCloseClub}
           >
             <motion.div
               layoutId={`expandable-card-${activeClub.id}`}
@@ -720,7 +753,7 @@ function Council() {
               <motion.button
                 type="button"
                 className="club-modal__close-btn"
-                onClick={() => setActiveClub(null)}
+                onClick={handleCloseClub}
                 aria-label="Close modal"
                 whileHover={{ scale: 1.1, rotate: 90 }}
                 whileTap={{ scale: 0.9 }}
