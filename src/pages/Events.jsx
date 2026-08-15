@@ -158,7 +158,15 @@ function Events() {
           <div className="top-logo-item">
             <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031296/piet_ppyo4j.png" alt="PIET Logo" className="top-logo-img--left" />
           </div>
-          <div className="top-logo-item">
+          <div
+            className="top-logo-item top-logo-item--interactive"
+            onClick={() => setForceUnlock((prev) => !prev)}
+            role="button"
+            tabIndex={0}
+            aria-label="Toggle Schedule Preview State"
+            title="Toggle Schedule Preview"
+            onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setForceUnlock((prev) => !prev)}
+          >
             <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031295/Logo_mieuoo.svg" alt="ACM Logo" className="top-logo-img--right" />
           </div>
         </div>
@@ -215,26 +223,6 @@ function Events() {
         <section className="page-content-wrap">
           <div className="page-content">
             <RevealOnScroll scrollContainerRef={scrollRef}>
-              {/* PREVIEW TOGGLE (For testing & demonstration) */}
-              <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem' }}>
-                <button
-                  type="button"
-                  onClick={() => setForceUnlock(!forceUnlock)}
-                  style={{
-                    background: 'rgba(37, 99, 235, 0.08)',
-                    border: '1px solid var(--border-blue)',
-                    color: 'var(--blue-dark)',
-                    borderRadius: '999px',
-                    padding: '0.3rem 0.85rem',
-                    fontSize: '0.75rem',
-                    fontWeight: 700,
-                    cursor: 'pointer',
-                  }}
-                >
-                  {isUnlocked ? '🔒 PREVIEW LOCKED STATE' : '🔓 PREVIEW UNLOCKED TIMELINE'}
-                </button>
-              </div>
-
               {/* IF LOCKED (< 8 HOURS BEFORE FIRST SLOT) */}
               {!isUnlocked ? (
                 <motion.div

@@ -110,6 +110,16 @@
   align-items: center;
 }
 
+.top-logo-item--interactive {
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s var(--ease-spring), opacity 0.2s ease;
+}
+
+.top-logo-item--interactive:active {
+  transform: scale(0.92);
+}
+
 /* LEFT LOGO (piet.png) SIZE SETTINGS */
 .top-logo-img--left {
   width: clamp(4.5rem, 14vw, 7.2rem);
