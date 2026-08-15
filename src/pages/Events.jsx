@@ -99,7 +99,7 @@ function getEventStatus(dateStr, slot, now) {
   const diffMins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60))
   const diffSecs = Math.floor((diffMs % (1000 * 60)) / 1000)
 
-  let countdownText = ''
+  let countdownText
   if (diffHrs > 24) {
     const days = Math.floor(diffHrs / 24)
     countdownText = `STARTING IN ${days}d ${diffHrs % 24}h`
@@ -139,11 +139,20 @@ function Events() {
   const lockSecs = Math.floor((lockDiffMs % (1000 * 60)) / 1000)
   const lockTimerText = `${String(lockHrs).padStart(2, '0')}h ${String(lockMins).padStart(2, '0')}m ${String(lockSecs).padStart(2, '0')}s`
 
+  const scrollToTimeline = () => {
+    if (scrollRef.current) {
+      const target = scrollRef.current.querySelector('.timeline-item, .events-lock-card')
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
+    }
+  }
+
   return (
-    <article className="page">
+    <article className="page page--events">
       <BlurredBackground src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031295/page_rx5cr9.png" scrollContainerRef={scrollRef} />
 
-      <div className="page-scroll" ref={scrollRef}>
+      <div className="page-scroll page-scroll--events" ref={scrollRef}>
         {/* TOP LOGOS BAR (Left: /piet.png | Right: /Logo.svg) */}
         <div className="top-logos-bar">
           <div className="top-logo-item">
@@ -188,7 +197,14 @@ function Events() {
           </div>
 
           <div className="page-hero__footer">
-            <div className="page-scroll-cue">
+            <div
+              className="page-scroll-cue"
+              onClick={scrollToTimeline}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && scrollToTimeline()}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="page-scroll-line" />
               <span className="page-scroll-label">SCROLL</span>
             </div>
@@ -200,24 +216,24 @@ function Events() {
           <div className="page-content">
             <RevealOnScroll scrollContainerRef={scrollRef}>
               {/* PREVIEW TOGGLE (For testing & demonstration) */}
-              {/*<div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem' }}>*/}
-              {/*  <button*/}
-              {/*    type="button"*/}
-              {/*    onClick={() => setForceUnlock(!forceUnlock)}*/}
-              {/*    style={{*/}
-              {/*      background: 'rgba(37, 99, 235, 0.08)',*/}
-              {/*      border: '1px solid var(--border-blue)',*/}
-              {/*      color: 'var(--blue-dark)',*/}
-              {/*      borderRadius: '999px',*/}
-              {/*      padding: '0.3rem 0.85rem',*/}
-              {/*      fontSize: '0.75rem',*/}
-              {/*      fontWeight: 700,*/}
-              {/*      cursor: 'pointer',*/}
-              {/*    }}*/}
-              {/*  >*/}
-              {/*    {isUnlocked ? '🔒 PREVIEW LOCKED STATE' : '🔓 PREVIEW UNLOCKED TIMELINE'}*/}
-              {/*  </button>*/}
-              {/*</div>*/}
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem' }}>
+                <button
+                  type="button"
+                  onClick={() => setForceUnlock(!forceUnlock)}
+                  style={{
+                    background: 'rgba(37, 99, 235, 0.08)',
+                    border: '1px solid var(--border-blue)',
+                    color: 'var(--blue-dark)',
+                    borderRadius: '999px',
+                    padding: '0.3rem 0.85rem',
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                  }}
+                >
+                  {isUnlocked ? '🔒 PREVIEW LOCKED STATE' : '🔓 PREVIEW UNLOCKED TIMELINE'}
+                </button>
+              </div>
 
               {/* IF LOCKED (< 8 HOURS BEFORE FIRST SLOT) */}
               {!isUnlocked ? (
@@ -331,12 +347,13 @@ function Events() {
                                     className="timeline-card__image-placeholder"
                                     style={{ display: slot.image ? 'none' : 'flex' }}
                                   >
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                                      <circle cx="8.5" cy="8.5" r="1.5" />
-                                      <polyline points="21 15 16 10 5 21" />
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                      <rect x="4" y="2" width="16" height="20" rx="3" />
+                                      <circle cx="9" cy="8" r="1.5" />
+                                      <path d="m20 16-4.5-4.5a1.5 1.5 0 0 0-2.12 0L5 19.8" />
                                     </svg>
-                                    <span>EVENT IMAGE HOLDER ({slot.slotNum})</span>
+                                    <span className="timeline-card__placeholder-title">EVENT POSTER ({slot.slotNum})</span>
+                                    <span className="timeline-card__placeholder-sub">Portrait Format</span>
                                   </div>
                                 </div>
                               ) : null}
@@ -362,7 +379,7 @@ function Events() {
             </RevealOnScroll>
 
             {/* BACK TO ABOUT PILL BUTTON AT BOTTOM OF PAGE */}
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3.5rem', marginBottom: '1.5rem' }}>
+            <div className="events-bottom-nav" style={{ display: 'flex', justifyContent: 'center', marginTop: '3.5rem', marginBottom: '1.5rem' }}>
               <button
                 type="button"
                 className="page-swipe-hint"
