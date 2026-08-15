@@ -471,7 +471,7 @@ const CLUBS_DATA = [
       role: 'Captain',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786444361/WhatsApp_Image_2026-08-11_at_15.48.05_c2h4gq.jpg',
       email: 'iks.lead@piet.ac.in',
-      instagram: 'https://instagram.com/iks_piet',
+      instagram: 'https://www.instagram.com/iks.pietjaipur',
     },
   },
 ]
