@@ -7,6 +7,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import BlurredBackground from '../components/BlurredBackground'
 import RevealOnScroll from '../components/RevealOnScroll'
+import Footer from '../components/Footer'
 import './Page.css'
 
 const IMAGE_WIDTH = 4960
@@ -346,6 +347,9 @@ function Map() {
             </div>
           </div>
         </section>
+
+        {/* SITE FOOTER */}
+        <Footer />
       </div>
     </article>
   )

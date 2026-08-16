@@ -7,6 +7,7 @@ import RevealOnScroll from '../components/RevealOnScroll'
 import StackedCardDeck from '../components/StackedCardDeck'
 import BranchStackedDeck from '../components/BranchStackedDeck'
 import InteractiveSparkles from '../components/InteractiveSparkles'
+import Footer from '../components/Footer'
 import './Page.css'
 
 /**
@@ -328,6 +329,9 @@ function About() {
 
           </div>
         </section>
+
+        {/* SITE FOOTER */}
+        <Footer />
       </div>
     </article>
   )

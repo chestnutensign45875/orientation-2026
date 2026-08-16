@@ -5,6 +5,7 @@ import BlurredBackground from '../components/BlurredBackground'
 import RevealOnScroll from '../components/RevealOnScroll'
 import InteractiveSparkles from '../components/InteractiveSparkles'
 import ExecutiveStackedDeck from '../components/ExecutiveStackedDeck'
+import Footer from '../components/Footer'
 import './Page.css'
 
 const CATEGORIES = ['ALL', 'TECHNICAL', 'CULTURAL', 'COMMUNITY', 'MEDIA & PUB', 'ATHLETICS']
@@ -739,6 +740,9 @@ function Council() {
             </div>
           </div>
         </section>
+
+        {/* SITE FOOTER */}
+        <Footer />
       </div>
 
       {/* EXPANDABLE PROFILE CARD MODAL OVERLAY */}

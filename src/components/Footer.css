@@ -1,0 +1,48 @@
+.site-credit-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 1rem 3rem;
+  margin-top: auto;
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.site-credit-footer__text {
+  font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+  font-size: clamp(0.82rem, 2.2vw, 0.9rem);
+  font-weight: 500;
+  color: #64748b;
+  margin: 0;
+  text-align: center;
+  letter-spacing: -0.01em;
+  background: transparent;
+}
+
+.site-credit-footer__link {
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.site-credit-footer__link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .site-credit-footer {
+    padding: 1.5rem 1rem 4rem;
+  }
+}

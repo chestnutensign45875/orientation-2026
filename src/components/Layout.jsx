@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import Footer from './Footer'
 import './Layout.css'
 
 const navItems = [
@@ -33,9 +34,7 @@ function Layout() {
         <Outlet />
       </main>
 
-      <footer className="site-footer">
-        <p>Orientation 2026 — building in progress</p>
-      </footer>
+      <Footer />
     </div>
   )
 }

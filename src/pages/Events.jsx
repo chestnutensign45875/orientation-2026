@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import BlurredBackground from '../components/BlurredBackground'
 import RevealOnScroll from '../components/RevealOnScroll'
 import InteractiveSparkles from '../components/InteractiveSparkles'
+import Footer from '../components/Footer'
 import './Page.css'
 
 // Single active event date (Updated manually each day by admin)
@@ -383,6 +384,9 @@ function Events() {
             </div>
           </div>
         </section>
+
+        {/* SITE FOOTER */}
+        <Footer />
       </div>
     </article>
   )
