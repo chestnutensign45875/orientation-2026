@@ -197,14 +197,25 @@ function Map() {
       <BlurredBackground src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031295/page_rx5cr9.png" scrollContainerRef={scrollRef} />
 
       <div className="page-scroll" ref={scrollRef}>
-        {/* TOP LOGOS BAR (Left: piet.png | Right: Logo.svg) */}
         <div className="top-logos-bar">
-          <div className="top-logo-item">
+          <a
+            href="https://instagram.com/piet_jaipur"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="top-logo-item"
+            aria-label="PIET Instagram Profile"
+          >
             <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031296/piet_ppyo4j.png" alt="PIET Logo" className="top-logo-img--left" />
-          </div>
-          <div className="top-logo-item">
-            <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031295/Logo_mieuoo.svg" alt="ACM Logo" className="top-logo-img--right" />
-          </div>
+          </a>
+          <a
+            href="https://instagram.com/studentscouncilpiet"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="top-logo-item"
+            aria-label="Students Council Instagram Profile"
+          >
+            <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031295/Logo_mieuoo.svg" alt="Students Council Logo" className="top-logo-img--right" />
+          </a>
         </div>
 
         {/* MAP SECTION - FIRST THING USER SEES */}

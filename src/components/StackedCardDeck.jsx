@@ -5,7 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 const cardsData = [
   {
     id: 'events',
-    path: '/events',
+    path: 'https://instagram.com/piet_jaipur',
+    isExternal: true,
     category: 'WORKSHOPS & SESSIONS',
     badgeClass: 'nav-card__badge--blue',
     title: 'EVENTS & SCHEDULE',
@@ -141,7 +142,11 @@ function StackedCardDeck() {
 
   const handleCardClick = () => {
     if (!isDraggingRef.current) {
-      navigate(activeCard.path)
+      if (activeCard.isExternal || activeCard.path.startsWith('http')) {
+        window.open(activeCard.path, '_blank', 'noopener,noreferrer')
+      } else {
+        navigate(activeCard.path)
+      }
     }
   }
 
@@ -214,7 +219,11 @@ function StackedCardDeck() {
               className="deck-card__action-btn"
               onClick={(e) => {
                 e.stopPropagation()
-                navigate(activeCard.path)
+                if (activeCard.isExternal || activeCard.path.startsWith('http')) {
+                  window.open(activeCard.path, '_blank', 'noopener,noreferrer')
+                } else {
+                  navigate(activeCard.path)
+                }
               }}
             >
               <span>{activeCard.btnText}</span>

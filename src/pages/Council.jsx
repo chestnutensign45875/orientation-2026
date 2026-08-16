@@ -540,20 +540,28 @@ function Council() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <motion.div
+          <motion.a
+            href="https://instagram.com/piet_jaipur"
+            target="_blank"
+            rel="noopener noreferrer"
             className="top-logo-item"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="PIET Instagram Profile"
           >
             <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031296/piet_ppyo4j.png" alt="PIET Logo" className="top-logo-img--left" />
-          </motion.div>
-          <motion.div
+          </motion.a>
+          <motion.a
+            href="https://instagram.com/studentscouncilpiet"
+            target="_blank"
+            rel="noopener noreferrer"
             className="top-logo-item"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="Students Council Instagram Profile"
           >
-            <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031295/Logo_mieuoo.svg" alt="ACM Logo" className="top-logo-img--right" />
-          </motion.div>
+            <img src="https://res.cloudinary.com/vbqcwa7d/image/upload/v1786031295/Logo_mieuoo.svg" alt="Students Council Logo" className="top-logo-img--right" />
+          </motion.a>
         </motion.div>
 
         {/* HERO HEADER */}
