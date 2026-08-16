@@ -216,7 +216,7 @@ const CLUBS_DATA = [
       role: 'Captain',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030728/spic_y1nczb.jpg',
       email: 'spicmacay.lead@piet.ac.in',
-      instagram: 'https://instagram.com/spicmacay_piet',
+      instagram: 'https://instagram.com/spicmacay.piet',
     },
   },
   {
@@ -264,7 +264,7 @@ const CLUBS_DATA = [
       role: 'Captain',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786348542/WhatsApp_Image_2026-08-10_at_13.23.15_dmt908.jpg',
       email: 'pixels.lead@piet.ac.in',
-      instagram: 'https://instagram.com/perfectpixels_piet',
+      instagram: 'https://instagram.com/perfectpixels.club',
     },
   },
   {
@@ -312,7 +312,7 @@ const CLUBS_DATA = [
       role: 'Captain',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030731/indgenius_btl0xf.jpg',
       email: 'indgenius.lead@piet.ac.in',
-      instagram: 'https://instagram.com/indgenius_piet',
+      instagram: 'https://instagram.com/indgenius.piet',
     },
   },
   {
@@ -344,7 +344,7 @@ const CLUBS_DATA = [
       role: 'Captain',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1785948493/samples/man-portrait.jpg',
       email: 'gateway.lead@piet.ac.in',
-      instagram: 'https://instagram.com/gradgateway_piet',
+      instagram: 'https://instagram.com/gradgateway.club',
     },
   },
   {
@@ -360,7 +360,7 @@ const CLUBS_DATA = [
       role: 'Gaming Tournament Director',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030742/esports_hi07wd.jpg',
       email: 'esports.lead@piet.ac.in',
-      instagram: 'https://instagram.com/esports_piet',
+      instagram: 'https://instagram.com/esports.piet',
     },
   },
   {
@@ -392,7 +392,7 @@ const CLUBS_DATA = [
       role: 'Captain',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030738/helping-hands_xtaz4s.jpg',
       email: 'helpinghands.lead@piet.ac.in',
-      instagram: 'https://instagram.com/helpinghands_piet',
+      instagram: 'https://instagram.com/happyhivegroupjaipur',
     },
   },
   {
@@ -456,7 +456,7 @@ const CLUBS_DATA = [
       role: 'Captain',
       image: 'https://res.cloudinary.com/vbqcwa7d/image/upload/v1786030732/yi_zyaowr.jpg',
       email: 'yi.lead@piet.ac.in',
-      instagram: 'https://instagram.com/yi_piet',
+      instagram: 'https://instagram.com/yijaipur',
     },
   },
   {
